@@ -1,0 +1,1726 @@
+{
+  "chapter": 4,
+  "key": "ch4",
+  "title": {
+    "zh": "第 4 章 数列与二项展开",
+    "en": "Chapter 4 Sequences and Binomial Expansions"
+  },
+  "sections": [
+    {
+      "id": "4.1",
+      "title": {
+        "zh": "数列与级数",
+        "en": "Sequences and Series"
+      },
+      "points": [
+        {
+          "zh": "数列 $a_1, a_2, a_3, a_4, \\ldots$ 是按正整数排列的一列实数，记作 $\\{a_n\\}_{n=1}^{\\infty}$ 或 $\\{a_n\\}$。",
+          "en": "A sequence $a_1, a_2, a_3, a_4, \\ldots$ is an ordered arrangement of real numbers, one for each positive integer, written $\\{a_n\\}_{n=1}^{\\infty}$ or simply $\\{a_n\\}$."
+        },
+        {
+          "zh": "数列可用三种方式给出：列出足够多的初始项以确定规律（如 $1, 4, 7, 10, 13, \\ldots$）、给出通项公式（如 $a_n = 3n - 2,\\ n \\ge 1$）、或给出递归公式（如 $a_1 = 1,\\ a_n = a_{n-1} + 3$）。",
+          "en": "A sequence may be specified by (i) giving enough initial terms to establish the pattern, (ii) giving an explicit formula for the $n$-th term, or (iii) using a recursive formula."
+        },
+        {
+          "zh": "Example 4.1 要求写出 $a_n = 1 - \\dfrac{1}{n}$、$a_n = 1 + (-1)^n \\dfrac{1}{n}$、$a_n = (-1)^n + \\dfrac{1}{n}$ 与 $a_n = 0.999$ 的前 6 项，其中 $0.999$ 是循环小数陷阱项。",
+          "en": "Example 4.1 asks for the first 6 terms of $a_n = 1 - \\dfrac{1}{n}$, $a_n = 1 + (-1)^n \\dfrac{1}{n}$, $a_n = (-1)^n + \\dfrac{1}{n}$ and $a_n = 0.999$, the last being the repeating-decimal trap."
+        },
+        {
+          "zh": "Example 4.2 的数列 $\\dfrac{3}{5}, -\\dfrac{4}{25}, \\dfrac{5}{125}, -\\dfrac{6}{625}, \\dfrac{7}{3125}, \\ldots$ 的通项为 $a_n = (-1)^{n+1}\\dfrac{n+2}{5^n}$；Example 4.3 的斐波那契数列满足 $f_0 = f_1 = 1$ 且 $f_n = f_{n-1} + f_{n-2}\\ (n \\ge 2)$。",
+          "en": "Example 4.2 asks for a general term of $\\dfrac{3}{5}, -\\dfrac{4}{25}, \\dfrac{5}{125}, -\\dfrac{6}{625}, \\dfrac{7}{3125}, \\ldots$; Example 4.3 uses the Fibonacci sequence $f_0 = f_1 = 1$, $f_n = f_{n-1} + f_{n-2}$ for $n \\ge 2$."
+        },
+        {
+          "zh": "无穷级数 $a_1 + a_2 + a_3 + \\cdots$ 的部分和为 $S_n = a_1 + a_2 + \\cdots + a_n$；若 $\\lim_{n \\to \\infty} S_n$ 存在，则称该级数收敛。",
+          "en": "An infinite series $a_1 + a_2 + a_3 + \\cdots$ has partial sums $S_n = a_1 + a_2 + \\cdots + a_n$; the series is convergent if $\\lim_{n \\to \\infty} S_n$ exists."
+        },
+        {
+          "zh": "$\\Sigma$ 记号表示求和：$\\sum_{k=m}^{n} a_k = a_m + a_{m+1} + \\ldots + a_{n-1} + a_n$，且 $\\sum_{k=m}^{n} c a_k = c \\sum_{k=m}^{n} a_k$、$\\sum_{k=m}^{n}(a_k \\pm b_k) = \\sum_{k=m}^{n} a_k \\pm \\sum_{k=m}^{n} b_k$。",
+          "en": "The symbol $\\Sigma$ denotes a summation, $\\sum_{k=m}^{n} a_k = a_m + a_{m+1} + \\ldots + a_{n-1} + a_n$, with $\\sum_{k=m}^{n} c a_k = c \\sum_{k=m}^{n} a_k$ and $\\sum_{k=m}^{n}(a_k \\pm b_k) = \\sum_{k=m}^{n} a_k \\pm \\sum_{k=m}^{n} b_k$."
+        },
+        {
+          "zh": "$\\prod$ 记号表示连乘：$\\prod_{k=m}^{n} a_k = a_m a_{m+1} \\cdots a_{n-1} a_n$，且 $\\prod_{k=m}^{n} c a_k = c^{n-m+1} \\prod_{k=m}^{n} a_k$、$\\prod_{k=m}^{n}(a_k b_k) = \\prod_{k=m}^{n} a_k \\prod_{k=m}^{n} b_k$；阶乘 $n! = \\prod_{k=1}^{n} k = 1 \\times 2 \\times 3 \\times \\cdots \\times n$，并规定 $0! = 1$。",
+          "en": "The symbol $\\prod$ denotes a product, $\\prod_{k=m}^{n} a_k = a_m a_{m+1} \\cdots a_{n-1} a_n$, with $\\prod_{k=m}^{n} c a_k = c^{n-m+1}\\prod_{k=m}^{n} a_k$ and $\\prod_{k=m}^{n}(a_k b_k) = \\prod_{k=m}^{n} a_k \\prod_{k=m}^{n} b_k$; the factorial is $n! = \\prod_{k=1}^{n} k$, extended by $0! = 1$."
+        }
+      ]
+    },
+    {
+      "id": "4.2",
+      "title": {
+        "zh": "等差数列与等比数列",
+        "en": "Arithmetic Sequence and Geometric Sequence"
+      },
+      "points": [
+        {
+          "zh": "若存在常数 $d$ 使 $a_{n+1} - a_n = d$ 对一切 $n \\ge 1$ 成立，则 $\\{a_n\\}$ 是等差数列，$d$ 称为公差。",
+          "en": "If there is a constant $d$ with $a_{n+1} - a_n = d$ for all $n \\ge 1$, then $\\{a_n\\}$ is an arithmetic sequence and $d$ is its common difference."
+        },
+        {
+          "zh": "Theorem 4.1：若 $a_1 = a$、公差为 $d$，则 $a_n = a + (n - 1)d$，且 $S_n = \\sum_{k=1}^{n} a_k = \\dfrac{n}{2}\\left(2a + (n-1)d\\right) = \\dfrac{n}{2}\\left(a + a_n\\right)$。",
+          "en": "Theorem 4.1: if $a_1 = a$ and the common difference is $d$, then $a_n = a + (n - 1)d$ and $S_n = \\sum_{k=1}^{n} a_k = \\dfrac{n}{2}\\left(2a + (n-1)d\\right) = \\dfrac{n}{2}\\left(a + a_n\\right)$."
+        },
+        {
+          "zh": "若存在常数 $r \\neq 0$ 使 $\\dfrac{a_{n+1}}{a_n} = r$ 对一切 $n \\ge 1$ 成立，则 $\\{a_n\\}$ 是等比数列，$r$ 称为公比。",
+          "en": "If there is a constant $r \\neq 0$ with $\\dfrac{a_{n+1}}{a_n} = r$ for all $n \\ge 1$, then $\\{a_n\\}$ is a geometric sequence and $r$ is its common ratio."
+        },
+        {
+          "zh": "Theorem 4.2：若 $a_1 = a$、公比为 $r$，则 $a_n = ar^{n-1}$，且 $S_n = \\sum_{k=1}^{n} a_k = \\dfrac{a\\left(r^{n} - 1\\right)}{r - 1}$。",
+          "en": "Theorem 4.2: if $a_1 = a$ and the common ratio is $r$, then $a_n = ar^{n-1}$ and $S_n = \\sum_{k=1}^{n} a_k = \\dfrac{a\\left(r^{n} - 1\\right)}{r - 1}$."
+        },
+        {
+          "zh": "Theorem 4.3：等比级数 $S_\\infty = \\lim_{n \\to \\infty} S_n$ 存在当且仅当 $|r| < 1$；此时 $S_\\infty = a + ar + ar^2 + \\cdots = \\dfrac{a}{1 - r}$，称为该级数的无穷和。",
+          "en": "Theorem 4.3: $S_\\infty = \\lim_{n \\to \\infty} S_n$ exists if and only if $|r| < 1$, and then $S_\\infty = a + ar + ar^2 + \\cdots = \\dfrac{a}{1 - r}$, the sum to infinity of the geometric series."
+        },
+        {
+          "zh": "由部分和判定数列类型：$S_n$ 是 $n$ 的二次式时，$a_n = S_n - S_{n-1}$ 是一次式，故 $\\{a_n\\}$ 是等差数列；$S_n$ 含 $q^n$ 项时，$a_n = S_n - S_{n-1}$ 含 $q^{n-1}$，故为等比数列。",
+          "en": "Type test from partial sums: if $S_n$ is quadratic in $n$, then $a_n = S_n - S_{n-1}$ is linear, so $\\{a_n\\}$ is arithmetic; if $S_n$ contains a $q^n$ term, then $a_n = S_n - S_{n-1}$ contains $q^{n-1}$, so $\\{a_n\\}$ is geometric."
+        }
+      ]
+    },
+    {
+      "id": "4.3",
+      "title": {
+        "zh": "二项展开",
+        "en": "Binomial Expansions"
+      },
+      "points": [
+        {
+          "zh": "二项式系数定义为 $\\binom{n}{0} = 1$；当 $k \\ge 1$ 时 $\\binom{n}{k} = \\dfrac{n(n-1) \\cdots (n-k+1)}{k!} = \\dfrac{n!}{k!(n-k)!}$。",
+          "en": "The binomial coefficients are defined by $\\binom{n}{0} = 1$ and, for $k \\ge 1$, $\\binom{n}{k} = \\dfrac{n(n-1) \\cdots (n-k+1)}{k!} = \\dfrac{n!}{k!(n-k)!}$."
+        },
+        {
+          "zh": "约定 $k < 0$ 或 $k > n$ 时 $\\binom{n}{k} = 0$，并注意对称性 $\\binom{n}{k} = \\binom{n}{n-k}$。",
+          "en": "The definition extends by $\\binom{n}{k} = 0$ if $k < 0$ or $k > n$, and the symmetry $\\binom{n}{k} = \\binom{n}{n-k}$ holds."
+        },
+        {
+          "zh": "Theorem 4.4（Pascal 恒等式）：若 $n$ 为正整数且 $1 \\le k \\le n$，则 $\\binom{n}{k} + \\binom{n}{k-1} = \\binom{n+1}{k}$。",
+          "en": "Theorem 4.4 (Pascal's identity): if $n$ is a positive integer and $1 \\le k \\le n$, then $\\binom{n}{k} + \\binom{n}{k-1} = \\binom{n+1}{k}$."
+        },
+        {
+          "zh": "Theorem 4.5（正整数次幂展开）：$(a + b)^n = \\sum_{k=0}^{n} \\binom{n}{k} a^{n-k} b^k = a^n + \\binom{n}{1} a^{n-1} b + \\cdots + \\binom{n}{k} a^{n-k} b^k + \\cdots + \\binom{n}{n-1} a b^{n-1} + b^n$。",
+          "en": "Theorem 4.5 (expansion with a positive integer power): $(a + b)^n = \\sum_{k=0}^{n} \\binom{n}{k} a^{n-k} b^k = a^n + \\binom{n}{1} a^{n-1} b + \\cdots + \\binom{n}{k} a^{n-k} b^k + \\cdots + \\binom{n}{n-1} a b^{n-1} + b^n$."
+        },
+        {
+          "zh": "广义二项式系数：对任意非零实数 $\\alpha$ 定义 $\\binom{\\alpha}{0} = 1$，对正整数 $k$ 定义 $\\binom{\\alpha}{k} = \\dfrac{\\alpha(\\alpha-1) \\cdots (\\alpha - k + 1)}{k!}$。",
+          "en": "Generalized binomial coefficients: for any nonzero real number $\\alpha$ define $\\binom{\\alpha}{0} = 1$ and, for a positive integer $k$, $\\binom{\\alpha}{k} = \\dfrac{\\alpha(\\alpha-1) \\cdots (\\alpha - k + 1)}{k!}$."
+        },
+        {
+          "zh": "Theorem 4.6（有理数次幂展开）：当 $\\alpha$ 为非零有理数时 $(1 + x)^{\\alpha} = \\sum_{k=0}^{\\infty} \\binom{\\alpha}{k} x^k$，该级数在 $|x| < 1$ 时收敛。",
+          "en": "Theorem 4.6 (expansion with a rational power): when $\\alpha$ is a nonzero rational number, $(1 + x)^{\\alpha} = \\sum_{k=0}^{\\infty} \\binom{\\alpha}{k} x^k$, and the series converges when $|x| < 1$."
+        },
+        {
+          "zh": "三角恒等式的二项展开证明：由 De Moivre 公式 $(\\cos\\theta + i\\sin\\theta)^n = \\cos n\\theta + i \\sin n\\theta$ 展开后比较实部与虚部。",
+          "en": "Trigonometric identities can be proved by binomial expansion: expand $(\\cos\\theta + i\\sin\\theta)^n = \\cos n\\theta + i \\sin n\\theta$ by De Moivre's theorem and compare real and imaginary parts."
+        }
+      ]
+    },
+    {
+      "id": "4.4",
+      "title": {
+        "zh": "幂和",
+        "en": "Sums of Powers"
+      },
+      "points": [
+        {
+          "zh": "Theorem 4.7：设 $n$ 为正整数，则 $\\sum_{k=1}^{n} k = \\dfrac{n(n+1)}{2}$，$\\sum_{k=1}^{n} k^2 = \\dfrac{n(n+1)(2n+1)}{6}$，$\\sum_{k=1}^{n} k^3 = \\dfrac{n^2 (n+1)^2}{4}$。",
+          "en": "Theorem 4.7: for a positive integer $n$, $\\sum_{k=1}^{n} k = \\dfrac{n(n+1)}{2}$, $\\sum_{k=1}^{n} k^2 = \\dfrac{n(n+1)(2n+1)}{6}$ and $\\sum_{k=1}^{n} k^3 = \\dfrac{n^2 (n+1)^2}{4}$."
+        },
+        {
+          "zh": "Example 4.16 求 $\\sum_{k=1}^{n}(2k-1)$、$\\sum_{k=1}^{n}(2k-1)^2$、$\\sum_{k=1}^{n}(2k-1)^3$，做法是先展开成 $k$ 的幂再用 Theorem 4.7。",
+          "en": "Example 4.16 evaluates $\\sum_{k=1}^{n}(2k-1)$, $\\sum_{k=1}^{n}(2k-1)^2$ and $\\sum_{k=1}^{n}(2k-1)^3$ by expanding each term into powers of $k$ and applying Theorem 4.7."
+        },
+        {
+          "zh": "高次幂和公式（教材与官方详解中用到）：$\\sum_{k=1}^{n} k^4 = \\dfrac{6n^5 + 15n^4 + 10n^3 - n}{30}$，$\\sum_{k=1}^{n} k^5 = \\dfrac{2n^6 + 6n^5 + 5n^4 - n^2}{12}$。",
+          "en": "Higher power-sum formulas used in the notes and official solutions: $\\sum_{k=1}^{n} k^4 = \\dfrac{6n^5 + 15n^4 + 10n^3 - n}{30}$ and $\\sum_{k=1}^{n} k^5 = \\dfrac{2n^6 + 6n^5 + 5n^4 - n^2}{12}$."
+        },
+        {
+          "zh": "推导高次幂和的标准技巧：用 $(k+1)^{m+1} - k^{m+1}$ 的二项展开求和，移项得 $(n+1)^{m+1} - 1 = \\sum_{k=1}^{n}\\left[(k+1)^{m+1} - k^{m+1}\\right]$，再代入已知低次幂和。",
+          "en": "Standard technique for deriving higher power sums: expand $(k+1)^{m+1} - k^{m+1}$ binomially, sum over $k$ to get $(n+1)^{m+1} - 1 = \\sum_{k=1}^{n}\\left[(k+1)^{m+1} - k^{m+1}\\right]$, then substitute the known lower power sums."
+        },
+        {
+          "zh": "线性组合求和：先把被求和项展开为多项式，再对每一项分别套用幂和公式，例如 $\\sum_{k=1}^{n}(5k-1)(k+2) = 5\\sum_{k=1}^{n} k^2 + 9\\sum_{k=1}^{n} k - 2n$。",
+          "en": "Linear combinations: expand the summand into a polynomial first, then apply a power-sum formula to each part, e.g. $\\sum_{k=1}^{n}(5k-1)(k+2) = 5\\sum_{k=1}^{n} k^2 + 9\\sum_{k=1}^{n} k - 2n$."
+        }
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "sec": "4.1",
+      "title": {
+        "zh": "从部分和还原通项",
+        "en": "Recovering Terms from Partial Sums"
+      },
+      "body": {
+        "zh": "已知 $S_n = \\sum_{k=1}^{n} a_k$ 时，$a_1 = S_1$；对 $n \\ge 2$ 有 $a_n = S_n - S_{n-1}$。因此像 $S_n = n^3 + 2n$ 这样的式子能直接拆成 $a_1 = 3$ 与 $a_n = 3n^2 - 3n + 3$。区间和用 $S_m - S_{n-1}$ 处理：$\\sum_{k=10}^{20} a_k = S_{20} - S_9$。",
+        "en": "Given $S_n = \\sum_{k=1}^{n} a_k$, we have $a_1 = S_1$ and, for $n \\ge 2$, $a_n = S_n - S_{n-1}$. So $S_n = n^3 + 2n$ splits into $a_1 = 3$ and $a_n = 3n^2 - 3n + 3$. Block sums use $S_m - S_{n-1}$, e.g. $\\sum_{k=10}^{20} a_k = S_{20} - S_9$."
+      }
+    },
+    {
+      "sec": "4.1",
+      "title": {
+        "zh": "连乘的望远镜消去",
+        "en": "Telescoping Products"
+      },
+      "body": {
+        "zh": "形如 $\\prod_{k=1}^{n}\\dfrac{(x^k - 1)(x^{k+1} + 1)}{x^{2k} - 1}$ 的连乘可先用 $x^{2k}-1 = (x^k-1)(x^k+1)$ 约掉，再逐项相消；$\\prod_{n=1}^{100}\\dfrac{2n-1}{2n+3}$ 同理只剩下首尾几项。这类题的关键是先做代数化简再展开相乘。",
+        "en": "A product such as $\\prod_{k=1}^{n}\\dfrac{(x^k - 1)(x^{k+1} + 1)}{x^{2k} - 1}$ is first simplified with $x^{2k}-1 = (x^k-1)(x^k+1)$ and then telescopes term by term; likewise $\\prod_{n=1}^{100}\\dfrac{2n-1}{2n+3}$ reduces to a few end factors. The key is to simplify algebraically before multiplying out."
+      }
+    },
+    {
+      "sec": "4.2",
+      "title": {
+        "zh": "等差数列的两条基本量",
+        "en": "Two Key Quantities of an Arithmetic Sequence"
+      },
+      "body": {
+        "zh": "$a_n = a + (n-1)d$ 给出通项，$S_n = \\dfrac{n}{2}(2a + (n-1)d) = \\dfrac{n}{2}(a+a_n)$ 给出前 $n$ 项和。已知两段区间和时，先把它们合并成 $S_m$ 与 $S_n$，再解关于 $a$ 与 $d$ 的二元一次方程组。",
+        "en": "The general term is $a_n = a + (n-1)d$ and the sum of the first $n$ terms is $S_n = \\dfrac{n}{2}(2a + (n-1)d) = \\dfrac{n}{2}(a+a_n)$. When two block sums are given, first combine them into $S_m$ and $S_n$, then solve the resulting linear system for $a$ and $d$."
+      }
+    },
+    {
+      "sec": "4.2",
+      "title": {
+        "zh": "等比数列求和的两种情形",
+        "en": "Two Cases for Geometric Sums"
+      },
+      "body": {
+        "zh": "有限和：$S_n = \\dfrac{a(r^n - 1)}{r - 1}$；无穷和：只有 $|r| < 1$ 时 $S_\\infty = \\dfrac{a}{1-r}$ 存在。求无穷和时必须先由题设的收敛性或解出的两个 $r$ 中挑出 $|r| < 1$ 的那一个。",
+        "en": "Finite sums use $S_n = \\dfrac{a(r^n - 1)}{r - 1}$; an infinite sum $S_\\infty = \\dfrac{a}{1-r}$ exists only when $|r| < 1$. When solving for $r$ from given data, always select the root with $|r| < 1$, as required by convergence."
+      }
+    },
+    {
+      "sec": "4.2",
+      "title": {
+        "zh": "用二次式求部分和的最值",
+        "en": "Maximising a Partial Sum given in Quadratic Form"
+      },
+      "body": {
+        "zh": "若 $S_n = \\dfrac{n}{20}(70 - 3n)$ 这类开口向下的二次式，则最大值在顶点处取到；顶点常不在整数点，故要分别检验相邻的两个整数 $n$，或改用 $S_n - S_{n-1} = a_n$ 的符号变化定位最大值点。",
+        "en": "If $S_n$ is a downward-opening quadratic such as $\\dfrac{n}{20}(70 - 3n)$, the maximum sits at the vertex, which often is not an integer; check the two neighbouring integers, or locate the maximum by the sign change of $S_n - S_{n-1} = a_n$."
+      }
+    },
+    {
+      "sec": "4.3",
+      "title": {
+        "zh": "常数项与指定幂次项的求法",
+        "en": "Finding the Constant Term or a Given Power"
+      },
+      "body": {
+        "zh": "在 $(x^3 + \\dfrac{5}{x})^8$ 中，通项 $\\binom{8}{k}(x^3)^{8-k}\\left(\\dfrac{5}{x}\\right)^k$ 的 $x$ 指数为 $3(8-k) - k$；令指数为 $0$ 解得 $k = 6$。求 $x^{-2}$ 的系数同理，令 $10 - k - 2k = -2$ 得 $k = 4$。",
+        "en": "In $(x^3 + \\dfrac{5}{x})^8$ the general term $\\binom{8}{k}(x^3)^{8-k}\\left(\\dfrac{5}{x}\\right)^k$ has $x$-power $3(8-k) - k$; setting it to $0$ gives $k = 6$. To find the coefficient of $x^{-2}$ in $(2x - \\dfrac{3}{x^2})^{10}$, set $10 - k - 2k = -2$ to get $k = 4$."
+      }
+    },
+    {
+      "sec": "4.3",
+      "title": {
+        "zh": "广义二项式展开的收敛半径",
+        "en": "Convergence Range of the Generalized Expansion"
+      },
+      "body": {
+        "zh": "$(1+x)^{\\alpha} = \\sum_{k=0}^{\\infty}\\binom{\\alpha}{k}x^k$ 只在 $|x| < 1$ 收敛，因此求具体函数的展开要先把它写成 $(1 + u)^{\\alpha}$ 的形式并把 $|u| < 1$ 翻译成 $x$ 的范围，例如 $\\dfrac{x}{\\sqrt{9-x}} = \\dfrac{x}{3}\\left(1 - \\dfrac{x}{9}\\right)^{-\\dfrac{1}{2}}$ 给出 $|x| < 9$。",
+        "en": "The series $(1+x)^{\\alpha} = \\sum_{k=0}^{\\infty}\\binom{\\alpha}{k}x^k$ converges only for $|x| < 1$, so a given function must first be written in the form $(1 + u)^{\\alpha}$ and $|u| < 1$ translated into a range for $x$; for instance $\\dfrac{x}{\\sqrt{9-x}} = \\dfrac{x}{3}\\left(1 - \\dfrac{x}{9}\\right)^{-\\dfrac{1}{2}}$ gives $|x| < 9$."
+      }
+    },
+    {
+      "sec": "4.3",
+      "title": {
+        "zh": "由二项展开证明三角恒等式",
+        "en": "Proving Trigonometric Identities by Binomial Expansion"
+      },
+      "body": {
+        "zh": "把 $(\\cos\\theta + i\\sin\\theta)^n$ 按二项式定理展开，奇次幂的 $i$ 因子给出虚部、偶次幂给出实部，再把 $\\sin^2\\theta = 1 - \\cos^2\\theta$ 代回即可得到 $\\cos 4\\theta$、$\\sin 5\\theta$、$\\cos 6\\theta$ 等纯余弦（纯正弦）表达式。",
+        "en": "Expanding $(\\cos\\theta + i\\sin\\theta)^n$ binomially, odd powers of $i$ give the imaginary part and even powers the real part; substituting $\\sin^2\\theta = 1 - \\cos^2\\theta$ then yields pure-cosine or pure-sine forms such as $\\cos 4\\theta$, $\\sin 5\\theta$ and $\\cos 6\\theta$."
+      }
+    },
+    {
+      "sec": "4.4",
+      "title": {
+        "zh": "幂和公式的适用范围",
+        "en": "Scope of the Power-Sum Formulas"
+      },
+      "body": {
+        "zh": "Theorem 4.7 给出 1、2、3 次幂和；4 次与 5 次幂和公式出现在官方详解的推导中，可直接引用。三次幂和 $\\sum_{k=1}^{n}k^3 = \\dfrac{n^2(n+1)^2}{4}$ 与 $\\left(\\sum_{k=1}^{n} k\\right)^2$ 相等，常用来速算。",
+        "en": "Theorem 4.7 covers the first, second and third power sums; the fourth and fifth power formulas appear in the derivations of the official solutions and can be quoted directly. The cubic identity $\\sum_{k=1}^{n}k^3 = \\dfrac{n^2(n+1)^2}{4} = \\left(\\sum_{k=1}^{n} k\\right)^2$ is a handy shortcut."
+      }
+    },
+    {
+      "sec": "4.4",
+      "title": {
+        "zh": "用递推式写出的 $a_n$",
+        "en": "Writing $a_n$ from a Recurrence"
+      },
+      "body": {
+        "zh": "对 $a_1 = 3$、$a_n = a_{n-1} + 4n - 3$ 这类递推，展开求和得 $a_n = a_1 + \\sum_{k=2}^{n}(4k-3)$，再用 $\\sum k = \\dfrac{n(n+1)}{2}$ 化成闭式 $a_n = 2n^2 - n + 2$；求 $a_{100}$ 时把 $n = 100$ 代入闭式即可。",
+        "en": "For a recurrence such as $a_1 = 3$, $a_n = a_{n-1} + 4n - 3$, expand the recurrence into $a_n = a_1 + \\sum_{k=2}^{n}(4k-3)$ and use $\\sum k = \\dfrac{n(n+1)}{2}$ to reach the closed form $a_n = 2n^2 - n + 2$; $a_{100}$ then follows by substitution."
+      }
+    }
+  ],
+  "pitfalls": [
+    {
+      "sec": "4.1",
+      "title": {
+        "zh": "把 $a_n = S_n - S_{n-1}$ 直接用在 $n=1$ 上",
+        "en": "Applying $a_n = S_n - S_{n-1}$ at $n = 1$"
+      },
+      "body": {
+        "zh": "当 $n = 1$ 时 $S_{n-1} = S_0$ 未定义（除非另外规定 $S_0 = 0$），所以要先单独算 $a_1 = S_1$，再对 $n \\ge 2$ 用差分公式。",
+        "en": "At $n = 1$ the term $S_{n-1} = S_0$ is not defined (unless one separately sets $S_0 = 0$), so compute $a_1 = S_1$ separately and use the difference formula only for $n \\ge 2$."
+      }
+    },
+    {
+      "sec": "4.1",
+      "title": {
+        "zh": "连乘中忘记因子的个数",
+        "en": "Miscounting the Power of a Common Factor in a Product"
+      },
+      "body": {
+        "zh": "$\\prod_{k=m}^{n} c a_k = c^{n-m+1}\\prod_{k=m}^{n} a_k$ 中指数是项数 $n-m+1$ 而不是 $n$；同理 $\\sum$ 的对应性质里常数只乘一次。乘积与求和的常数规则不同，极易混淆。",
+        "en": "In $\\prod_{k=m}^{n} c a_k = c^{n-m+1}\\prod_{k=m}^{n} a_k$ the exponent is the number of terms $n-m+1$, not $n$; by contrast a constant is taken out of a sum only once. The constant rules for products and sums differ and are easily confused."
+      }
+    },
+    {
+      "sec": "4.1",
+      "title": {
+        "zh": "向上取整与向下取整用反",
+        "en": "Confusing Ceiling and Floor"
+      },
+      "body": {
+        "zh": "像 $1, 2, 2, 3, 3, 3, 4, 4, 4, 4, \\ldots$ 这样 $k$ 出现 $k$ 次的数列，其通项含向上取整 $\\left\\lceil \\cdot \\right\\rceil$，且不等号一端是严格的 $< k$、另一端是 $\\le k$；写反就会在边界项（如 $n = 3, 6, 10$）上出错。",
+        "en": "For a sequence in which $k$ is repeated $k$ times, the general term involves the ceiling $\\left\\lceil \\cdot \\right\\rceil$, with a strict $< k$ on one side and $\\le k$ on the other; reversing them breaks the boundary cases ($n = 3, 6, 10$ and so on)."
+      }
+    },
+    {
+      "sec": "4.2",
+      "title": {
+        "zh": "两段区间和没有先合并",
+        "en": "Failing to Combine Two Block Sums First"
+      },
+      "body": {
+        "zh": "给出 $\\sum_{k=9}^{16} a_k$ 之类区间和时，应先写成 $S_{16} - S_8$ 并与 $S_8$ 合并成 $S_{16}$，再用 $\\dfrac{n}{2}(2a + (n-1)d)$ 写方程，否则容易把区间长度当成总项数。",
+        "en": "When a block sum such as $\\sum_{k=9}^{16} a_k$ is given, first write it as $S_{16} - S_8$ and combine it with $S_8$ to obtain $S_{16}$, then apply $\\dfrac{n}{2}(2a + (n-1)d)$; otherwise the block length gets mistaken for the total number of terms."
+      }
+    },
+    {
+      "sec": "4.2",
+      "title": {
+        "zh": "等比级数无条件求无穷和",
+        "en": "Using the Infinite Geometric Sum Without Checking $|r| < 1$"
+      },
+      "body": {
+        "zh": "$S_\\infty = \\dfrac{a}{1-r}$ 只在 $|r| < 1$ 时成立。解题中常出现两个可能的公比 $r$，必须依据题设的收敛性舍去 $|r| > 1$ 的那个；否则会得到负数或不自洽的结果。",
+        "en": "The formula $S_\\infty = \\dfrac{a}{1-r}$ holds only for $|r| < 1$. Problems often admit two possible ratios $r$, so the root with $|r| > 1$ must be discarded using the stated convergence; otherwise one obtains a negative or inconsistent result."
+      }
+    },
+    {
+      "sec": "4.2",
+      "title": {
+        "zh": "把最大值点当成实数顶点",
+        "en": "Treating the Vertex as an Integer"
+      },
+      "body": {
+        "zh": "$S_n$ 的顶点常是分数（如 $n = \\dfrac{35}{3}$），而 $n$ 必须是正整数。正确做法是比较相邻两个整数点 $n = 11$ 与 $n = 12$ 的值，或考察 $a_n$ 由正转负的位置。",
+        "en": "The vertex of $S_n$ is often fractional (for instance $n = \\dfrac{35}{3}$), yet $n$ must be a positive integer. Compare the two neighbouring integers $n = 11$ and $n = 12$, or locate where $a_n$ changes from positive to negative."
+      }
+    },
+    {
+      "sec": "4.3",
+      "title": {
+        "zh": "广义二项式系数与普通系数混用",
+        "en": "Mixing Up Generalized and Ordinary Binomial Coefficients"
+      },
+      "body": {
+        "zh": "$\\binom{n}{k} = \\dfrac{n!}{k!(n-k)!}$ 只对整数 $n \\ge k \\ge 0$ 有意义；有理指数幂必须用 $\\binom{\\alpha}{k} = \\dfrac{\\alpha(\\alpha-1)\\cdots(\\alpha-k+1)}{k!}$，且 $(1+x)^{\\alpha}$ 的展开只在 $|x| < 1$ 有效。",
+        "en": "The formula $\\binom{n}{k} = \\dfrac{n!}{k!(n-k)!}$ applies only to integers with $n \\ge k \\ge 0$; a rational power requires $\\binom{\\alpha}{k} = \\dfrac{\\alpha(\\alpha-1)\\cdots(\\alpha-k+1)}{k!}$, and the expansion of $(1+x)^{\\alpha}$ is valid only for $|x| < 1$."
+      }
+    },
+    {
+      "sec": "4.4",
+      "title": {
+        "zh": "幂和公式代入时弄错上下限",
+        "en": "Mismatching Limits in the Power-Sum Formulas"
+      },
+      "body": {
+        "zh": "Theorem 4.7 的公式都是 $\\sum_{k=1}^{n}$ 的形式；求 $\\sum_{k=m}^{n}$ 时应先用 $\\sum_{k=1}^{n} - \\sum_{k=1}^{m-1}$ 处理。另外 $\\sum_{k=1}^{n} k^2$ 的分母是 $6$ 而 $\\sum_{k=1}^{n} k$ 的分母是 $2$，写错分母会整体差一个因子。",
+        "en": "The formulas of Theorem 4.7 all use $\\sum_{k=1}^{n}$; a sum from $m$ to $n$ must first be written as $\\sum_{k=1}^{n} - \\sum_{k=1}^{m-1}$. Also note the denominators differ: $6$ for $\\sum_{k=1}^{n} k^2$ versus $2$ for $\\sum_{k=1}^{n} k$."
+      }
+    }
+  ],
+  "sheet": [
+    {
+      "group": {
+        "zh": "数列求和",
+        "en": "Sequence Sums"
+      },
+      "items": [
+        {
+          "f": "$S_n = \\sum_{k=1}^{n} a_k$",
+          "note": {
+            "zh": "部分和定义",
+            "en": "definition of partial sums"
+          }
+        },
+        {
+          "f": "$a_1 = S_1,\\quad a_n = S_n - S_{n-1}\\ (n \\ge 2)$",
+          "note": {
+            "zh": "由部分和求通项",
+            "en": "recovering a term from partial sums"
+          }
+        },
+        {
+          "f": "$\\sum_{k=m}^{n} a_k = a_m + a_{m+1} + \\cdots + a_{n-1} + a_n$",
+          "note": {
+            "zh": "$\\Sigma$ 记号",
+            "en": "the $\\Sigma$ notation"
+          }
+        },
+        {
+          "f": "$\\sum_{k=m}^{n} c a_k = c \\sum_{k=m}^{n} a_k$",
+          "note": {
+            "zh": "求和的常数倍性质",
+            "en": "pulling a constant out of a sum"
+          }
+        },
+        {
+          "f": "$\\prod_{k=m}^{n} a_k = a_m a_{m+1} \\cdots a_{n-1} a_n$",
+          "note": {
+            "zh": "$\\prod$ 记号",
+            "en": "the $\\prod$ notation"
+          }
+        },
+        {
+          "f": "$n! = \\prod_{k=1}^{n} k,\\quad 0! = 1$",
+          "note": {
+            "zh": "阶乘",
+            "en": "factorial"
+          }
+        }
+      ]
+    },
+    {
+      "group": {
+        "zh": "等差与等比数列",
+        "en": "Arithmetic and Geometric Sequences"
+      },
+      "items": [
+        {
+          "f": "$a_{n+1} - a_n = d$",
+          "note": {
+            "zh": "等差数列定义（公差 $d$）",
+            "en": "arithmetic sequence (common difference $d$)"
+          }
+        },
+        {
+          "f": "$a_n = a + (n - 1)d$",
+          "note": {
+            "zh": "等差通项",
+            "en": "arithmetic general term"
+          }
+        },
+        {
+          "f": "$S_n = \\dfrac{n}{2}\\left(2a + (n-1)d\\right) = \\dfrac{n}{2}\\left(a + a_n\\right)$",
+          "note": {
+            "zh": "等差求和公式",
+            "en": "arithmetic sum formula"
+          }
+        },
+        {
+          "f": "$\\dfrac{a_{n+1}}{a_n} = r \\neq 0$",
+          "note": {
+            "zh": "等比数列定义（公比 $r$）",
+            "en": "geometric sequence (common ratio $r$)"
+          }
+        },
+        {
+          "f": "$a_n = ar^{n-1}$",
+          "note": {
+            "zh": "等比通项",
+            "en": "geometric general term"
+          }
+        },
+        {
+          "f": "$S_n = \\dfrac{a\\left(r^{n} - 1\\right)}{r - 1}$",
+          "note": {
+            "zh": "等比求和公式",
+            "en": "geometric sum formula"
+          }
+        },
+        {
+          "f": "$|r| < 1 \\implies S_\\infty = \\lim_{n \\to \\infty} S_n = \\dfrac{a}{1 - r}$",
+          "note": {
+            "zh": "等比无穷和",
+            "en": "sum to infinity of a geometric series"
+          }
+        }
+      ]
+    },
+    {
+      "group": {
+        "zh": "二项展开",
+        "en": "Binomial Expansions"
+      },
+      "items": [
+        {
+          "f": "$\\binom{n}{k} = \\dfrac{n!}{k!(n-k)!}$",
+          "note": {
+            "zh": "二项式系数",
+            "en": "binomial coefficient"
+          }
+        },
+        {
+          "f": "$\\binom{n}{k} = \\binom{n}{n-k}$",
+          "note": {
+            "zh": "对称性",
+            "en": "symmetry"
+          }
+        },
+        {
+          "f": "$\\binom{n}{k} + \\binom{n}{k-1} = \\binom{n+1}{k}$",
+          "note": {
+            "zh": "Pascal 恒等式（Theorem 4.4）",
+            "en": "Pascal's identity (Theorem 4.4)"
+          }
+        },
+        {
+          "f": "$(a + b)^n = \\sum_{k=0}^{n} \\binom{n}{k} a^{n-k} b^k$",
+          "note": {
+            "zh": "二项展开（Theorem 4.5）",
+            "en": "binomial expansion (Theorem 4.5)"
+          }
+        },
+        {
+          "f": "$\\binom{\\alpha}{k} = \\dfrac{\\alpha(\\alpha - 1) \\cdots (\\alpha - k + 1)}{k!}$",
+          "note": {
+            "zh": "广义二项式系数",
+            "en": "generalized binomial coefficient"
+          }
+        },
+        {
+          "f": "$(1 + x)^{\\alpha} = \\sum_{k=0}^{\\infty} \\binom{\\alpha}{k} x^k,\\quad |x| < 1$",
+          "note": {
+            "zh": "有理次幂展开（Theorem 4.6）",
+            "en": "expansion with a rational power (Theorem 4.6)"
+          }
+        }
+      ]
+    },
+    {
+      "group": {
+        "zh": "幂和",
+        "en": "Sums of Powers"
+      },
+      "items": [
+        {
+          "f": "$\\sum_{k=1}^{n} k = \\dfrac{n(n+1)}{2}$",
+          "note": {
+            "zh": "一次幂和",
+            "en": "sum of first powers"
+          }
+        },
+        {
+          "f": "$\\sum_{k=1}^{n} k^2 = \\dfrac{n(n+1)(2n+1)}{6}$",
+          "note": {
+            "zh": "二次幂和",
+            "en": "sum of squares"
+          }
+        },
+        {
+          "f": "$\\sum_{k=1}^{n} k^3 = \\dfrac{n^2 (n+1)^2}{4}$",
+          "note": {
+            "zh": "三次幂和",
+            "en": "sum of cubes"
+          }
+        },
+        {
+          "f": "$\\sum_{k=1}^{n} k^4 = \\dfrac{6n^5 + 15n^4 + 10n^3 - n}{30}$",
+          "note": {
+            "zh": "四次幂和",
+            "en": "sum of fourth powers"
+          }
+        },
+        {
+          "f": "$\\sum_{k=1}^{n} k^5 = \\dfrac{2n^6 + 6n^5 + 5n^4 - n^2}{12}$",
+          "note": {
+            "zh": "五次幂和",
+            "en": "sum of fifth powers"
+          }
+        }
+      ]
+    }
+  ],
+  "problems": [
+    {
+      "num": "4.1(a)",
+      "sec": "4.1",
+      "type": {
+        "zh": "递归数列逐项计算",
+        "en": "Computing terms of a recursive sequence"
+      },
+      "q": {
+        "zh": "写出数列 $\\{a_n\\}$ 的前 10 项，其中 $a_1 = 1$，$a_2 = 2$，且对 $n \\ge 2$ 有 $a_{n+1} = 2a_n - a_{n-1}$。",
+        "en": "Write down the first 10 terms of the sequence $\\{a_n\\}$, where $a_1 = 1$, $a_2 = 2$, and $a_{n+1} = 2a_n - a_{n-1}$ for $n \\ge 2$."
+      },
+      "ans": {
+        "zh": "$1, 2, 3, 4, 5, 6, 7, 8, 9, 10$。",
+        "en": "$1, 2, 3, 4, 5, 6, 7, 8, 9, 10$."
+      },
+      "steps": [
+        {
+          "zh": "由 $a_{n+1} - a_n = a_n - a_{n-1}$ 知相邻差恒为 $1$，故为公差 $d = 1$ 的等差数列。",
+          "en": "Since $a_{n+1} - a_n = a_n - a_{n-1}$, the consecutive differences are constantly $1$, so this is an arithmetic sequence with common difference $d = 1$."
+        },
+        {
+          "zh": "由 $a_n = a_1 + (n-1)d = 1 + (n-1) = n$ 逐项列出。",
+          "en": "Using $a_n = a_1 + (n-1)d = 1 + (n-1) = n$, list the terms."
+        }
+      ],
+      "official": {
+        "zh": "官方详解直接给出表格：(a) 行依次为 $1, 2, 3, 4, 5, 6, 7, 8, 9, 10$（共 10 项）。",
+        "en": "The official solutions give the table directly: row (a) reads $1, 2, 3, 4, 5, 6, 7, 8, 9, 10$."
+      },
+      "src": {
+        "zh": "官方详解 p.1",
+        "en": "Official solutions p.1"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.1，页面底部印刷页码为 1，对应习题 PDF 第 1 页。",
+        "en": "Official solutions PDF physical page p.1; the printed page number at the foot of that page is 1, corresponding to page 1 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.1(b)",
+      "sec": "4.1",
+      "type": {
+        "zh": "递归数列逐项计算",
+        "en": "Computing terms of a recursive sequence"
+      },
+      "q": {
+        "zh": "写出数列 $\\{a_n\\}$ 的前 10 项，其中 $a_1 = 1$，$a_2 = 3$，且对 $n \\ge 2$ 有 $a_{n+1} = 2a_n - a_{n-1}$。",
+        "en": "Write down the first 10 terms of the sequence $\\{a_n\\}$, where $a_1 = 1$, $a_2 = 3$, and $a_{n+1} = 2a_n - a_{n-1}$ for $n \\ge 2$."
+      },
+      "ans": {
+        "zh": "$1, 3, 5, 7, 9, 11, 13, 15, 17, 19$。",
+        "en": "$1, 3, 5, 7, 9, 11, 13, 15, 17, 19$."
+      },
+      "steps": [
+        {
+          "zh": "差分 $a_{n+1} - a_n$ 恒等于 $a_2 - a_1 = 2$，故公差 $d = 2$。",
+          "en": "The difference $a_{n+1} - a_n$ is constantly $a_2 - a_1 = 2$, so the common difference is $d = 2$."
+        },
+        {
+          "zh": "$a_n = a_1 + (n-1)d = 1 + 2(n-1) = 2n - 1$。",
+          "en": "$a_n = a_1 + (n-1)d = 1 + 2(n-1) = 2n - 1$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解表格 (b) 行：$1, 3, 5, 7, 9, 11, 13, 15, 17, 19$。",
+        "en": "The official solutions table, row (b): $1, 3, 5, 7, 9, 11, 13, 15, 17, 19$."
+      },
+      "src": {
+        "zh": "官方详解 p.1",
+        "en": "Official solutions p.1"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.1，页面底部印刷页码为 1，对应习题 PDF 第 1 页。",
+        "en": "Official solutions PDF physical page p.1; the printed page number at the foot of that page is 1, corresponding to page 1 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.1(c)",
+      "sec": "4.1",
+      "type": {
+        "zh": "递归数列逐项计算",
+        "en": "Computing terms of a recursive sequence"
+      },
+      "q": {
+        "zh": "写出数列 $\\{a_n\\}$ 的前 10 项，其中 $a_1 = 1$，$a_2 = 2$，且对 $n \\ge 2$ 有 $a_{n+1} = 3a_n - 2a_{n-1}$。",
+        "en": "Write down the first 10 terms of the sequence $\\{a_n\\}$, where $a_1 = 1$, $a_2 = 2$, and $a_{n+1} = 3a_n - 2a_{n-1}$ for $n \\ge 2$."
+      },
+      "ans": {
+        "zh": "$1, 2, 4, 8, 16, 32, 64, 128, 256, 512$。",
+        "en": "$1, 2, 4, 8, 16, 32, 64, 128, 256, 512$."
+      },
+      "steps": [
+        {
+          "zh": "逐项代入得 $a_3 = 3\\times 2 - 2\\times 1 = 4$，$a_4 = 3\\times 4 - 2\\times 2 = 8$，$a_5 = 3\\times 8 - 2\\times 4 = 16$。",
+          "en": "Substituting successively gives $a_3 = 3\\times 2 - 2\\times 1 = 4$, $a_4 = 3\\times 4 - 2\\times 2 = 8$, $a_5 = 3\\times 8 - 2\\times 4 = 16$."
+        },
+        {
+          "zh": "可见比值 $a_{n+1}/a_n = 2$，故该数列为公比 $2$ 的等比数列，$a_n = 2^{n-1}$。",
+          "en": "The ratio $a_{n+1}/a_n = 2$ is constant, so the sequence is geometric with common ratio $2$ and $a_n = 2^{n-1}$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解表格 (c) 行：$1, 2, 4, 8, 16, 32, 64, 128, 256, 512$。",
+        "en": "The official solutions table, row (c): $1, 2, 4, 8, 16, 32, 64, 128, 256, 512$."
+      },
+      "src": {
+        "zh": "官方详解 p.1",
+        "en": "Official solutions p.1"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.1，页面底部印刷页码为 1，对应习题 PDF 第 1 页。",
+        "en": "Official solutions PDF physical page p.1; the printed page number at the foot of that page is 1, corresponding to page 1 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.2",
+      "sec": "4.1",
+      "type": {
+        "zh": "由列项模式求通项",
+        "en": "Finding a general term from a pattern"
+      },
+      "q": {
+        "zh": "求数列 $1, 2, 2, 3, 3, 3, 4, 4, 4, 4, \\ldots$ 的通项公式，其中数列从 $a_1$ 开始。",
+        "en": "Find a formula for the general term of the sequence $1, 2, 2, 3, 3, 3, 4, 4, 4, 4, \\ldots$, where the sequence starts with $a_1$."
+      },
+      "ans": {
+        "zh": "$a_n = \\left\\lceil \\sqrt{2n + \\dfrac{1}{4}} - \\dfrac{1}{2} \\right\\rceil$。",
+        "en": "$a_n = \\left\\lceil \\sqrt{2n + \\dfrac{1}{4}} - \\dfrac{1}{2} \\right\\rceil$."
+      },
+      "steps": [
+        {
+          "zh": "数 $k$ 出现 $k$ 次，故 $a_n = k$ 当且仅当 $1 + 2 + \\cdots + (k-1) < n \\le 1 + 2 + \\cdots + k$，即 $\\dfrac{k(k-1)}{2} < n \\le \\dfrac{k(k+1)}{2}$。",
+          "en": "The integer $k$ is repeated $k$ times, so $a_n = k$ exactly when $1 + 2 + \\cdots + (k-1) < n \\le 1 + 2 + \\cdots + k$, i.e. $\\dfrac{k(k-1)}{2} < n \\le \\dfrac{k(k+1)}{2}$."
+        },
+        {
+          "zh": "两边同加 $\\dfrac{1}{4}$ 再乘 $2$：$k^2 - k + \\dfrac{1}{4} < 2n + \\dfrac{1}{4} \\le k^2 + k + \\dfrac{1}{4}$，即 $\\left(k - \\dfrac{1}{2}\\right)^2 < 2n + \\dfrac{1}{4} \\le \\left(k + \\dfrac{1}{2}\\right)^2$。",
+          "en": "Adding $\\dfrac{1}{4}$ and multiplying by $2$ gives $k^2 - k + \\dfrac{1}{4} < 2n + \\dfrac{1}{4} \\le k^2 + k + \\dfrac{1}{4}$, i.e. $\\left(k - \\dfrac{1}{2}\\right)^2 < 2n + \\dfrac{1}{4} \\le \\left(k + \\dfrac{1}{2}\\right)^2$."
+        },
+        {
+          "zh": "开方并整理得 $k - 1 < \\sqrt{2n + \\dfrac{1}{4}} - \\dfrac{1}{2} \\le k$，故 $k = \\left\\lceil \\sqrt{2n + \\dfrac{1}{4}} - \\dfrac{1}{2} \\right\\rceil$。",
+          "en": "Taking square roots and rearranging gives $k - 1 < \\sqrt{2n + \\dfrac{1}{4}} - \\dfrac{1}{2} \\le k$, hence $k = \\left\\lceil \\sqrt{2n + \\dfrac{1}{4}} - \\dfrac{1}{2} \\right\\rceil$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：设 $a_n = k \\in \\mathbb{Z}^+$，由 $\\dfrac{k(k-1)}{2} < n \\le \\dfrac{k(k+1)}{2}$ 推得 $\\left(k - \\dfrac{1}{2}\\right)^2 < 2n + \\dfrac{1}{4} \\le \\left(k + \\dfrac{1}{2}\\right)^2$，从而 $a_n = \\left\\lceil \\sqrt{2n + \\dfrac{1}{4}} - \\dfrac{1}{2} \\right\\rceil$。",
+        "en": "Official solutions: put $a_n = k \\in \\mathbb{Z}^+$; from $\\dfrac{k(k-1)}{2} < n \\le \\dfrac{k(k+1)}{2}$ one gets $\\left(k - \\dfrac{1}{2}\\right)^2 < 2n + \\dfrac{1}{4} \\le \\left(k + \\dfrac{1}{2}\\right)^2$, hence $a_n = \\left\\lceil \\sqrt{2n + \\dfrac{1}{4}} - \\dfrac{1}{2} \\right\\rceil$."
+      },
+      "src": {
+        "zh": "官方详解 p.2",
+        "en": "Official solutions p.2"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.2，页面底部印刷页码为 2，对应习题 PDF 第 2 页。附取整定义页 p.3（印刷页码无）。",
+        "en": "Official solutions PDF physical page p.2; the printed page number at the foot of that page is 2, corresponding to page 2 of the problems PDF. plus the floor/ceiling definitions on p.3."
+      }
+    },
+    {
+      "num": "4.3",
+      "sec": "4.1",
+      "type": {
+        "zh": "连乘的望远镜消去",
+        "en": "Telescoping a product"
+      },
+      "q": {
+        "zh": "求 $\\prod_{n=1}^{100} \\dfrac{2n - 1}{2n + 3}$。",
+        "en": "Find $\\prod_{n=1}^{100} \\dfrac{2n - 1}{2n + 3}$."
+      },
+      "ans": {
+        "zh": "$\\dfrac{1}{13601}$。",
+        "en": "$\\dfrac{1}{13601}$."
+      },
+      "steps": [
+        {
+          "zh": "展开为 $\\dfrac{1}{5} \\times \\dfrac{3}{7} \\times \\dfrac{5}{9} \\times \\cdots \\times \\dfrac{197}{201} \\times \\dfrac{199}{203}$，相邻项首尾相消后只剩 $\\dfrac{1 \\times 3}{201 \\times 203}$。",
+          "en": "Expand as $\\dfrac{1}{5} \\times \\dfrac{3}{7} \\times \\dfrac{5}{9} \\times \\cdots \\times \\dfrac{197}{201} \\times \\dfrac{199}{203}$; the cancellation leaves $\\dfrac{1 \\times 3}{201 \\times 203}$."
+        },
+        {
+          "zh": "分子分母同除以 $3$ 得 $\\dfrac{1}{67 \\times 203}$。",
+          "en": "Divide numerator and denominator by $3$ to get $\\dfrac{1}{67 \\times 203}$."
+        },
+        {
+          "zh": "$67 \\times 203 = 13601$，故结果为 $\\dfrac{1}{13601}$。",
+          "en": "Since $67 \\times 203 = 13601$, the value is $\\dfrac{1}{13601}$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：$\\prod_{n=1}^{100}\\dfrac{2n-1}{2n+3} = \\dfrac{1 \\times 3}{201 \\times 203} = \\dfrac{1}{67 \\times 203} = \\dfrac{1}{13601}$。",
+        "en": "Official solutions: $\\prod_{n=1}^{100}\\dfrac{2n-1}{2n+3} = \\dfrac{1 \\times 3}{201 \\times 203} = \\dfrac{1}{67 \\times 203} = \\dfrac{1}{13601}$."
+      },
+      "src": {
+        "zh": "官方详解 p.4",
+        "en": "Official solutions p.4"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.4，页面底部印刷页码为 3，对应习题 PDF 第 3 页。",
+        "en": "Official solutions PDF physical page p.4; the printed page number at the foot of that page is 3, corresponding to page 3 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.4",
+      "sec": "4.1",
+      "type": {
+        "zh": "连乘的化简与消去",
+        "en": "Simplifying and telescoping a product"
+      },
+      "q": {
+        "zh": "化简 $\\prod_{k=1}^{n} \\dfrac{(x^k - 1)(x^{k+1} + 1)}{x^{2k} - 1}$。",
+        "en": "Simplify $\\prod_{k=1}^{n} \\dfrac{(x^k - 1)(x^{k+1} + 1)}{x^{2k} - 1}$."
+      },
+      "ans": {
+        "zh": "$\\dfrac{x^{n+1} + 1}{x + 1}$。",
+        "en": "$\\dfrac{x^{n+1} + 1}{x + 1}$."
+      },
+      "steps": [
+        {
+          "zh": "由 $x^{2k} - 1 = (x^k - 1)(x^k + 1)$ 把每项化为 $\\dfrac{x^{k+1} + 1}{x^k + 1}$。",
+          "en": "Since $x^{2k} - 1 = (x^k - 1)(x^k + 1)$, each factor becomes $\\dfrac{x^{k+1} + 1}{x^k + 1}$."
+        },
+        {
+          "zh": "连乘展开为 $\\dfrac{x^2 + 1}{x + 1} \\times \\dfrac{x^3 + 1}{x^2 + 1} \\times \\cdots \\times \\dfrac{x^{n+1} + 1}{x^n + 1}$，逐项相消。",
+          "en": "The product becomes $\\dfrac{x^2 + 1}{x + 1} \\times \\dfrac{x^3 + 1}{x^2 + 1} \\times \\cdots \\times \\dfrac{x^{n+1} + 1}{x^n + 1}$, and everything cancels."
+        },
+        {
+          "zh": "剩下 $\\dfrac{x^{n+1} + 1}{x + 1}$。",
+          "en": "What remains is $\\dfrac{x^{n+1} + 1}{x + 1}$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：$\\prod_{k=1}^{n}\\dfrac{(x^k - 1)(x^{k+1} + 1)}{x^{2k} - 1} = \\prod_{k=1}^{n}\\dfrac{x^{k+1} + 1}{x^k + 1} = \\dfrac{x^{n+1} + 1}{x + 1}$。",
+        "en": "Official solutions: $\\prod_{k=1}^{n}\\dfrac{(x^k - 1)(x^{k+1} + 1)}{x^{2k} - 1} = \\prod_{k=1}^{n}\\dfrac{x^{k+1} + 1}{x^k + 1} = \\dfrac{x^{n+1} + 1}{x + 1}$."
+      },
+      "src": {
+        "zh": "官方详解 p.5",
+        "en": "Official solutions p.5"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.5，页面底部印刷页码为 4，对应习题 PDF 第 4 页。",
+        "en": "Official solutions PDF physical page p.5; the printed page number at the foot of that page is 4, corresponding to page 4 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.5(a)",
+      "sec": "4.1",
+      "type": {
+        "zh": "由部分和求指定项",
+        "en": "Finding a term from partial sums"
+      },
+      "q": {
+        "zh": "设数列 $\\{a_n\\}$ 的部分和为 $S_n = \\sum_{k=1}^{n} a_k = 3^n - 2n$，求 $a_5$。",
+        "en": "Suppose $\\{a_n\\}$ has partial sums $S_n = \\sum_{k=1}^{n} a_k = 3^n - 2n$. Find $a_5$."
+      },
+      "ans": {
+        "zh": "$a_5 = 160$。",
+        "en": "$a_5 = 160$."
+      },
+      "steps": [
+        {
+          "zh": "$a_5 = S_5 - S_4$。",
+          "en": "$a_5 = S_5 - S_4$."
+        },
+        {
+          "zh": "$S_5 = 3^5 - 2\\times 5 = 233$，$S_4 = 3^4 - 2\\times 4 = 73$。",
+          "en": "$S_5 = 3^5 - 2\\times 5 = 233$ and $S_4 = 3^4 - 2\\times 4 = 73$."
+        },
+        {
+          "zh": "故 $a_5 = 233 - 73 = 160$。",
+          "en": "Hence $a_5 = 233 - 73 = 160$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：$a_5 = (a_1 + \\cdots + a_5) - (a_1 + \\cdots + a_4) = S_5 - S_4 = 3^5 - 2 \\times 5 - (3^4 - 2 \\times 4) = 243 - 81 - 2 = 160$。",
+        "en": "Official solutions: $a_5 = (a_1 + \\cdots + a_5) - (a_1 + \\cdots + a_4) = S_5 - S_4 = 3^5 - 2 \\times 5 - (3^4 - 2 \\times 4) = 243 - 81 - 2 = 160$."
+      },
+      "src": {
+        "zh": "官方详解 p.6",
+        "en": "Official solutions p.6"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.6，页面底部印刷页码为 5，对应习题 PDF 第 5 页。",
+        "en": "Official solutions PDF physical page p.6; the printed page number at the foot of that page is 5, corresponding to page 5 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.5(b)",
+      "sec": "4.1",
+      "type": {
+        "zh": "由部分和求通项",
+        "en": "Finding a general term from partial sums"
+      },
+      "q": {
+        "zh": "设数列 $\\{a_n\\}$ 的部分和为 $S_n = \\sum_{k=1}^{n} a_k = 3^n - 2n$，求 $a_n$ 的通项公式。",
+        "en": "Suppose $\\{a_n\\}$ has partial sums $S_n = \\sum_{k=1}^{n} a_k = 3^n - 2n$. Find a general formula for $a_n$."
+      },
+      "ans": {
+        "zh": "$a_n = 2\\left(3^{n-1} - 1\\right)$（$n \\ge 1$）。",
+        "en": "$a_n = 2\\left(3^{n-1} - 1\\right)$ for $n \\ge 1$."
+      },
+      "steps": [
+        {
+          "zh": "$a_1 = S_1 = 3 - 2 = 1$。",
+          "en": "$a_1 = S_1 = 3 - 2 = 1$."
+        },
+        {
+          "zh": "对 $n \\ge 2$，$a_n = S_n - S_{n-1} = 3^n - 2n - \\left(3^{n-1} - 2(n-1)\\right)$。",
+          "en": "For $n \\ge 2$, $a_n = S_n - S_{n-1} = 3^n - 2n - \\left(3^{n-1} - 2(n-1)\\right)$."
+        },
+        {
+          "zh": "化简得 $a_n = 3^n - 3^{n-1} - 2 = 2 \\times 3^{n-1} - 2 = 2\\left(3^{n-1} - 1\\right)$。",
+          "en": "Simplifying gives $a_n = 3^n - 3^{n-1} - 2 = 2 \\times 3^{n-1} - 2 = 2\\left(3^{n-1} - 1\\right)$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：$a_1 = S_1 = 3 - 2 = 1$；当 $n \\ge 2$ 时 $a_n = S_n - S_{n-1} = 3^n - 2n - \\left(3^{n-1} - 2(n-1)\\right) = 3^n - 3^{n-1} - 2 = 2 \\times 3^{n-1} - 2 = 2\\left(3^{n-1} - 1\\right)$。",
+        "en": "Official solutions: $a_1 = S_1 = 3 - 2 = 1$; for $n \\ge 2$, $a_n = S_n - S_{n-1} = 3^n - 2n - \\left(3^{n-1} - 2(n-1)\\right) = 3^n - 3^{n-1} - 2 = 2 \\times 3^{n-1} - 2 = 2\\left(3^{n-1} - 1\\right)$."
+      },
+      "src": {
+        "zh": "官方详解 p.6",
+        "en": "Official solutions p.6"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.6，页面底部印刷页码为 5，对应习题 PDF 第 5 页。",
+        "en": "Official solutions PDF physical page p.6; the printed page number at the foot of that page is 5, corresponding to page 5 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.6(a)",
+      "sec": "4.1",
+      "type": {
+        "zh": "由部分和求指定项",
+        "en": "Finding a term from partial sums"
+      },
+      "q": {
+        "zh": "已知数列 $\\{a_n\\}$ 的部分和为 $S_n = \\sum_{k=1}^{n} a_k = n^3 + 2n$，求 $a_5$。",
+        "en": "Given $\\{a_n\\}$ with partial sums $S_n = \\sum_{k=1}^{n} a_k = n^3 + 2n$, find $a_5$."
+      },
+      "ans": {
+        "zh": "$a_5 = 63$。",
+        "en": "$a_5 = 63$."
+      },
+      "steps": [
+        {
+          "zh": "$a_5 = S_5 - S_4$。",
+          "en": "$a_5 = S_5 - S_4$."
+        },
+        {
+          "zh": "$S_5 = 5^3 + 2\\times 5 = 135$，$S_4 = 4^3 + 2\\times 4 = 72$。",
+          "en": "$S_5 = 5^3 + 2\\times 5 = 135$ and $S_4 = 4^3 + 2\\times 4 = 72$."
+        },
+        {
+          "zh": "故 $a_5 = 135 - 72 = 63$。",
+          "en": "Hence $a_5 = 135 - 72 = 63$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：$a_5 = S_5 - S_4 = 5^3 + 2 \\times 5 - (4^3 + 2 \\times 4) = 125 - 64 + 2 = 63$。",
+        "en": "Official solutions: $a_5 = S_5 - S_4 = 5^3 + 2 \\times 5 - (4^3 + 2 \\times 4) = 125 - 64 + 2 = 63$."
+      },
+      "src": {
+        "zh": "官方详解 p.7",
+        "en": "Official solutions p.7"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.7，页面底部印刷页码为 6，对应习题 PDF 第 6 页。",
+        "en": "Official solutions PDF physical page p.7; the printed page number at the foot of that page is 6, corresponding to page 6 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.6(b)",
+      "sec": "4.1",
+      "type": {
+        "zh": "由部分和求通项",
+        "en": "Finding a general term from partial sums"
+      },
+      "q": {
+        "zh": "已知数列 $\\{a_n\\}$ 的部分和为 $S_n = \\sum_{k=1}^{n} a_k = n^3 + 2n$，求 $a_n$ 的通项公式。",
+        "en": "Given $\\{a_n\\}$ with partial sums $S_n = \\sum_{k=1}^{n} a_k = n^3 + 2n$, find a general formula for $a_n$."
+      },
+      "ans": {
+        "zh": "$a_n = 3\\left(n^2 - n + 1\\right)$（$n \\ge 1$）。",
+        "en": "$a_n = 3\\left(n^2 - n + 1\\right)$ for $n \\ge 1$."
+      },
+      "steps": [
+        {
+          "zh": "$a_1 = S_1 = 1 + 2 = 3$。",
+          "en": "$a_1 = S_1 = 1 + 2 = 3$."
+        },
+        {
+          "zh": "对 $n \\ge 2$，$a_n = S_n - S_{n-1} = n^3 + 2n - \\left((n-1)^3 + 2(n-1)\\right)$。",
+          "en": "For $n \\ge 2$, $a_n = S_n - S_{n-1} = n^3 + 2n - \\left((n-1)^3 + 2(n-1)\\right)$."
+        },
+        {
+          "zh": "展开 $(n-1)^3 = n^3 - 3n^2 + 3n - 1$ 得 $a_n = 3n^2 - 3n + 3 = 3\\left(n^2 - n + 1\\right)$。",
+          "en": "Expanding $(n-1)^3 = n^3 - 3n^2 + 3n - 1$ gives $a_n = 3n^2 - 3n + 3 = 3\\left(n^2 - n + 1\\right)$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：$a_1 = S_1 = 1 + 2 = 3$；当 $n \\ge 2$ 时 $a_n = S_n - S_{n-1} = n^3 + 2n - \\left((n-1)^3 + 2(n-1)\\right) = n^3 - (n^3 - 3n^2 + 3n - 1) + 2 = 3n^2 - 3n + 3 = 3(n^2 - n + 1)$。",
+        "en": "Official solutions: $a_1 = S_1 = 1 + 2 = 3$; for $n \\ge 2$, $a_n = S_n - S_{n-1} = n^3 + 2n - \\left((n-1)^3 + 2(n-1)\\right) = n^3 - (n^3 - 3n^2 + 3n - 1) + 2 = 3n^2 - 3n + 3 = 3(n^2 - n + 1)$."
+      },
+      "src": {
+        "zh": "官方详解 p.7",
+        "en": "Official solutions p.7"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.7，页面底部印刷页码为 6，对应习题 PDF 第 6 页。",
+        "en": "Official solutions PDF physical page p.7; the printed page number at the foot of that page is 6, corresponding to page 6 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.6(c)",
+      "sec": "4.1",
+      "type": {
+        "zh": "区间部分和",
+        "en": "Block sums of partial sums"
+      },
+      "q": {
+        "zh": "已知数列 $\\{a_n\\}$ 的部分和为 $S_n = \\sum_{k=1}^{n} a_k = n^3 + 2n$，求 $\\sum_{k=10}^{20} a_k$。",
+        "en": "Given $\\{a_n\\}$ with partial sums $S_n = \\sum_{k=1}^{n} a_k = n^3 + 2n$, find $\\sum_{k=10}^{20} a_k$."
+      },
+      "ans": {
+        "zh": "$\\sum_{k=10}^{20} a_k = 7293$。",
+        "en": "$\\sum_{k=10}^{20} a_k = 7293$."
+      },
+      "steps": [
+        {
+          "zh": "$\\sum_{k=10}^{20} a_k = \\sum_{k=1}^{20} a_k - \\sum_{k=1}^{9} a_k = S_{20} - S_9$。",
+          "en": "$\\sum_{k=10}^{20} a_k = \\sum_{k=1}^{20} a_k - \\sum_{k=1}^{9} a_k = S_{20} - S_9$."
+        },
+        {
+          "zh": "$S_{20} = 20^3 + 2 \\times 20 = 8040$，$S_9 = 9^3 + 2 \\times 9 = 747$。",
+          "en": "$S_{20} = 20^3 + 2 \\times 20 = 8040$ and $S_9 = 9^3 + 2 \\times 9 = 747$."
+        },
+        {
+          "zh": "故 $\\sum_{k=10}^{20} a_k = 8040 - 747 = 7293$。",
+          "en": "Hence $\\sum_{k=10}^{20} a_k = 8040 - 747 = 7293$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：$\\sum_{k=10}^{20} a_k = \\sum_{k=1}^{20} a_k - \\sum_{k=1}^{9} a_k = S_{20} - S_9 = 20^3 + 2 \\times 20 - 9^3 - 2 \\times 9 = 7293$。",
+        "en": "Official solutions: $\\sum_{k=10}^{20} a_k = \\sum_{k=1}^{20} a_k - \\sum_{k=1}^{9} a_k = S_{20} - S_9 = 20^3 + 2 \\times 20 - 9^3 - 2 \\times 9 = 7293$."
+      },
+      "src": {
+        "zh": "官方详解 p.7",
+        "en": "Official solutions p.7"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.7，页面底部印刷页码为 6，对应习题 PDF 第 6 页。",
+        "en": "Official solutions PDF physical page p.7; the printed page number at the foot of that page is 6, corresponding to page 6 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.7",
+      "sec": "4.2",
+      "type": {
+        "zh": "由部分和判定等差数列",
+        "en": "Recognising an arithmetic sequence from partial sums"
+      },
+      "q": {
+        "zh": "设数列 $\\{a_n\\}$ 的部分和为 $S_n = \\sum_{k=1}^{n} a_k = \\alpha n^2 + \\beta n$，证明 $\\{a_n\\}$ 是等差数列并求其公差。",
+        "en": "Suppose $S_n = \\sum_{k=1}^{n} a_k = \\alpha n^2 + \\beta n$. Show that $\\{a_n\\}$ is an arithmetic sequence and find the common difference."
+      },
+      "ans": {
+        "zh": "$\\{a_n\\}$ 是等差数列，公差为 $2\\alpha$（通项 $a_n = \\alpha(2n-1) + \\beta$）。",
+        "en": "$\\{a_n\\}$ is an arithmetic sequence with common difference $2\\alpha$ (general term $a_n = \\alpha(2n-1) + \\beta$)."
+      },
+      "steps": [
+        {
+          "zh": "$S_1 = a_1 = \\alpha + \\beta$。",
+          "en": "$S_1 = a_1 = \\alpha + \\beta$."
+        },
+        {
+          "zh": "对 $n \\ge 2$，$a_n = S_n - S_{n-1} = \\alpha n^2 + \\beta n - \\alpha(n-1)^2 - \\beta(n-1) = \\alpha(2n-1) + \\beta$，该式在 $n = 1$ 时同样成立。",
+          "en": "For $n \\ge 2$, $a_n = S_n - S_{n-1} = \\alpha n^2 + \\beta n - \\alpha(n-1)^2 - \\beta(n-1) = \\alpha(2n-1) + \\beta$, and this formula also holds at $n = 1$."
+        },
+        {
+          "zh": "$a_{n+1} - a_n = 2\\alpha$ 与 $n$ 无关，故为等差数列，公差 $2\\alpha$。",
+          "en": "$a_{n+1} - a_n = 2\\alpha$ is independent of $n$, so the sequence is arithmetic with common difference $2\\alpha$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：$S_1 = a_1 = \\alpha + \\beta$；当 $n \\ge 2$ 时 $a_n = S_n - S_{n-1} = \\alpha n^2 + \\beta n - \\alpha(n-1)^2 - \\beta(n-1) = \\alpha(2n-1) + \\beta = 2\\alpha n + \\beta - \\alpha$（对 $n = 1$ 也成立）；于是 $a_{n+1} - a_n = 2\\alpha$，是常数，故 $\\{a_n\\}$ 是公差为 $2\\alpha$ 的等差数列。",
+        "en": "Official solutions: $S_1 = a_1 = \\alpha + \\beta$; for $n \\ge 2$, $a_n = S_n - S_{n-1} = \\alpha n^2 + \\beta n - \\alpha(n-1)^2 - \\beta(n-1) = \\alpha(2n-1) + \\beta = 2\\alpha n + \\beta - \\alpha$ (which also holds at $n = 1$); hence $a_{n+1} - a_n = 2\\alpha$ is constant, so $\\{a_n\\}$ is arithmetic with common difference $2\\alpha$."
+      },
+      "src": {
+        "zh": "官方详解 p.8",
+        "en": "Official solutions p.8"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.8，页面底部印刷页码为 7，对应习题 PDF 第 7 页。",
+        "en": "Official solutions PDF physical page p.8; the printed page number at the foot of that page is 7, corresponding to page 7 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.8",
+      "sec": "4.2",
+      "type": {
+        "zh": "等差数列的区间和",
+        "en": "Block sums of an arithmetic sequence"
+      },
+      "q": {
+        "zh": "已知 $\\{a_n\\}$ 是等差数列，且 $\\sum_{k=1}^{8} a_k = 16$、$\\sum_{k=9}^{16} a_k = 32$，求 $\\sum_{k=17}^{24} a_k$。",
+        "en": "Given that $\\{a_n\\}$ is an arithmetic sequence with $\\sum_{k=1}^{8} a_k = 16$ and $\\sum_{k=9}^{16} a_k = 32$, find $\\sum_{k=17}^{24} a_k$."
+      },
+      "ans": {
+        "zh": "$\\sum_{k=17}^{24} a_k = 48$。",
+        "en": "$\\sum_{k=17}^{24} a_k = 48$."
+      },
+      "steps": [
+        {
+          "zh": "设首项 $a$、公差 $d$。由 $S_8 = 16$ 得 $\\dfrac{8}{2}(2a + 7d) = 16$，即 $2a + 7d = 4$。",
+          "en": "Let $a = a_1$ and $d$ be the common difference. From $S_8 = 16$, $\\dfrac{8}{2}(2a + 7d) = 16$, so $2a + 7d = 4$."
+        },
+        {
+          "zh": "由 $\\sum_{k=9}^{16} a_k = 32$ 得 $S_{16} = 32 + 16 = 48$，故 $\\dfrac{16}{2}(2a + 15d) = 48$，即 $2a + 15d = 6$。",
+          "en": "From $\\sum_{k=9}^{16} a_k = 32$ we get $S_{16} = 32 + 16 = 48$, so $\\dfrac{16}{2}(2a + 15d) = 48$, i.e. $2a + 15d = 6$."
+        },
+        {
+          "zh": "两式相减得 $8d = 2$，$d = \\dfrac{1}{4}$；于是 $S_{24} = \\dfrac{24}{2}(2a + 23d) = 12(2a + 15d + 8d) = 12(6 + 2) = 96$。",
+          "en": "Subtracting gives $8d = 2$, so $d = \\dfrac{1}{4}$; then $S_{24} = \\dfrac{24}{2}(2a + 23d) = 12(2a + 15d + 8d) = 12(6 + 2) = 96$."
+        },
+        {
+          "zh": "$\\sum_{k=17}^{24} a_k = S_{24} - S_{16} = 96 - 48 = 48$。",
+          "en": "$\\sum_{k=17}^{24} a_k = S_{24} - S_{16} = 96 - 48 = 48$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：设 $a = a_1$、$d = a_2 - a_1$。由 $\\sum_{k=1}^{8}a_k = 16$ 得 $\\dfrac{8}{2}(2a+7d) = 16$，即 $2a+7d = 4$；由 $\\sum_{k=9}^{16}a_k = 32$ 得 $S_{16} = 48$，故 $\\dfrac{16}{2}(2a+15d) = 48$，即 $2a+15d = 6$。两式相减得 $8d = 2$，$d = \\dfrac{1}{4}$。于是 $\\sum_{k=1}^{24}a_k = \\dfrac{24}{2}(2a+23d) = 12(2a+15d+8d) = 12(6+2) = 96$，从而 $\\sum_{k=17}^{24}a_k = 96 - 48 = 48$。",
+        "en": "Official solutions: let $a = a_1$ and $d = a_2 - a_1$. From $\\sum_{k=1}^{8}a_k = 16$, $\\dfrac{8}{2}(2a+7d) = 16$, so $2a+7d = 4$; from $\\sum_{k=9}^{16}a_k = 32$, $S_{16} = 48$, so $\\dfrac{16}{2}(2a+15d) = 48$, i.e. $2a+15d = 6$. Subtracting, $8d = 2$ and $d = \\dfrac{1}{4}$. Then $\\sum_{k=1}^{24}a_k = \\dfrac{24}{2}(2a+23d) = 12(2a+15d+8d) = 12(6+2) = 96$, and $\\sum_{k=17}^{24}a_k = 96 - 48 = 48$."
+      },
+      "src": {
+        "zh": "官方详解 p.9",
+        "en": "Official solutions p.9"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.9，页面底部印刷页码为 8，对应习题 PDF 第 8 页。",
+        "en": "Official solutions PDF physical page p.9; the printed page number at the foot of that page is 8, corresponding to page 8 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.9",
+      "sec": "4.2",
+      "type": {
+        "zh": "部分和的最大值",
+        "en": "Maximising a partial sum"
+      },
+      "q": {
+        "zh": "设 $\\{a_n\\}$ 是等差数列，且 $\\sum_{k=1}^{10} a_k = 20$、$\\sum_{k=1}^{20} a_k = 10$。若 $S_n = \\sum_{k=1}^{n} a_k$，求 $S_n$ 的最大值。",
+        "en": "Suppose $\\{a_n\\}$ is an arithmetic sequence with $\\sum_{k=1}^{10} a_k = 20$ and $\\sum_{k=1}^{20} a_k = 10$. If $S_n = \\sum_{k=1}^{n} a_k$, find the maximum value of $S_n$."
+      },
+      "ans": {
+        "zh": "$S_n$ 的最大值为 $\\dfrac{102}{5} = 20.4$，在 $n = 12$ 时取得。",
+        "en": "The maximum value of $S_n$ is $\\dfrac{102}{5} = 20.4$, attained at $n = 12$."
+      },
+      "steps": [
+        {
+          "zh": "由 $\\dfrac{10}{2}(2a + 9d) = 20$ 得 $2a + 9d = 4$；由 $\\dfrac{20}{2}(2a + 19d) = 10$ 得 $2a + 19d = 1$。",
+          "en": "From $\\dfrac{10}{2}(2a + 9d) = 20$ we get $2a + 9d = 4$; from $\\dfrac{20}{2}(2a + 19d) = 10$ we get $2a + 19d = 1$."
+        },
+        {
+          "zh": "两式相减得 $10d = -3$，$d = -\\dfrac{3}{10}$；代回得 $2a = 1 - 19d = \\dfrac{67}{10}$，$a = \\dfrac{67}{20}$。",
+          "en": "Subtracting gives $10d = -3$ and $d = -\\dfrac{3}{10}$; substituting back, $2a = 1 - 19d = \\dfrac{67}{10}$ and $a = \\dfrac{67}{20}$."
+        },
+        {
+          "zh": "于是 $S_n = \\dfrac{n}{2}\\left(\\dfrac{67}{10} - \\dfrac{3}{10}(n-1)\\right) = \\dfrac{n}{20}(70 - 3n)$，这是开口向下的二次式，顶点在 $n = \\dfrac{35}{3} \\approx 11.67$。",
+          "en": "Hence $S_n = \\dfrac{n}{2}\\left(\\dfrac{67}{10} - \\dfrac{3}{10}(n-1)\\right) = \\dfrac{n}{20}(70 - 3n)$, a downward-opening quadratic with vertex at $n = \\dfrac{35}{3} \\approx 11.67$."
+        },
+        {
+          "zh": "比较 $S_{11} = \\dfrac{11}{20}(70 - 33) = \\dfrac{407}{20} = 20.35$ 与 $S_{12} = \\dfrac{12}{20}(70 - 36) = \\dfrac{102}{5} = 20.4$，取 $S_{12}$。",
+          "en": "Comparing $S_{11} = \\dfrac{11}{20}(70 - 33) = \\dfrac{407}{20} = 20.35$ with $S_{12} = \\dfrac{12}{20}(70 - 36) = \\dfrac{102}{5} = 20.4$ gives $S_{12}$."
+        },
+        {
+          "zh": "另一看法：$a_n = \\dfrac{73 - 6n}{20}$，$a_{12} = \\dfrac{1}{20} > 0$ 而 $a_{13} = -\\dfrac{5}{20} < 0$，故 $S_n$ 在 $n = 12$ 后开始下降。",
+          "en": "Alternatively $a_n = \\dfrac{73 - 6n}{20}$ with $a_{12} = \\dfrac{1}{20} > 0$ and $a_{13} = -\\dfrac{5}{20} < 0$, so $S_n$ starts decreasing after $n = 12$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：$2a + 9d = 4$，$2a + 19d = 1$，故 $10d = -3$，$d = -\\dfrac{3}{10}$，$a = \\dfrac{67}{20}$，$S_n = \\dfrac{n}{20}(70 - 3n) = -\\dfrac{3}{20}\\left[\\left(n - \\dfrac{35}{3}\\right)^2 - \\left(\\dfrac{35}{3}\\right)^2\\right]$。当 $n \\le 11$ 时 $S_n \\le S_{11}$，当 $n \\ge 12$ 时 $S_n \\le S_{12}$，且 $S_{11} \\le S_{12}$，故最大值为 $S_{12} = \\dfrac{12}{20}(70 - 3 \\times 12) = \\dfrac{3}{5} \\times 34 = \\dfrac{102}{5} = 20.4$。官方另注明 $S_n > S_{n-1} \\iff a_n > 0 \\iff 67 - 6n + 6 > 0 \\iff 6n < 73 \\iff n \\le 12$，所以 $S_{12}$ 最大。",
+        "en": "Official solutions: $2a + 9d = 4$ and $2a + 19d = 1$ give $10d = -3$, $d = -\\dfrac{3}{10}$, $a = \\dfrac{67}{20}$ and $S_n = \\dfrac{n}{20}(70 - 3n) = -\\dfrac{3}{20}\\left[\\left(n - \\dfrac{35}{3}\\right)^2 - \\left(\\dfrac{35}{3}\\right)^2\\right]$. For $n \\le 11$ one has $S_n \\le S_{11}$ and for $n \\ge 12$ one has $S_n \\le S_{12}$, with $S_{11} \\le S_{12}$; hence the maximum is $S_{12} = \\dfrac{12}{20}(70 - 3 \\times 12) = \\dfrac{3}{5} \\times 34 = \\dfrac{102}{5} = 20.4$. The official notes also record $S_n > S_{n-1} \\iff a_n > 0 \\iff 67 - 6n + 6 > 0 \\iff 6n < 73 \\iff n \\le 12$, so $S_{12}$ is the largest."
+      },
+      "src": {
+        "zh": "官方详解 p.10",
+        "en": "Official solutions p.10"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.10，页面底部印刷页码为 9，对应习题 PDF 第 9 页。解答续至物理页 p.11（无印刷页码）。",
+        "en": "Official solutions PDF physical page p.10; the printed page number at the foot of that page is 9, corresponding to page 9 of the problems PDF. the solution continues on physical page p.11."
+      }
+    },
+    {
+      "num": "4.10",
+      "sec": "4.2",
+      "type": {
+        "zh": "等比级数的无穷和",
+        "en": "Sum to infinity of a geometric series"
+      },
+      "q": {
+        "zh": "设 $\\{a_n\\}$ 是等比数列，满足 $\\sum_{n=3}^{5} a_n = 84$ 且 $a_4 = -72$。若 $\\sum_{n=1}^{\\infty} a_n$ 收敛，求该无穷级数的和。",
+        "en": "Let $\\{a_n\\}$ be a geometric sequence with $\\sum_{n=3}^{5} a_n = 84$ and $a_4 = -72$. If $\\sum_{n=1}^{\\infty} a_n$ is convergent, find the sum of this infinite series."
+      },
+      "ans": {
+        "zh": "$\\sum_{n=1}^{\\infty} a_n = \\dfrac{729}{5} = 3^6/5$。",
+        "en": "$\\sum_{n=1}^{\\infty} a_n = \\dfrac{729}{5} = 3^6/5$."
+      },
+      "steps": [
+        {
+          "zh": "$a_3 + a_4 + a_5 = 84$，即 $\\dfrac{a_4}{r} + a_4 + a_4 r = 84$。",
+          "en": "$a_3 + a_4 + a_5 = 84$, i.e. $\\dfrac{a_4}{r} + a_4 + a_4 r = 84$."
+        },
+        {
+          "zh": "两边除以 $a_4 = -72$：$\\dfrac{1}{r} + 1 + r = -\\dfrac{7}{6}$，即 $r + \\dfrac{1}{r} = -\\dfrac{13}{6}$。",
+          "en": "Dividing by $a_4 = -72$ gives $\\dfrac{1}{r} + 1 + r = -\\dfrac{7}{6}$, i.e. $r + \\dfrac{1}{r} = -\\dfrac{13}{6}$."
+        },
+        {
+          "zh": "故 $6r^2 + 13r + 6 = 0$，即 $(2r+3)(3r+2) = 0$，得 $r = -\\dfrac{3}{2}$ 或 $r = -\\dfrac{2}{3}$；由收敛性 $|r| < 1$ 取 $r = -\\dfrac{2}{3}$。",
+          "en": "Hence $6r^2 + 13r + 6 = 0$, i.e. $(2r+3)(3r+2) = 0$, giving $r = -\\dfrac{3}{2}$ or $r = -\\dfrac{2}{3}$; convergence $|r| < 1$ selects $r = -\\dfrac{2}{3}$."
+        },
+        {
+          "zh": "由 $a_4 = ar^3 = -72$ 得 $a = \\dfrac{-72}{\\left(-\\dfrac{2}{3}\\right)^3} = 3^5$。",
+          "en": "From $a_4 = ar^3 = -72$ we get $a = \\dfrac{-72}{\\left(-\\dfrac{2}{3}\\right)^3} = 3^5$."
+        },
+        {
+          "zh": "$S_\\infty = \\dfrac{a}{1 - r} = \\dfrac{3^5}{1 + \\dfrac{2}{3}} = \\dfrac{3^6}{5} = \\dfrac{729}{5}$。",
+          "en": "$S_\\infty = \\dfrac{a}{1 - r} = \\dfrac{3^5}{1 + \\dfrac{2}{3}} = \\dfrac{3^6}{5} = \\dfrac{729}{5}$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：$a_3 + a_4 + a_5 = 84$，$\\dfrac{a_4}{r} + a_4 + a_4 r = 84$，$\\dfrac{1}{r} + 1 + r = \\dfrac{84}{-72} = -\\dfrac{7}{6}$，故 $r + \\dfrac{1}{r} = -\\dfrac{13}{6}$，$6r^2 + 13r + 6 = 0$，$(2r+3)(3r+2) = 0$，$r = -\\dfrac{3}{2}$ 或 $-\\dfrac{2}{3}$。因 $\\sum_{n=1}^{\\infty}a_n$ 收敛故 $|r| < 1$，取 $r = -\\dfrac{2}{3}$。再由 $a_4 = ar^3 = -72$ 得 $a = 3^5$，于是 $\\sum_{n=1}^{\\infty}a_n = \\dfrac{a}{1-r} = \\dfrac{3^5}{1-(-2/3)} = \\dfrac{3^6}{5} = \\dfrac{729}{5}$。",
+        "en": "Official solutions: $a_3 + a_4 + a_5 = 84$, $\\dfrac{a_4}{r} + a_4 + a_4 r = 84$, $\\dfrac{1}{r} + 1 + r = \\dfrac{84}{-72} = -\\dfrac{7}{6}$, so $r + \\dfrac{1}{r} = -\\dfrac{13}{6}$ and $6r^2 + 13r + 6 = 0$, $(2r+3)(3r+2) = 0$, $r = -\\dfrac{3}{2}$ or $-\\dfrac{2}{3}$. Since $\\sum_{n=1}^{\\infty}a_n$ is convergent, $|r| < 1$ and $r = -\\dfrac{2}{3}$. Then $a_4 = ar^3 = -72$ gives $a = 3^5$, so $\\sum_{n=1}^{\\infty}a_n = \\dfrac{a}{1-r} = \\dfrac{3^5}{1-(-2/3)} = \\dfrac{3^6}{5} = \\dfrac{729}{5}$."
+      },
+      "src": {
+        "zh": "官方详解 p.12",
+        "en": "Official solutions p.12"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.12，页面底部印刷页码为 10，对应习题 PDF 第 10 页。",
+        "en": "Official solutions PDF physical page p.12; the printed page number at the foot of that page is 10, corresponding to page 10 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.11",
+      "sec": "4.3",
+      "type": {
+        "zh": "求常数项",
+        "en": "Finding the constant term"
+      },
+      "q": {
+        "zh": "求 $\\left(x^3 + \\dfrac{5}{x}\\right)^8$ 展开式中的常数项。",
+        "en": "Find the constant term in the expansion of $\\left(x^3 + \\dfrac{5}{x}\\right)^8$."
+      },
+      "ans": {
+        "zh": "常数项为 $437500$。",
+        "en": "The constant term is $437500$."
+      },
+      "steps": [
+        {
+          "zh": "由二项式定理：$\\left(x^3 + \\dfrac{5}{x}\\right)^8 = \\sum_{k=0}^{8} \\binom{8}{k}\\left(x^3\\right)^{8-k}\\left(\\dfrac{5}{x}\\right)^k$。",
+          "en": "By the binomial theorem, $\\left(x^3 + \\dfrac{5}{x}\\right)^8 = \\sum_{k=0}^{8} \\binom{8}{k}\\left(x^3\\right)^{8-k}\\left(\\dfrac{5}{x}\\right)^k$."
+        },
+        {
+          "zh": "通项中 $x$ 的指数为 $3(8-k) - k$，令其等于 $0$ 得 $24 - 4k = 0$，即 $k = 6$。",
+          "en": "The $x$-power of the general term is $3(8-k) - k$; setting it to $0$ gives $24 - 4k = 0$, i.e. $k = 6$."
+        },
+        {
+          "zh": "常数项为 $\\binom{8}{6}\\left(x^3\\right)^2\\left(\\dfrac{5}{x}\\right)^6 = \\dfrac{8 \\times 7}{1 \\times 2} \\times 5^6 = 28 \\times 15625 = 437500$。",
+          "en": "The constant term is $\\binom{8}{6}\\left(x^3\\right)^2\\left(\\dfrac{5}{x}\\right)^6 = \\dfrac{8 \\times 7}{1 \\times 2} \\times 5^6 = 28 \\times 15625 = 437500$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：$(x^3+\\dfrac{5}{x})^8 = \\sum_{k=0}^{8}\\binom{8}{k}(x^3)^{8-k}\\left(\\dfrac{5}{x}\\right)^k$；常数项要求 $3(8-k)-k = 0$，即 $24 - 4k = 0$，$k = 6$；常数项为 $\\binom{8}{6}(x^3)^2\\left(\\dfrac{5}{x}\\right)^6 = \\dfrac{8\\times 7}{1\\times 2}\\times 5^6 = 437500$。",
+        "en": "Official solutions: $(x^3+\\dfrac{5}{x})^8 = \\sum_{k=0}^{8}\\binom{8}{k}(x^3)^{8-k}\\left(\\dfrac{5}{x}\\right)^k$; the constant term requires $3(8-k)-k = 0$, i.e. $24 - 4k = 0$, so $k = 6$; the constant term is $\\binom{8}{6}(x^3)^2\\left(\\dfrac{5}{x}\\right)^6 = \\dfrac{8\\times 7}{1\\times 2}\\times 5^6 = 437500$."
+      },
+      "src": {
+        "zh": "官方详解 p.13",
+        "en": "Official solutions p.13"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.13，页面底部印刷页码为 11，对应习题 PDF 第 11 页。",
+        "en": "Official solutions PDF physical page p.13; the printed page number at the foot of that page is 11, corresponding to page 11 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.12",
+      "sec": "4.3",
+      "type": {
+        "zh": "求指定幂次的系数",
+        "en": "Coefficient of a given power"
+      },
+      "q": {
+        "zh": "求 $\\left(2x - \\dfrac{3}{x^2}\\right)^{10}$ 展开式中 $x^{-2}$ 的系数。",
+        "en": "Find the coefficient of $x^{-2}$ in the expansion of $\\left(2x - \\dfrac{3}{x^2}\\right)^{10}$."
+      },
+      "ans": {
+        "zh": "$x^{-2}$ 的系数为 $1088640$。",
+        "en": "The coefficient of $x^{-2}$ is $1088640$."
+      },
+      "steps": [
+        {
+          "zh": "$\\left(2x - \\dfrac{3}{x^2}\\right)^{10} = \\sum_{k=0}^{10} \\binom{10}{k}(2x)^{10-k}\\left(-\\dfrac{3}{x^2}\\right)^k$。",
+          "en": "$\\left(2x - \\dfrac{3}{x^2}\\right)^{10} = \\sum_{k=0}^{10} \\binom{10}{k}(2x)^{10-k}\\left(-\\dfrac{3}{x^2}\\right)^k$."
+        },
+        {
+          "zh": "通项中 $x$ 的指数为 $10 - k - 2k$，令其等于 $-2$ 得 $3k = 12$，即 $k = 4$。",
+          "en": "The $x$-power of the general term is $10 - k - 2k$; setting it equal to $-2$ gives $3k = 12$, i.e. $k = 4$."
+        },
+        {
+          "zh": "系数为 $\\binom{10}{4} \\times 2^6 \\times (-3)^4 = 210 \\times 64 \\times 81 = 1088640$。",
+          "en": "The coefficient is $\\binom{10}{4} \\times 2^6 \\times (-3)^4 = 210 \\times 64 \\times 81 = 1088640$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：$(2x - \\dfrac{3}{x^2})^{10} = \\sum_{k=0}^{10}\\binom{10}{k}(2x)^{10-k}\\left(-\\dfrac{3}{x^2}\\right)^k$；要 $x^{-2}$ 项，$10 - k - 2k = -2$，$3k = 12$，$k = 4$；故系数为 $\\binom{10}{4} \\times 2^6 \\times (-3)^4 = 1088640$。",
+        "en": "Official solutions: $(2x - \\dfrac{3}{x^2})^{10} = \\sum_{k=0}^{10}\\binom{10}{k}(2x)^{10-k}\\left(-\\dfrac{3}{x^2}\\right)^k$; for the $x^{-2}$ term, $10 - k - 2k = -2$, $3k = 12$, $k = 4$; the coefficient is $\\binom{10}{4} \\times 2^6 \\times (-3)^4 = 1088640$."
+      },
+      "src": {
+        "zh": "官方详解 p.14",
+        "en": "Official solutions p.14"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.14，页面底部印刷页码为 12，对应习题 PDF 第 12 页。",
+        "en": "Official solutions PDF physical page p.14; the printed page number at the foot of that page is 12, corresponding to page 12 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.13",
+      "sec": "4.3",
+      "type": {
+        "zh": "用二项展开证明三角恒等式",
+        "en": "Proving a trigonometric identity by binomial expansion"
+      },
+      "q": {
+        "zh": "证明 $\\cos 4\\theta = 8\\cos^4\\theta - 8\\cos^2\\theta + 1$。",
+        "en": "Prove that $\\cos 4\\theta = 8\\cos^4\\theta - 8\\cos^2\\theta + 1$."
+      },
+      "ans": {
+        "zh": "恒等式 $\\cos 4\\theta = 8\\cos^4\\theta - 8\\cos^2\\theta + 1$ 得证。",
+        "en": "The identity $\\cos 4\\theta = 8\\cos^4\\theta - 8\\cos^2\\theta + 1$ is proved."
+      },
+      "steps": [
+        {
+          "zh": "由 De Moivre 公式 $\\cos 4\\theta + i\\sin 4\\theta = e^{4i\\theta} = (e^{i\\theta})^4 = (\\cos\\theta + i\\sin\\theta)^4$。",
+          "en": "By De Moivre's theorem, $\\cos 4\\theta + i\\sin 4\\theta = e^{4i\\theta} = (e^{i\\theta})^4 = (\\cos\\theta + i\\sin\\theta)^4$."
+        },
+        {
+          "zh": "按二项式定理展开：$= \\cos^4\\theta + 4\\cos^3\\theta(i\\sin\\theta) + 6\\cos^2\\theta(i\\sin\\theta)^2 + 4\\cos\\theta(i\\sin\\theta)^3 + (i\\sin\\theta)^4$。",
+          "en": "Expanding binomially: $= \\cos^4\\theta + 4\\cos^3\\theta(i\\sin\\theta) + 6\\cos^2\\theta(i\\sin\\theta)^2 + 4\\cos\\theta(i\\sin\\theta)^3 + (i\\sin\\theta)^4$."
+        },
+        {
+          "zh": "比较实部得 $\\cos 4\\theta = \\cos^4\\theta - 6\\cos^2\\theta\\sin^2\\theta + \\sin^4\\theta$。",
+          "en": "Comparing real parts gives $\\cos 4\\theta = \\cos^4\\theta - 6\\cos^2\\theta\\sin^2\\theta + \\sin^4\\theta$."
+        },
+        {
+          "zh": "代入 $\\sin^2\\theta = 1 - \\cos^2\\theta$ 并整理：$= 7\\cos^4\\theta - 6\\cos^2\\theta + 1 - 2\\cos^2\\theta + \\cos^4\\theta = 8\\cos^4\\theta - 8\\cos^2\\theta + 1$。",
+          "en": "Substituting $\\sin^2\\theta = 1 - \\cos^2\\theta$ and simplifying: $= 7\\cos^4\\theta - 6\\cos^2\\theta + 1 - 2\\cos^2\\theta + \\cos^4\\theta = 8\\cos^4\\theta - 8\\cos^2\\theta + 1$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：用到 $\\binom{4}{1} = \\binom{4}{3} = 4$、$\\binom{4}{2} = 6$。由 $\\cos 4\\theta + i\\sin 4\\theta = e^{4i\\theta} = (e^{i\\theta})^4 = (\\cos\\theta + i\\sin\\theta)^4$ 二项展开，比较实部得 $\\cos 4\\theta = \\cos^4\\theta - 6\\cos^2\\theta\\sin^2\\theta + \\sin^4\\theta = \\cos^4\\theta - 6\\cos^2\\theta(1-\\cos^2\\theta) + (1-\\cos^2\\theta)^2 = 7\\cos^4\\theta - 6\\cos^2\\theta + 1 - 2\\cos^2\\theta + \\cos^4\\theta = 8\\cos^4\\theta - 8\\cos^2\\theta + 1$。",
+        "en": "Official solutions: use $\\binom{4}{1} = \\binom{4}{3} = 4$ and $\\binom{4}{2} = 6$. From $\\cos 4\\theta + i\\sin 4\\theta = e^{4i\\theta} = (e^{i\\theta})^4 = (\\cos\\theta + i\\sin\\theta)^4$, expanded binomially, comparing real parts gives $\\cos 4\\theta = \\cos^4\\theta - 6\\cos^2\\theta\\sin^2\\theta + \\sin^4\\theta = \\cos^4\\theta - 6\\cos^2\\theta(1-\\cos^2\\theta) + (1-\\cos^2\\theta)^2 = 7\\cos^4\\theta - 6\\cos^2\\theta + 1 - 2\\cos^2\\theta + \\cos^4\\theta = 8\\cos^4\\theta - 8\\cos^2\\theta + 1$."
+      },
+      "src": {
+        "zh": "官方详解 p.15",
+        "en": "Official solutions p.15"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.15，页面底部印刷页码为 13，对应习题 PDF 第 13 页。",
+        "en": "Official solutions PDF physical page p.15; the printed page number at the foot of that page is 13, corresponding to page 13 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.14",
+      "sec": "4.3",
+      "type": {
+        "zh": "用二项展开证明三角恒等式",
+        "en": "Proving a trigonometric identity by binomial expansion"
+      },
+      "q": {
+        "zh": "证明 $\\sin 5\\theta = 16\\sin^5\\theta - 20\\sin^3\\theta + 5\\sin\\theta$。",
+        "en": "Prove that $\\sin 5\\theta = 16\\sin^5\\theta - 20\\sin^3\\theta + 5\\sin\\theta$."
+      },
+      "ans": {
+        "zh": "恒等式 $\\sin 5\\theta = 16\\sin^5\\theta - 20\\sin^3\\theta + 5\\sin\\theta$ 得证。",
+        "en": "The identity $\\sin 5\\theta = 16\\sin^5\\theta - 20\\sin^3\\theta + 5\\sin\\theta$ is proved."
+      },
+      "steps": [
+        {
+          "zh": "用到 $\\binom{5}{1} = \\binom{5}{4} = 5$、$\\binom{5}{2} = \\binom{5}{3} = 10$。",
+          "en": "Use $\\binom{5}{1} = \\binom{5}{4} = 5$ and $\\binom{5}{2} = \\binom{5}{3} = 10$."
+        },
+        {
+          "zh": "由 $\\cos 5\\theta + i\\sin 5\\theta = e^{i5\\theta} = (e^{i\\theta})^5 = (\\cos\\theta + i\\sin\\theta)^5$ 二项展开。",
+          "en": "Expand $\\cos 5\\theta + i\\sin 5\\theta = e^{i5\\theta} = (e^{i\\theta})^5 = (\\cos\\theta + i\\sin\\theta)^5$ binomially."
+        },
+        {
+          "zh": "比较虚部得 $\\sin 5\\theta = 5\\cos^4\\theta\\sin\\theta - 10\\cos^2\\theta\\sin^3\\theta + \\sin^5\\theta$。",
+          "en": "Comparing imaginary parts gives $\\sin 5\\theta = 5\\cos^4\\theta\\sin\\theta - 10\\cos^2\\theta\\sin^3\\theta + \\sin^5\\theta$."
+        },
+        {
+          "zh": "提取 $\\sin\\theta$ 并代入 $\\cos^2\\theta = 1 - \\sin^2\\theta$：$= \\sin\\theta\\left[5(1-\\sin^2\\theta)^2 - 10(1-\\sin^2\\theta)\\sin^2\\theta + \\sin^4\\theta\\right] = 16\\sin^5\\theta - 20\\sin^3\\theta + 5\\sin\\theta$。",
+          "en": "Factoring out $\\sin\\theta$ and substituting $\\cos^2\\theta = 1 - \\sin^2\\theta$: $= \\sin\\theta\\left[5(1-\\sin^2\\theta)^2 - 10(1-\\sin^2\\theta)\\sin^2\\theta + \\sin^4\\theta\\right] = 16\\sin^5\\theta - 20\\sin^3\\theta + 5\\sin\\theta$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：用到 $\\binom{5}{1} = \\binom{5}{4} = 5$，$\\binom{5}{2} = \\binom{5}{3} = 10$。由 $\\cos 5\\theta + i\\sin 5\\theta = e^{i5\\theta} = (e^{i\\theta})^5 = (\\cos\\theta + i\\sin\\theta)^5$ 二项展开，比较虚部得 $\\sin 5\\theta = 5\\cos^4\\theta\\sin\\theta - 10\\cos^2\\theta\\sin^3\\theta + \\sin^5\\theta = \\sin\\theta\\left[5(1-\\sin^2\\theta)^2 - 10(1-\\sin^2\\theta)\\sin^2\\theta + \\sin^4\\theta\\right] = \\sin\\theta\\left(5 - 10\\sin^2\\theta + 5\\sin^4\\theta - 10\\sin^2\\theta + 10\\sin^4\\theta + \\sin^4\\theta\\right) = 16\\sin^5\\theta - 20\\sin^3\\theta + 5\\sin\\theta$。",
+        "en": "Official solutions: use $\\binom{5}{1} = \\binom{5}{4} = 5$ and $\\binom{5}{2} = \\binom{5}{3} = 10$. Expanding $\\cos 5\\theta + i\\sin 5\\theta = e^{i5\\theta} = (e^{i\\theta})^5 = (\\cos\\theta + i\\sin\\theta)^5$ and comparing imaginary parts gives $\\sin 5\\theta = 5\\cos^4\\theta\\sin\\theta - 10\\cos^2\\theta\\sin^3\\theta + \\sin^5\\theta = \\sin\\theta\\left[5(1-\\sin^2\\theta)^2 - 10(1-\\sin^2\\theta)\\sin^2\\theta + \\sin^4\\theta\\right] = \\sin\\theta\\left(5 - 10\\sin^2\\theta + 5\\sin^4\\theta - 10\\sin^2\\theta + 10\\sin^4\\theta + \\sin^4\\theta\\right) = 16\\sin^5\\theta - 20\\sin^3\\theta + 5\\sin\\theta$."
+      },
+      "src": {
+        "zh": "官方详解 p.16",
+        "en": "Official solutions p.16"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.16，页面底部印刷页码为 14，对应习题 PDF 第 14 页。",
+        "en": "Official solutions PDF physical page p.16; the printed page number at the foot of that page is 14, corresponding to page 14 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.15",
+      "sec": "4.3",
+      "type": {
+        "zh": "用二项展开证明三角恒等式",
+        "en": "Proving a trigonometric identity by binomial expansion"
+      },
+      "q": {
+        "zh": "证明 $\\cos 6\\theta = 32\\cos^6\\theta - 48\\cos^4\\theta + 18\\cos^2\\theta - 1$。",
+        "en": "Prove that $\\cos 6\\theta = 32\\cos^6\\theta - 48\\cos^4\\theta + 18\\cos^2\\theta - 1$."
+      },
+      "ans": {
+        "zh": "恒等式 $\\cos 6\\theta = 32\\cos^6\\theta - 48\\cos^4\\theta + 18\\cos^2\\theta - 1$ 得证。",
+        "en": "The identity $\\cos 6\\theta = 32\\cos^6\\theta - 48\\cos^4\\theta + 18\\cos^2\\theta - 1$ is proved."
+      },
+      "steps": [
+        {
+          "zh": "用到 $\\binom{6}{1} = \\binom{6}{5} = 6$，$\\binom{6}{2} = \\binom{6}{4} = 15$，$\\binom{6}{3} = 20$。",
+          "en": "Use $\\binom{6}{1} = \\binom{6}{5} = 6$, $\\binom{6}{2} = \\binom{6}{4} = 15$ and $\\binom{6}{3} = 20$."
+        },
+        {
+          "zh": "由 $\\cos 6\\theta + i\\sin 6\\theta = e^{6i\\theta} = (\\cos\\theta + i\\sin\\theta)^6$ 二项展开。",
+          "en": "Expand $\\cos 6\\theta + i\\sin 6\\theta = e^{6i\\theta} = (\\cos\\theta + i\\sin\\theta)^6$ binomially."
+        },
+        {
+          "zh": "比较实部得 $\\cos 6\\theta = \\cos^6\\theta - 15\\cos^4\\theta\\sin^2\\theta + 15\\cos^2\\theta\\sin^4\\theta - \\sin^6\\theta$。",
+          "en": "Comparing real parts gives $\\cos 6\\theta = \\cos^6\\theta - 15\\cos^4\\theta\\sin^2\\theta + 15\\cos^2\\theta\\sin^4\\theta - \\sin^6\\theta$."
+        },
+        {
+          "zh": "代入 $\\sin^2\\theta = 1 - \\cos^2\\theta$ 并整理：$= 16\\cos^6\\theta - 15\\cos^4\\theta + 15\\cos^2\\theta(1-2\\cos^2\\theta + \\cos^4\\theta) - (1-3\\cos^2\\theta + 3\\cos^4\\theta - \\cos^6\\theta) = 32\\cos^6\\theta - 48\\cos^4\\theta + 18\\cos^2\\theta - 1$。",
+          "en": "Substituting $\\sin^2\\theta = 1 - \\cos^2\\theta$ and simplifying: $= 16\\cos^6\\theta - 15\\cos^4\\theta + 15\\cos^2\\theta(1-2\\cos^2\\theta + \\cos^4\\theta) - (1-3\\cos^2\\theta + 3\\cos^4\\theta - \\cos^6\\theta) = 32\\cos^6\\theta - 48\\cos^4\\theta + 18\\cos^2\\theta - 1$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：用到 $\\binom{6}{1}=\\binom{6}{5}=6$，$\\binom{6}{2}=\\binom{6}{4}=15$，$\\binom{6}{3}=20$。由 $\\cos 6\\theta + i\\sin 6\\theta = e^{6i\\theta} = (\\cos\\theta + i\\sin\\theta)^6$ 二项展开，比较实部得 $\\cos 6\\theta = \\cos^6\\theta - 15\\cos^4\\theta\\sin^2\\theta + 15\\cos^2\\theta\\sin^4\\theta - \\sin^6\\theta$，再代入 $\\sin^2\\theta = 1-\\cos^2\\theta$ 展开化简得 $32\\cos^6\\theta - 48\\cos^4\\theta + 18\\cos^2\\theta - 1$。",
+        "en": "Official solutions: use $\\binom{6}{1}=\\binom{6}{5}=6$, $\\binom{6}{2}=\\binom{6}{4}=15$ and $\\binom{6}{3}=20$. Expanding $\\cos 6\\theta + i\\sin 6\\theta = e^{6i\\theta} = (\\cos\\theta + i\\sin\\theta)^6$ and comparing real parts gives $\\cos 6\\theta = \\cos^6\\theta - 15\\cos^4\\theta\\sin^2\\theta + 15\\cos^2\\theta\\sin^4\\theta - \\sin^6\\theta$; substituting $\\sin^2\\theta = 1-\\cos^2\\theta$ and simplifying yields $32\\cos^6\\theta - 48\\cos^4\\theta + 18\\cos^2\\theta - 1$."
+      },
+      "src": {
+        "zh": "官方详解 p.17",
+        "en": "Official solutions p.17"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.17，页面底部印刷页码为 15，对应习题 PDF 第 15 页。",
+        "en": "Official solutions PDF physical page p.17; the printed page number at the foot of that page is 15, corresponding to page 15 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.16",
+      "sec": "4.3",
+      "type": {
+        "zh": "广义二项展开与收敛区间",
+        "en": "Generalized binomial expansion and its convergence range"
+      },
+      "q": {
+        "zh": "求 $\\dfrac{x}{\\sqrt{9 - x}}$ 按 $x$ 的升幂展开到 $x^4$ 项，并求该级数收敛的 $x$ 的范围。",
+        "en": "Find the expansion of $\\dfrac{x}{\\sqrt{9 - x}}$ in ascending powers of $x$ until the term in $x^4$, and find the range of $x$ for which the series is convergent."
+      },
+      "ans": {
+        "zh": "$\\dfrac{x}{\\sqrt{9 - x}} = \\dfrac{x}{3} + \\dfrac{x^2}{54} + \\dfrac{x^3}{648} + \\dfrac{5x^4}{34992} + \\cdots$，收敛范围为 $|x| < 9$（即 $-9 < x < 9$）。",
+        "en": "$\\dfrac{x}{\\sqrt{9 - x}} = \\dfrac{x}{3} + \\dfrac{x^2}{54} + \\dfrac{x^3}{648} + \\dfrac{5x^4}{34992} + \\cdots$, convergent for $|x| < 9$ (i.e. $-9 < x < 9$)."
+      },
+      "steps": [
+        {
+          "zh": "先写成广义二项式：$\\dfrac{x}{\\sqrt{9-x}} = \\dfrac{x}{3}\\left(1 - \\dfrac{x}{9}\\right)^{-\\dfrac{1}{2}}$。",
+          "en": "First put it in generalized binomial form: $\\dfrac{x}{\\sqrt{9-x}} = \\dfrac{x}{3}\\left(1 - \\dfrac{x}{9}\\right)^{-\\dfrac{1}{2}}$."
+        },
+        {
+          "zh": "用 $\\binom{-1/2}{0}=1$、$\\binom{-1/2}{1}=-\\dfrac{1}{2}$、$\\binom{-1/2}{2}=\\dfrac{3}{8}$、$\\binom{-1/2}{3}=-\\dfrac{5}{16}$ 展开：$\\left(1-\\dfrac{x}{9}\\right)^{-\\dfrac{1}{2}} = 1 + \\dfrac{x}{18} + \\dfrac{x^2}{216} + \\dfrac{5}{11664}x^3 + \\cdots$。",
+          "en": "Using $\\binom{-1/2}{0}=1$, $\\binom{-1/2}{1}=-\\dfrac{1}{2}$, $\\binom{-1/2}{2}=\\dfrac{3}{8}$ and $\\binom{-1/2}{3}=-\\dfrac{5}{16}$: $\\left(1-\\dfrac{x}{9}\\right)^{-\\dfrac{1}{2}} = 1 + \\dfrac{x}{18} + \\dfrac{x^2}{216} + \\dfrac{5}{11664}x^3 + \\cdots$."
+        },
+        {
+          "zh": "乘以 $\\dfrac{x}{3}$ 得 $\\dfrac{x}{3} + \\dfrac{x^2}{54} + \\dfrac{x^3}{648} + \\dfrac{5x^4}{34992} + \\cdots$。",
+          "en": "Multiplying by $\\dfrac{x}{3}$ gives $\\dfrac{x}{3} + \\dfrac{x^2}{54} + \\dfrac{x^3}{648} + \\dfrac{5x^4}{34992} + \\cdots$."
+        },
+        {
+          "zh": "由 Theorem 4.6 要求 $|-\\dfrac{x}{9}| < 1$，得收敛范围 $|x| < 9$。",
+          "en": "Theorem 4.6 requires $|-\\dfrac{x}{9}| < 1$, so the range of convergence is $|x| < 9$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：$\\dfrac{x}{\\sqrt{9-x}} = \\dfrac{x}{3}\\left(1 - \\dfrac{x}{9}\\right)^{-\\dfrac{1}{2}}$。当 $|x| < 9$ 时，$\\dfrac{x}{\\sqrt{9-x}} = \\dfrac{x}{3}\\left[1 + \\left(-\\dfrac{1}{2}\\right)\\left(-\\dfrac{x}{9}\\right) + \\dfrac{\\left(-\\dfrac{1}{2}\\right)\\left(-\\dfrac{3}{2}\\right)}{2}\\left(-\\dfrac{x}{9}\\right)^2 + \\dfrac{\\left(-\\dfrac{1}{2}\\right)\\left(-\\dfrac{3}{2}\\right)\\left(-\\dfrac{5}{2}\\right)}{6}\\left(-\\dfrac{x}{9}\\right)^3 + \\cdots\\right] = \\dfrac{x}{3}\\left(1 + \\dfrac{x}{18} + \\dfrac{x^2}{216} + \\dfrac{5}{11664}x^3 + \\cdots\\right) = \\dfrac{x}{3} + \\dfrac{x^2}{54} + \\dfrac{x^3}{648} + \\dfrac{5x^4}{34992} + \\cdots$。收敛范围 $|x| < 9$，即 $-9 < x < 9$。",
+        "en": "Official solutions: $\\dfrac{x}{\\sqrt{9-x}} = \\dfrac{x}{3}\\left(1 - \\dfrac{x}{9}\\right)^{-\\dfrac{1}{2}}$. When $|x| < 9$, $\\dfrac{x}{\\sqrt{9-x}} = \\dfrac{x}{3}\\left[1 + \\left(-\\dfrac{1}{2}\\right)\\left(-\\dfrac{x}{9}\\right) + \\dfrac{\\left(-\\dfrac{1}{2}\\right)\\left(-\\dfrac{3}{2}\\right)}{2}\\left(-\\dfrac{x}{9}\\right)^2 + \\dfrac{\\left(-\\dfrac{1}{2}\\right)\\left(-\\dfrac{3}{2}\\right)\\left(-\\dfrac{5}{2}\\right)}{6}\\left(-\\dfrac{x}{9}\\right)^3 + \\cdots\\right] = \\dfrac{x}{3}\\left(1 + \\dfrac{x}{18} + \\dfrac{x^2}{216} + \\dfrac{5}{11664}x^3 + \\cdots\\right) = \\dfrac{x}{3} + \\dfrac{x^2}{54} + \\dfrac{x^3}{648} + \\dfrac{5x^4}{34992} + \\cdots$. Range of convergence: $|x| < 9$, i.e. $-9 < x < 9$."
+      },
+      "src": {
+        "zh": "官方详解 p.18",
+        "en": "Official solutions p.18"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.18，页面底部印刷页码为 16，对应习题 PDF 第 16 页。",
+        "en": "Official solutions PDF physical page p.18; the printed page number at the foot of that page is 16, corresponding to page 16 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.17",
+      "sec": "4.3",
+      "type": {
+        "zh": "广义二项展开求系数",
+        "en": "Finding a coefficient in a generalized expansion"
+      },
+      "q": {
+        "zh": "求 $\\dfrac{2x + 3}{3 - 4x}$ 按 $x$ 的升幂展开中 $x^4$ 的系数。",
+        "en": "Find the coefficient of $x^4$ in the expansion of $\\dfrac{2x + 3}{3 - 4x}$ in ascending powers of $x$."
+      },
+      "ans": {
+        "zh": "$x^4$ 的系数为 $\\dfrac{128}{27}$。",
+        "en": "The coefficient of $x^4$ is $\\dfrac{128}{27}$."
+      },
+      "steps": [
+        {
+          "zh": "$\\dfrac{2x+3}{3-4x} = \\dfrac{2x+3}{3}\\left(1 - \\dfrac{4}{3}x\\right)^{-1}$。",
+          "en": "$\\dfrac{2x+3}{3-4x} = \\dfrac{2x+3}{3}\\left(1 - \\dfrac{4}{3}x\\right)^{-1}$."
+        },
+        {
+          "zh": "当 $\\left|\\dfrac{4}{3}x\\right| < 1$ 时，$\\left(1 - \\dfrac{4}{3}x\\right)^{-1} = 1 + \\dfrac{4}{3}x + \\left(\\dfrac{4}{3}x\\right)^2 + \\left(\\dfrac{4}{3}x\\right)^3 + \\left(\\dfrac{4}{3}x\\right)^4 + \\cdots$。",
+          "en": "When $\\left|\\dfrac{4}{3}x\\right| < 1$, $\\left(1 - \\dfrac{4}{3}x\\right)^{-1} = 1 + \\dfrac{4}{3}x + \\left(\\dfrac{4}{3}x\\right)^2 + \\left(\\dfrac{4}{3}x\\right)^3 + \\left(\\dfrac{4}{3}x\\right)^4 + \\cdots$."
+        },
+        {
+          "zh": "于是 $\\dfrac{2x+3}{3-4x} = \\left(1 + \\dfrac{2}{3}x\\right)\\left(1 + \\dfrac{4}{3}x + \\left(\\dfrac{4}{3}x\\right)^2 + \\left(\\dfrac{4}{3}x\\right)^3 + \\left(\\dfrac{4}{3}x\\right)^4 + \\cdots\\right)$。",
+          "en": "Hence $\\dfrac{2x+3}{3-4x} = \\left(1 + \\dfrac{2}{3}x\\right)\\left(1 + \\dfrac{4}{3}x + \\left(\\dfrac{4}{3}x\\right)^2 + \\left(\\dfrac{4}{3}x\\right)^3 + \\left(\\dfrac{4}{3}x\\right)^4 + \\cdots\\right)$."
+        },
+        {
+          "zh": "$x^4$ 的系数为 $\\left(\\dfrac{4}{3}\\right)^4 + \\dfrac{2}{3}\\left(\\dfrac{4}{3}\\right)^3 = \\dfrac{256 + 128}{81} = \\dfrac{384}{81} = \\dfrac{128}{27}$。",
+          "en": "The coefficient of $x^4$ is $\\left(\\dfrac{4}{3}\\right)^4 + \\dfrac{2}{3}\\left(\\dfrac{4}{3}\\right)^3 = \\dfrac{256 + 128}{81} = \\dfrac{384}{81} = \\dfrac{128}{27}$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：$\\dfrac{2x+3}{3-4x} = \\dfrac{2x+3}{3}\\left(1 - \\dfrac{4}{3}x\\right)^{-1}$。当 $\\left|\\dfrac{4}{3}x\\right| < 1$ 时展开为 $\\left(1 + \\dfrac{2}{3}x\\right)\\left(1 + \\dfrac{4}{3}x + \\left(\\dfrac{4}{3}x\\right)^2 + \\left(\\dfrac{4}{3}x\\right)^3 + \\left(\\dfrac{4}{3}x\\right)^4 - \\cdots\\right)$，$x^4$ 的系数为 $\\left(\\dfrac{4}{3}\\right)^4 + \\dfrac{2}{3}\\left(\\dfrac{4}{3}\\right)^3 = \\dfrac{256 + 128}{81} = \\dfrac{384}{81} = \\dfrac{128}{27}$。",
+        "en": "Official solutions: $\\dfrac{2x+3}{3-4x} = \\dfrac{2x+3}{3}\\left(1 - \\dfrac{4}{3}x\\right)^{-1}$. When $\\left|\\dfrac{4}{3}x\\right| < 1$ this expands as $\\left(1 + \\dfrac{2}{3}x\\right)\\left(1 + \\dfrac{4}{3}x + \\left(\\dfrac{4}{3}x\\right)^2 + \\left(\\dfrac{4}{3}x\\right)^3 + \\left(\\dfrac{4}{3}x\\right)^4 - \\cdots\\right)$, and the coefficient of $x^4$ is $\\left(\\dfrac{4}{3}\\right)^4 + \\dfrac{2}{3}\\left(\\dfrac{4}{3}\\right)^3 = \\dfrac{256 + 128}{81} = \\dfrac{384}{81} = \\dfrac{128}{27}$."
+      },
+      "src": {
+        "zh": "官方详解 p.19",
+        "en": "Official solutions p.19"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.19，页面底部印刷页码为 17，对应习题 PDF 第 17 页。",
+        "en": "Official solutions PDF physical page p.19; the printed page number at the foot of that page is 17, corresponding to page 17 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.18",
+      "sec": "4.4",
+      "type": {
+        "zh": "幂和的线性组合",
+        "en": "Linear combinations of power sums"
+      },
+      "q": {
+        "zh": "求 $\\sum_{k=1}^{n} (5k - 1)(k + 2)$。",
+        "en": "Evaluate $\\sum_{k=1}^{n} (5k - 1)(k + 2)$."
+      },
+      "ans": {
+        "zh": "$\\sum_{k=1}^{n} (5k - 1)(k + 2) = \\dfrac{n(5n^2 + 21n + 10)}{3}$。",
+        "en": "$\\sum_{k=1}^{n} (5k - 1)(k + 2) = \\dfrac{n(5n^2 + 21n + 10)}{3}$."
+      },
+      "steps": [
+        {
+          "zh": "展开被求和项：$(5k-1)(k+2) = 5k^2 + 9k - 2$。",
+          "en": "Expand the summand: $(5k-1)(k+2) = 5k^2 + 9k - 2$."
+        },
+        {
+          "zh": "利用求和的线性性质：$= 5\\sum_{k=1}^{n}k^2 + 9\\sum_{k=1}^{n}k - 2n$。",
+          "en": "By linearity: $= 5\\sum_{k=1}^{n}k^2 + 9\\sum_{k=1}^{n}k - 2n$."
+        },
+        {
+          "zh": "代入 Theorem 4.7：$= \\dfrac{5n(n+1)(2n+1)}{6} + \\dfrac{9n(n+1)}{2} - 2n$。",
+          "en": "Substitute Theorem 4.7: $= \\dfrac{5n(n+1)(2n+1)}{6} + \\dfrac{9n(n+1)}{2} - 2n$."
+        },
+        {
+          "zh": "提公因数 $\\dfrac{n}{6}$ 并合并：$= \\dfrac{n}{6}\\left(10n^2 + 42n + 20\\right) = \\dfrac{n(5n^2 + 21n + 10)}{3}$。",
+          "en": "Factor out $\\dfrac{n}{6}$ and combine: $= \\dfrac{n}{6}\\left(10n^2 + 42n + 20\\right) = \\dfrac{n(5n^2 + 21n + 10)}{3}$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：$(5k-1)(k+2) = 5k^2 + 9k - 2$，故 $\\sum_{k=1}^{n}(5k-1)(k+2) = 5\\sum_{k=1}^{n}k^2 + 9\\sum_{k=1}^{n}k - 2n = \\dfrac{5n(n+1)(2n+1)}{6} + \\dfrac{9n(n+1)}{2} - 2n = \\dfrac{n}{6}\\left[5(n+1)(2n+1) + 3\\cdot 9(n+1) - 6\\cdot 2\\right] = \\dfrac{n}{6}\\left(10n^2 + 42n + 20\\right) = \\dfrac{n(5n^2 + 21n + 10)}{3}$。",
+        "en": "Official solutions: $(5k-1)(k+2) = 5k^2 + 9k - 2$, so $\\sum_{k=1}^{n}(5k-1)(k+2) = 5\\sum_{k=1}^{n}k^2 + 9\\sum_{k=1}^{n}k - 2n = \\dfrac{5n(n+1)(2n+1)}{6} + \\dfrac{9n(n+1)}{2} - 2n = \\dfrac{n}{6}\\left[5(n+1)(2n+1) + 3\\cdot 9(n+1) - 6\\cdot 2\\right] = \\dfrac{n}{6}\\left(10n^2 + 42n + 20\\right) = \\dfrac{n(5n^2 + 21n + 10)}{3}$."
+      },
+      "src": {
+        "zh": "官方详解 p.20",
+        "en": "Official solutions p.20"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.20，页面底部印刷页码为 18，对应习题 PDF 第 18 页。",
+        "en": "Official solutions PDF physical page p.20; the printed page number at the foot of that page is 18, corresponding to page 18 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.19",
+      "sec": "4.4",
+      "type": {
+        "zh": "幂和的线性组合",
+        "en": "Linear combinations of power sums"
+      },
+      "q": {
+        "zh": "求 $\\sum_{k=1}^{n} k(k + 1)(k + 2)$。",
+        "en": "Evaluate $\\sum_{k=1}^{n} k(k + 1)(k + 2)$."
+      },
+      "ans": {
+        "zh": "$\\sum_{k=1}^{n} k(k + 1)(k + 2) = \\dfrac{n(n+1)(n+2)(n+3)}{4}$。",
+        "en": "$\\sum_{k=1}^{n} k(k + 1)(k + 2) = \\dfrac{n(n+1)(n+2)(n+3)}{4}$."
+      },
+      "steps": [
+        {
+          "zh": "展开：$k(k+1)(k+2) = k^3 + 3k^2 + 2k$。",
+          "en": "Expand: $k(k+1)(k+2) = k^3 + 3k^2 + 2k$."
+        },
+        {
+          "zh": "代入 Theorem 4.7：$= \\dfrac{n^2(n+1)^2}{4} + \\dfrac{3n(n+1)(2n+1)}{6} + \\dfrac{2n(n+1)}{2}$。",
+          "en": "Substitute Theorem 4.7: $= \\dfrac{n^2(n+1)^2}{4} + \\dfrac{3n(n+1)(2n+1)}{6} + \\dfrac{2n(n+1)}{2}$."
+        },
+        {
+          "zh": "提公因数 $\\dfrac{n(n+1)}{4}$：$= \\dfrac{n(n+1)}{4}\\left(n^2 + n + 2(2n+1) + 4\\right) = \\dfrac{n(n+1)}{4}(n^2 + 5n + 6)$。",
+          "en": "Factor out $\\dfrac{n(n+1)}{4}$: $= \\dfrac{n(n+1)}{4}\\left(n^2 + n + 2(2n+1) + 4\\right) = \\dfrac{n(n+1)}{4}(n^2 + 5n + 6)$."
+        },
+        {
+          "zh": "$n^2 + 5n + 6 = (n+2)(n+3)$，故结果为 $\\dfrac{n(n+1)(n+2)(n+3)}{4}$。",
+          "en": "Since $n^2 + 5n + 6 = (n+2)(n+3)$, the result is $\\dfrac{n(n+1)(n+2)(n+3)}{4}$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：$\\sum_{k=1}^{n} k(k+1)(k+2) = \\sum_{k=1}^{n}(k^3 + 3k^2 + 2k) = \\dfrac{n^2(n+1)^2}{4} + \\dfrac{3n(n+1)(2n+1)}{6} + \\dfrac{2n(n+1)}{2} = \\dfrac{n(n+1)}{4}\\left(n^2 + n + 2(2n+1) + 4\\right) = \\dfrac{n(n+1)}{4}(n^2 + 5n + 6) = \\dfrac{n(n+1)(n+2)(n+3)}{4}$。",
+        "en": "Official solutions: $\\sum_{k=1}^{n} k(k+1)(k+2) = \\sum_{k=1}^{n}(k^3 + 3k^2 + 2k) = \\dfrac{n^2(n+1)^2}{4} + \\dfrac{3n(n+1)(2n+1)}{6} + \\dfrac{2n(n+1)}{2} = \\dfrac{n(n+1)}{4}\\left(n^2 + n + 2(2n+1) + 4\\right) = \\dfrac{n(n+1)}{4}(n^2 + 5n + 6) = \\dfrac{n(n+1)(n+2)(n+3)}{4}$."
+      },
+      "src": {
+        "zh": "官方详解 p.21",
+        "en": "Official solutions p.21"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.21，页面底部印刷页码为 19，对应习题 PDF 第 19 页。",
+        "en": "Official solutions PDF physical page p.21; the printed page number at the foot of that page is 19, corresponding to page 19 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.20",
+      "sec": "4.4",
+      "type": {
+        "zh": "推导高次幂和公式",
+        "en": "Deriving a formula for sums of fifth powers"
+      },
+      "q": {
+        "zh": "推导 $\\sum_{k=1}^{n} k^5$ 的公式。",
+        "en": "Derive a formula for $\\sum_{k=1}^{n} k^5$."
+      },
+      "ans": {
+        "zh": "$\\sum_{k=1}^{n} k^5 = \\dfrac{2n^6 + 6n^5 + 5n^4 - n^2}{12}$。",
+        "en": "$\\sum_{k=1}^{n} k^5 = \\dfrac{2n^6 + 6n^5 + 5n^4 - n^2}{12}$."
+      },
+      "steps": [
+        {
+          "zh": "由二项展开：$(k+1)^6 - k^6 = \\binom{6}{1}k^5 + \\binom{6}{2}k^4 + \\binom{6}{3}k^3 + \\binom{6}{4}k^2 + \\binom{6}{5}k + 1$。",
+          "en": "Binomial expansion gives $(k+1)^6 - k^6 = \\binom{6}{1}k^5 + \\binom{6}{2}k^4 + \\binom{6}{3}k^3 + \\binom{6}{4}k^2 + \\binom{6}{5}k + 1$."
+        },
+        {
+          "zh": "对 $k = 1, \\ldots, n$ 求和，左端望远镜相消得 $(n+1)^6 - 1 = 6\\sum_{k=1}^{n}k^5 + 15\\sum_{k=1}^{n}k^4 + 20\\sum_{k=1}^{n}k^3 + 15\\sum_{k=1}^{n}k^2 + 6\\sum_{k=1}^{n}k + n$。",
+          "en": "Summing over $k = 1, \\ldots, n$, the left-hand side telescopes to $(n+1)^6 - 1 = 6\\sum_{k=1}^{n}k^5 + 15\\sum_{k=1}^{n}k^4 + 20\\sum_{k=1}^{n}k^3 + 15\\sum_{k=1}^{n}k^2 + 6\\sum_{k=1}^{n}k + n$."
+        },
+        {
+          "zh": "代入 $\\sum k = \\dfrac{n(n+1)}{2}$、$\\sum k^2 = \\dfrac{n(n+1)(2n+1)}{6}$、$\\sum k^3 = \\dfrac{n^2(n+1)^2}{4}$、$\\sum k^4 = \\dfrac{6n^5 + 15n^4 + 10n^3 - n}{30}$，整理得 $6\\sum_{k=1}^{n}k^5 = n^6 + 3n^5 + \\dfrac{5}{2}n^4 - \\dfrac{1}{2}n^2$。",
+          "en": "Substituting $\\sum k = \\dfrac{n(n+1)}{2}$, $\\sum k^2 = \\dfrac{n(n+1)(2n+1)}{6}$, $\\sum k^3 = \\dfrac{n^2(n+1)^2}{4}$ and $\\sum k^4 = \\dfrac{6n^5 + 15n^4 + 10n^3 - n}{30}$ and simplifying gives $6\\sum_{k=1}^{n}k^5 = n^6 + 3n^5 + \\dfrac{5}{2}n^4 - \\dfrac{1}{2}n^2$."
+        },
+        {
+          "zh": "两边除以 $6$ 得 $\\sum_{k=1}^{n}k^5 = \\dfrac{2n^6 + 6n^5 + 5n^4 - n^2}{12}$。",
+          "en": "Dividing by $6$ gives $\\sum_{k=1}^{n}k^5 = \\dfrac{2n^6 + 6n^5 + 5n^4 - n^2}{12}$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：$(k+1)^6 - k^6 = \\binom{6}{1}k^5 + \\binom{6}{2}k^4 + \\binom{6}{3}k^3 + \\binom{6}{4}k^2 + \\binom{6}{5}k + 1$；求和后 $(n+1)^6 - 1 = 6\\sum_{k=1}^{n}k^5 + 15\\sum_{k=1}^{n}k^4 + 20\\sum_{k=1}^{n}k^3 + 15\\sum_{k=1}^{n}k^2 + 6\\sum_{k=1}^{n}k + n$。代入 $\\sum k = \\dfrac{n(n+1)}{2}$、$\\sum k^2 = \\dfrac{n(n+1)(2n+1)}{6}$、$\\sum k^3 = \\dfrac{n^2(n+1)^2}{4}$、$\\sum k^4 = \\dfrac{6n^5 + 15n^4 + 10n^3 - n}{30}$ 后化简得 $6\\sum_{k=1}^{n}k^5 = n^6 + 3n^5 + \\dfrac{5}{2}n^4 - \\dfrac{1}{2}n^2$，因此 $\\sum_{k=1}^{n}k^5 = \\dfrac{2n^6 + 6n^5 + 5n^4 - n^2}{12}$。",
+        "en": "Official solutions: $(k+1)^6 - k^6 = \\binom{6}{1}k^5 + \\binom{6}{2}k^4 + \\binom{6}{3}k^3 + \\binom{6}{4}k^2 + \\binom{6}{5}k + 1$; summing gives $(n+1)^6 - 1 = 6\\sum_{k=1}^{n}k^5 + 15\\sum_{k=1}^{n}k^4 + 20\\sum_{k=1}^{n}k^3 + 15\\sum_{k=1}^{n}k^2 + 6\\sum_{k=1}^{n}k + n$. Substituting $\\sum k = \\dfrac{n(n+1)}{2}$, $\\sum k^2 = \\dfrac{n(n+1)(2n+1)}{6}$, $\\sum k^3 = \\dfrac{n^2(n+1)^2}{4}$ and $\\sum k^4 = \\dfrac{6n^5 + 15n^4 + 10n^3 - n}{30}$ and simplifying gives $6\\sum_{k=1}^{n}k^5 = n^6 + 3n^5 + \\dfrac{5}{2}n^4 - \\dfrac{1}{2}n^2$, hence $\\sum_{k=1}^{n}k^5 = \\dfrac{2n^6 + 6n^5 + 5n^4 - n^2}{12}$."
+      },
+      "src": {
+        "zh": "官方详解 p.22",
+        "en": "Official solutions p.22"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.22，页面底部印刷页码为 20，对应习题 PDF 第 20 页。",
+        "en": "Official solutions PDF physical page p.22; the printed page number at the foot of that page is 20, corresponding to page 20 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.21(a)",
+      "sec": "4.1",
+      "type": {
+        "zh": "递推数列求指定项",
+        "en": "Finding a term of a recursive sequence"
+      },
+      "q": {
+        "zh": "设数列 $\\{a_n\\}$ 满足 $a_1 = 3$，且对一切 $n \\ge 2$ 有 $a_n = a_{n-1} + 4n - 3$，求 $a_{100}$。",
+        "en": "Suppose $\\{a_n\\}$ satisfies $a_1 = 3$ and $a_n = a_{n-1} + 4n - 3$ for all $n \\ge 2$. Find $a_{100}$."
+      },
+      "ans": {
+        "zh": "$a_{100} = 19902$。",
+        "en": "$a_{100} = 19902$."
+      },
+      "steps": [
+        {
+          "zh": "反复代入递推式：$a_{100} = a_{99} + 4\\times 100 - 3 = a_{98} + (4\\times 99 - 3) + (4\\times 100 - 3) = \\cdots$。",
+          "en": "Substituting the recurrence repeatedly: $a_{100} = a_{99} + 4\\times 100 - 3 = a_{98} + (4\\times 99 - 3) + (4\\times 100 - 3) = \\cdots$."
+        },
+        {
+          "zh": " $= a_1 + \\sum_{k=2}^{100}(4k - 3) = 3 + 4(2 + 3 + \\cdots + 100) - 3\\times 99$。",
+          "en": "$= a_1 + \\sum_{k=2}^{100}(4k - 3) = 3 + 4(2 + 3 + \\cdots + 100) - 3\\times 99$."
+        },
+        {
+          "zh": "由 $\\sum_{k=1}^{n}k = \\dfrac{n(n+1)}{2}$ 得 $2 + 3 + \\cdots + 100 = 5050 - 1 = 5049$，故 $a_{100} = 3 + 4\\times 5049 - 297 = 19902$。",
+          "en": "Using $\\sum_{k=1}^{n}k = \\dfrac{n(n+1)}{2}$, $2 + 3 + \\cdots + 100 = 5050 - 1 = 5049$, so $a_{100} = 3 + 4\\times 5049 - 297 = 19902$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：$a_{100} = a_{99} + 4\\times 100 - 3 = a_{98} + 4\\times 99 - 3 + 4\\times 100 - 3 = \\cdots = a_1 + 4\\times 2 - 3 + 4\\times 3 - 3 + \\cdots + 4\\times 100 - 3 = 3 + 4\\times(2 + 3 + \\cdots + 100) - 3\\times 99 = 2 + 4\\times\\dfrac{100}{2}(1 + 100) - 300 = 2 + 100\\times 202 - 300 = 19902$。",
+        "en": "Official solutions: $a_{100} = a_{99} + 4\\times 100 - 3 = a_{98} + 4\\times 99 - 3 + 4\\times 100 - 3 = \\cdots = a_1 + 4\\times 2 - 3 + 4\\times 3 - 3 + \\cdots + 4\\times 100 - 3 = 3 + 4\\times(2 + 3 + \\cdots + 100) - 3\\times 99 = 2 + 4\\times\\dfrac{100}{2}(1 + 100) - 300 = 2 + 100\\times 202 - 300 = 19902$."
+      },
+      "src": {
+        "zh": "官方详解 p.23",
+        "en": "Official solutions p.23"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.23，页面底部印刷页码为 21，对应习题 PDF 第 21 页。",
+        "en": "Official solutions PDF physical page p.23; the printed page number at the foot of that page is 21, corresponding to page 21 of the problems PDF."
+      }
+    },
+    {
+      "num": "4.21(b)",
+      "sec": "4.1",
+      "type": {
+        "zh": "递推数列求通项",
+        "en": "Finding a general term of a recursive sequence"
+      },
+      "q": {
+        "zh": "设数列 $\\{a_n\\}$ 满足 $a_1 = 3$，且对一切 $n \\ge 2$ 有 $a_n = a_{n-1} + 4n - 3$，求 $a_n$ 的通项公式。",
+        "en": "Suppose $\\{a_n\\}$ satisfies $a_1 = 3$ and $a_n = a_{n-1} + 4n - 3$ for all $n \\ge 2$. Find a general formula for $a_n$."
+      },
+      "ans": {
+        "zh": "$a_n = 2n^2 - n + 2$。",
+        "en": "$a_n = 2n^2 - n + 2$."
+      },
+      "steps": [
+        {
+          "zh": "对 $k = 2, \\ldots, n$ 求和：$\\sum_{k=2}^{n}a_k = \\sum_{k=2}^{n}(a_{k-1} + 4k - 3) = \\sum_{k=1}^{n-1}a_k + 4\\left(\\sum_{k=1}^{n}k - 1\\right) - 3(n-1)$。",
+          "en": "Summing for $k = 2, \\ldots, n$: $\\sum_{k=2}^{n}a_k = \\sum_{k=2}^{n}(a_{k-1} + 4k - 3) = \\sum_{k=1}^{n-1}a_k + 4\\left(\\sum_{k=1}^{n}k - 1\\right) - 3(n-1)$."
+        },
+        {
+          "zh": "把 $\\sum_{k=2}^{n}a_k = S_n - a_1$ 与 $\\sum_{k=1}^{n-1}a_k = S_{n-1}$ 代入并整理得 $a_n = a_1 + 4\\dfrac{n(n+1)}{2} - 4 - 3n + 3$。",
+          "en": "Substituting $\\sum_{k=2}^{n}a_k = S_n - a_1$ and $\\sum_{k=1}^{n-1}a_k = S_{n-1}$ and simplifying gives $a_n = a_1 + 4\\dfrac{n(n+1)}{2} - 4 - 3n + 3$."
+        },
+        {
+          "zh": "代入 $a_1 = 3$：$a_n = 3 + 2n(n+1) - 4 - 3n + 3 = 2n^2 - n + 2$。",
+          "en": "With $a_1 = 3$: $a_n = 3 + 2n(n+1) - 4 - 3n + 3 = 2n^2 - n + 2$."
+        }
+      ],
+      "official": {
+        "zh": "官方详解：由 $\\sum_{k=2}^{n}a_k = \\sum_{k=2}^{n}(a_{k-1} + 4k - 3) = \\sum_{k=1}^{n-1}a_k + 4\\times\\left(\\sum_{k=1}^{n}k - 1\\right) - 3(n-1)$，整理得 $a_n = a_1 + 4\\dfrac{n(n+1)}{2} - 4 - 3n + 3 = 2 - 3n + 2n^2 + 2n = 2n^2 - n + 2$。",
+        "en": "Official solutions: from $\\sum_{k=2}^{n}a_k = \\sum_{k=2}^{n}(a_{k-1} + 4k - 3) = \\sum_{k=1}^{n-1}a_k + 4\\times\\left(\\sum_{k=1}^{n}k - 1\\right) - 3(n-1)$ it follows that $a_n = a_1 + 4\\dfrac{n(n+1)}{2} - 4 - 3n + 3 = 2 - 3n + 2n^2 + 2n = 2n^2 - n + 2$."
+      },
+      "src": {
+        "zh": "官方详解 p.23",
+        "en": "Official solutions p.23"
+      },
+      "note": {
+        "zh": "官方详解 PDF 物理页 p.23，页面底部印刷页码为 21，对应习题 PDF 第 21 页。",
+        "en": "Official solutions PDF physical page p.23; the printed page number at the foot of that page is 21, corresponding to page 21 of the problems PDF."
+      }
+    }
+  ]
+}

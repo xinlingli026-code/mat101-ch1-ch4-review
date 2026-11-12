@@ -1,0 +1,606 @@
+{
+  "chapter": 1,
+  "key": "ch1",
+  "title": { "zh": "第 1 章 数系", "en": "Chapter 1 Number Systems" },
+  "sections": [
+    {
+      "id": "1.1",
+      "title": { "zh": "整数", "en": "Integers" },
+      "points": [
+        { "zh": "自然数由 $1,2,3,\\dots$ 计数得到，本课程不把 $0$ 计入自然数，自然数集记作 $\\mathbb{N}$。", "en": "Natural numbers come from counting $1,2,3,\\dots$; in this course $0$ is not counted as a natural number, and the set of natural numbers is denoted by $\\mathbb{N}$." },
+        { "zh": "整数上的加法满足交换律 $a+b=b+a$ 与结合律 $(a+b)+c=a+(b+c)$。", "en": "Addition on the integers satisfies commutativity $a+b=b+a$ and associativity $(a+b)+c=a+(b+c)$." },
+        { "zh": "减法只在 $a>b$ 时对自然数有定义，且不满足交换律与结合律。", "en": "Subtraction of natural numbers is only defined when $a>b$, and it satisfies neither commutativity nor associativity." },
+        { "zh": "引入 $0$ 与负整数后，$a+0=0+a=a$ 且 $a+(-a)=0$，其中 $0$ 是加法单位元、$-a$ 是 $a$ 的加法逆元，于是减法可写成 $a-b=a+(-b)$。", "en": "Once $0$ and negative integers are introduced, $a+0=0+a=a$ and $a+(-a)=0$, where $0$ is the additive unit and $-a$ is the additive inverse of $a$; subtraction then becomes $a-b=a+(-b)$." },
+        { "zh": "整数乘法满足交换律 $a\\times b=b\\times a$、结合律 $(a\\times b)\\times c=a\\times(b\\times c)$ 以及对加法的分配律 $a\\times(b+c)=a\\times b+a\\times c$。", "en": "Integer multiplication satisfies commutativity $a\\times b=b\\times a$, associativity $(a\\times b)\\times c=a\\times(b\\times c)$ and distributivity over addition $a\\times(b+c)=a\\times b+a\\times c$." },
+        { "zh": "带余除法：若 $a,b$ 为正整数且 $b\\ge 2$，则存在唯一的整数 $q$ 与 $r$ 使 $a=bq+r$，$0\\le r\\le b-1$，$q$ 为商、$r$ 为余数。", "en": "Division with remainder: if $a,b$ are positive integers with $b\\ge 2$, there are unique integers $q,r$ with $a=bq+r$ and $0\\le r\\le b-1$, where $q$ is the quotient and $r$ is the remainder." },
+        { "zh": "进制表示：$\\overline{a_n a_{n-1}\\dots a_1 a_0}_b=a_n\\times b^n+a_{n-1}\\times b^{n-1}+\\dots+a_1\\times b+a_0$，十进制即 $b=10$ 的情形。", "en": "Base representation: $\\overline{a_n a_{n-1}\\dots a_1 a_0}_b=a_n\\times b^n+a_{n-1}\\times b^{n-1}+\\dots+a_1\\times b+a_0$; the decimal system is the case $b=10$." }
+      ]
+    },
+    {
+      "id": "1.2",
+      "title": { "zh": "有理数、无理数与实数", "en": "Rational Numbers, Irrational Numbers, Real Numbers" },
+      "points": [
+        { "zh": "分数形如 $\\dfrac{p}{q}$，其中 $p,q$ 为整数且 $q\\neq 0$；若 $p,q$ 除 $1,-1$ 外没有公因子，则称该分数为最简分数。", "en": "A fraction has the form $\\dfrac{p}{q}$ with $p,q$ integers and $q\\neq 0$; if $p$ and $q$ have no common factor other than $1$ and $-1$, the fraction is said to be in lowest terms." },
+        { "zh": "分数也称有理数，有理数集记作 $\\mathbb{Q}$，其上加法与乘法可以按分数运算来定义。", "en": "Fractions are also called rational numbers; the set of rational numbers is denoted by $\\mathbb{Q}$, and addition and multiplication extend to them through the usual fraction rules." },
+        { "zh": "有理数可以在数轴上表示：若 $r_1+(-r_2)$ 为正数，则 $r_1$ 在 $r_2$ 的右边。", "en": "Rational numbers can be represented on the number line: $r_1$ lies to the right of $r_2$ if $r_1+(-r_2)$ is positive." },
+        { "zh": "单位正方形的对角线长为 $\\sqrt{2}$，它不是有理数，说明有理数之外还有别的数。", "en": "The diagonal of a unit square has length $\\sqrt{2}$, which is not rational, so numbers beyond the rational ones exist." },
+        { "zh": "幂的定义：$x^n=\\underbrace{x\\times\\dots\\times x}_{n\\text{ terms}}$，$x^{-n}=\\dfrac{1}{x^n}$，并约定 $x^0=1$；指数律为 $x^m\\times x^n=x^{m+n}$ 与 $\\dfrac{x^m}{x^n}=x^{m-n}$。", "en": "Powers are defined by $x^n=\\underbrace{x\\times\\dots\\times x}_{n\\text{ terms}}$, $x^{-n}=\\dfrac{1}{x^n}$, with $x^0=1$; the exponent laws are $x^m\\times x^n=x^{m+n}$ and $\\dfrac{x^m}{x^n}=x^{m-n}$." },
+        { "zh": "有限小数 $\\overline{a_n\\dots a_0.a_{-1}\\dots a_{-m}}$ 表示 $a_n\\times10^n+\\dots+a_0+\\dfrac{a_{-1}}{10}+\\dots+\\dfrac{a_{-m}}{10^m}$；无限循环小数按同样方式展开为无穷级数。", "en": "A finite decimal $\\overline{a_n\\dots a_0.a_{-1}\\dots a_{-m}}$ represents $a_n\\times10^n+\\dots+a_0+\\dfrac{a_{-1}}{10}+\\dots+\\dfrac{a_{-m}}{10^m}$; an infinite decimal expansion is written in the same way as an infinite series." },
+        { "zh": "几何级数 $1+r+r^2+r^3+\\dots=\\dfrac{1}{1-r}$（$0<r<1$），它是把循环小数化为分数的关键工具。", "en": "The geometric series $1+r+r^2+r^3+\\dots=\\dfrac{1}{1-r}$ for $0<r<1$ is the key tool for turning a repeating decimal into a fraction." }
+      ]
+    },
+    {
+      "id": "1.3",
+      "title": { "zh": "代数数与超越数", "en": "Algebraic Numbers and Transcendental Numbers" },
+      "points": [
+        { "zh": "定义 1.1：若数 $x$ 满足整系数多项式方程 $a_nx^n+a_{n-1}x^{n-1}+\\dots+a_1x+a_0=0$（$a_n\\neq 0$），则称 $x$ 为代数数。", "en": "Definition 1.1: a number $x$ is called algebraic if it satisfies a polynomial equation $a_nx^n+a_{n-1}x^{n-1}+\\dots+a_1x+a_0=0$ with $a_n\\neq 0$ and all coefficients $a_0,a_1,\\dots,a_n$ integers." },
+        { "zh": "不是代数数的数称为超越数；例如 $\\sqrt{2}$ 满足 $x^2-2=0$，故为代数数。", "en": "A number that is not algebraic is called transcendental; for instance $\\sqrt{2}$ satisfies $x^2-2=0$, so it is algebraic." },
+        { "zh": "定理 1.3：每个有理数都是代数数。", "en": "Theorem 1.3: every rational number is an algebraic number." },
+        { "zh": "定理 1.4：若 $a,b$ 都是代数数，则 $a+b$、$a-b$ 与 $ab$ 也都是代数数。", "en": "Theorem 1.4: if $a$ and $b$ are algebraic numbers, then so are $a+b$, $a-b$ and $ab$." },
+        { "zh": "讲义例 1.9 指出 $\\sqrt{3}-\\sqrt{2}$ 也是代数数（与习题 1.11 的 $\\sqrt{3}+\\sqrt[3]{2}$ 同类）。", "en": "Lecture Example 1.9 shows that $\\sqrt{3}-\\sqrt{2}$ is algebraic (the same style of argument as exercise 1.11 with $\\sqrt{3}+\\sqrt[3]{2}$)." },
+        { "zh": "$\\pi$ 是超越数，由 Ferdinand von Lindemann 于 1882 年证明。", "en": "$\\pi$ is transcendental, proved by Ferdinand von Lindemann in 1882." },
+        { "zh": "Joseph Liouville 于 1844 年首次证明超越数存在；Georg Cantor 于 1874 年证明超越数远多于代数数。", "en": "Joseph Liouville first proved the existence of transcendental numbers in 1844; in 1874 Georg Cantor proved that there are far more transcendental numbers than algebraic ones." }
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "sec": "1.1",
+      "title": { "zh": "自然数、整数集与加法单位元", "en": "Natural Numbers, the Integers and the Additive Unit" },
+      "body": {
+        "zh": "数数得到 $1,2,3,\\dots$，这些数叫自然数，本课程不把 $0$ 计入其中，自然数集记作 $\\mathbb{N}$，它们有无穷多个，也叫正整数。整数集 $\\mathbb{Z}$ 由正整数、$0$ 与负整数组成。为了让 $3-3$ 与 $3-5$ 有意义，引入 $0$ 和负数 $-a$。此时加法除交换律、结合律外还满足 $a+0=0+a=a$ 与 $a+(-a)=0$，于是 $0$ 叫加法单位元、$-a$ 叫 $a$ 的加法逆元，减法统一写成 $a-b=a+(-b)$。",
+        "en": "Counting gives $1,2,3,\\dots$, the natural numbers; this course does not include $0$ among them, and the set is denoted by $\\mathbb{N}$; there are infinitely many of them, and they are also called positive integers. The set of integers $\\mathbb{Z}$ contains the positive integers, $0$ and the negative integers. To make $3-3$ and $3-5$ meaningful we introduce $0$ and the negative $-a$. Besides commutativity and associativity, addition then satisfies $a+0=0+a=a$ and $a+(-a)=0$, so $0$ is the additive unit and $-a$ is the additive inverse of $a$, and subtraction is written $a-b=a+(-b)$."
+      }
+    },
+    {
+      "sec": "1.1",
+      "title": { "zh": "乘法运算律与符号法则", "en": "Laws of Multiplication and Sign Rules" },
+      "body": {
+        "zh": "正整数的乘法定义为重复加法，例如 $5\\times3=3+3+3+3+3=15$。乘法满足交换律 $a\\times b=b\\times a$、结合律 $(a\\times b)\\times c=a\\times(b\\times c)$，并对加法满足分配律 $a\\times(b+c)=a\\times b+a\\times c$。这些性质可延拓到所有整数。特别地 $0\\times a=a\\times0=0$，$1\\times a=a\\times1=a$，符号法则为：正数乘正数为正，正数乘负数为负，负数乘负数为正。",
+        "en": "Multiplication of positive integers is defined as repeated addition, e.g. $5\\times3=3+3+3+3+3=15$. It satisfies commutativity $a\\times b=b\\times a$, associativity $(a\\times b)\\times c=a\\times(b\\times c)$ and distributivity over addition $a\\times(b+c)=a\\times b+a\\times c$. These properties extend to all integers. In particular $0\\times a=a\\times0=0$ and $1\\times a=a\\times1=a$, and the sign rules are: positive times positive is positive, positive times negative is negative, negative times negative is positive."
+      }
+    },
+    {
+      "sec": "1.1",
+      "title": { "zh": "带余除法与进制表示", "en": "Division with Remainder and Base Representation" },
+      "body": {
+        "zh": "若 $a,b$ 是正整数且 $b\\ge 2$，则存在唯一的整数 $q,r$ 使 $a=bq+r$，$0\\le r\\le b-1$；$q$ 是商，$r$ 是余数。当 $r=0$ 时称 $b$ 整除 $a$、$b$ 是 $a$ 的因子、$a$ 是 $b$ 的倍数。日常使用十进制，$\\overline{a_n a_{n-1}\\dots a_1 a_0}=a_n\\times10^n+\\dots+a_1\\times10+a_0$；一般地 $\\overline{a_n a_{n-1}\\dots a_1 a_0}_b=a_n\\times b^n+\\dots+a_1\\times b+a_0$。进制换算的基本手法是：十进制转 $b$ 进制反复除以 $b$ 取余并倒序读出；$b$ 进制转二进制按每位展开（$8=2^3$），二进制转 $b$ 进制按每 $\\log_2 b$ 位一组。",
+        "en": "If $a,b$ are positive integers with $b\\ge 2$, there are unique integers $q,r$ with $a=bq+r$ and $0\\le r\\le b-1$; $q$ is the quotient and $r$ the remainder. When $r=0$ we say that $b$ divides $a$, that $b$ is a factor of $a$ and that $a$ is a multiple of $b$. In daily use we write base 10, $\\overline{a_n a_{n-1}\\dots a_1 a_0}=a_n\\times10^n+\\dots+a_1\\times10+a_0$; in general $\\overline{a_n a_{n-1}\\dots a_1 a_0}_b=a_n\\times b^n+\\dots+a_1\\times b+a_0$. The conversion tricks are: decimal to base $b$ by repeated division by $b$ reading the remainders in reverse; base $b$ to binary by expanding each digit since $8=2^3$; binary to base $b$ by grouping bits in blocks of $\\log_2 b$."
+      }
+    },
+    {
+      "sec": "1.2",
+      "title": { "zh": "分数与有理数", "en": "Fractions and Rational Numbers" },
+      "body": {
+        "zh": "分数是形如 $\\dfrac{p}{q}$（$p,q$ 为整数，$q\\neq0$）的数；若 $p,q$ 除了 $1,-1$ 外没有公因子，则称 $\\dfrac{p}{q}$ 为最简分数。分数也称有理数，其全体记作 $\\mathbb{Q}$，加法与乘法按 $\\dfrac{p}{q}\\pm\\dfrac{r}{s}=\\dfrac{ps\\pm rq}{qs}$、$\\dfrac{p}{q}\\times\\dfrac{r}{s}=\\dfrac{pr}{qs}$、$\\dfrac{p}{q}\\div\\dfrac{r}{s}=\\dfrac{ps}{qr}$ 运算。$\\mathbb{Q}$ 对这四种运算封闭（$b\\neq0$ 时）。",
+        "en": "A fraction is a number of the form $\\dfrac{p}{q}$ where $p,q$ are integers and $q\\neq0$; if $p$ and $q$ share no factor other than $1$ and $-1$ the fraction is in lowest terms. Fractions are also called rational numbers and the set is denoted by $\\mathbb{Q}$, with operations $\\dfrac{p}{q}\\pm\\dfrac{r}{s}=\\dfrac{ps\\pm rq}{qs}$, $\\dfrac{p}{q}\\times\\dfrac{r}{s}=\\dfrac{pr}{qs}$ and $\\dfrac{p}{q}\\div\\dfrac{r}{s}=\\dfrac{ps}{qr}$. The set $\\mathbb{Q}$ is closed under these four operations (when $b\\neq0$)."
+      }
+    },
+    {
+      "sec": "1.2",
+      "title": { "zh": "数轴、无理数与 $\\sqrt{2}$", "en": "The Number Line, Irrational Numbers and $\\sqrt{2}$" },
+      "body": {
+        "zh": "有理数可以摆在数轴上：两个有理数 $r_1,r_2$ 中，若 $r_1+(-r_2)$ 是正数，则 $r_1$ 位于 $r_2$ 的右侧。并非所有数都是有理数——单位正方形的对角线长为 $\\sqrt{2}$，讲义例 1.5 证明 $\\sqrt{2}$ 不是有理数（用反证法：设 $\\sqrt{2}=\\dfrac{p}{q}$，则 $p^2=2q^2$，由奇偶性矛盾）。无理数比有理数多得多，但证明一个数无理相当困难；$\\pi$ 的无理性直到 18 世纪才被证明。",
+        "en": "Rational numbers sit on the number line: for two rational numbers $r_1,r_2$, $r_1$ is to the right of $r_2$ if $r_1+(-r_2)$ is positive. Not every number is rational — the diagonal of a unit square has length $\\sqrt{2}$, and lecture Example 1.5 proves $\\sqrt{2}$ is not rational by contradiction: assume $\\sqrt{2}=\\dfrac{p}{q}$, then $p^2=2q^2$, and the parity of $p$ and $q$ gives a contradiction. There are far more irrational numbers than rational ones, but proving irrationality is hard; the irrationality of $\\pi$ was only proved in the 18th century."
+      }
+    },
+    {
+      "sec": "1.2",
+      "title": { "zh": "幂与指数运算律", "en": "Powers and the Laws of Exponents" },
+      "body": {
+        "zh": "若 $x$ 是一个数、$n$ 为正整数，定义 $x^n=\\underbrace{x\\times\\dots\\times x}_{n\\text{ terms}}$，$x^{-n}=\\dfrac{1}{x^n}$，并定义 $x^0=1$。对任意整数 $m,n$ 有 $x^m\\times x^n=x^{m+n}$ 与 $\\dfrac{x^m}{x^n}=x^{m-n}$。这三条是化简指数式与处理循环小数的工具。",
+        "en": "If $x$ is a number and $n$ a positive integer, define $x^n=\\underbrace{x\\times\\dots\\times x}_{n\\text{ terms}}$, $x^{-n}=\\dfrac{1}{x^n}$, and define $x^0=1$. For any integers $m,n$ we have $x^m\\times x^n=x^{m+n}$ and $\\dfrac{x^m}{x^n}=x^{m-n}$. These three rules are the working tools for simplifying exponential expressions and for handling repeating decimals."
+      }
+    },
+    {
+      "sec": "1.2",
+      "title": { "zh": "有限小数与循环小数", "en": "Finite and Repeating Decimals" },
+      "body": {
+        "zh": "正有限小数写成 $\\overline{a_n a_{n-1}\\cdots a_0.a_{-1}a_{-2}\\cdots a_{-m}}$，它表示 $a_n\\times10^n+a_{n-1}\\times10^{n-1}+\\dots+a_0+\\dfrac{a_{-1}}{10}+\\dfrac{a_{-2}}{10^2}+\\dots+\\dfrac{a_{-m}}{10^m}$。无限小数 $\\overline{a_na_{n-1}\\dots a_0.a_{-1}a_{-2}a_{-3}\\dots}$ 表示同样的无穷展开。当 $0<r<1$ 时 $1+r+r^2+r^3+\\dots=\\dfrac{1}{1-r}$，于是循环小数可写成等比级数并求和，例如 $0.0\\overline{14}=\\dfrac{14}{10^3}\\times\\dfrac{1}{1-\\dfrac{1}{10^2}}$。",
+        "en": "A positive finite decimal is written $\\overline{a_n a_{n-1}\\cdots a_0.a_{-1}a_{-2}\\cdots a_{-m}}$ and represents $a_n\\times10^n+a_{n-1}\\times10^{n-1}+\\dots+a_0+\\dfrac{a_{-1}}{10}+\\dfrac{a_{-2}}{10^2}+\\dots+\\dfrac{a_{-m}}{10^m}$. An infinite decimal $\\overline{a_na_{n-1}\\dots a_0.a_{-1}a_{-2}a_{-3}\\dots}$ stands for the corresponding infinite expansion. For $0<r<1$ we have $1+r+r^2+r^3+\\dots=\\dfrac{1}{1-r}$, so a repeating decimal becomes a geometric series that can be summed, for instance $0.0\\overline{14}=\\dfrac{14}{10^3}\\times\\dfrac{1}{1-\\dfrac{1}{10^2}}$."
+      }
+    },
+    {
+      "sec": "1.2",
+      "title": { "zh": "定理 1.1 与定理 1.2", "en": "Theorems 1.1 and 1.2" },
+      "body": {
+        "zh": "定理 1.1：所有有理数都可以写成有限小数或循环小数。定理 1.2：有限小数或循环小数表示一个有理数。两者合起来说明有理数与有限/循环小数是同一集合的两个侧面。所有小数的全体称为实数集，记作 $\\mathbb{R}$。",
+        "en": "Theorem 1.1: all rational numbers can be written as finite decimals or repeating decimals. Theorem 1.2: a finite or repeating decimal represents a rational number. Together they say that rational numbers and finite/repeating decimals are two views of the same set. The set of all decimals is called the set of real numbers, denoted by $\\mathbb{R}$."
+      }
+    },
+    {
+      "sec": "1.3",
+      "title": { "zh": "定义 1.1：代数数与超越数", "en": "Definition 1.1: Algebraic and Transcendental Numbers" },
+      "body": {
+        "zh": "若数 $x$ 满足多项式方程 $a_nx^n+a_{n-1}x^{n-1}+\\dots+a_1x+a_0=0$（$a_n\\neq0$），其中所有系数 $a_0,a_1,\\dots,a_n$ 都是整数，则称 $x$ 为代数数（Definition 1.1）；不是代数数的数称为超越数。例 1.8 给出 $\\sqrt{2}$ 满足 $x^2-2=0$，故 $\\sqrt{2}$ 是代数数。要证明一个数是代数数，只需找出一个系数全为整数的多项式方程使它成立。",
+        "en": "If a number $x$ satisfies the polynomial equation $a_nx^n+a_{n-1}x^{n-1}+\\dots+a_1x+a_0=0$ with $a_n\\neq0$ and all coefficients $a_0,a_1,\\dots,a_n$ integers, then $x$ is called an algebraic number (Definition 1.1); a number that is not algebraic is called transcendental. Example 1.8 gives that $\\sqrt{2}$ satisfies $x^2-2=0$, so $\\sqrt{2}$ is algebraic. To prove a number algebraic you only need to exhibit one polynomial equation with integer coefficients that it satisfies."
+      }
+    },
+    {
+      "sec": "1.3",
+      "title": { "zh": "定理 1.3 与定理 1.4：代数数的封闭性", "en": "Theorems 1.3 and 1.4: Closure Properties of Algebraic Numbers" },
+      "body": {
+        "zh": "定理 1.3：每个有理数都是代数数（因为 $\\dfrac{p}{q}$ 满足 $qx-p=0$）。定理 1.4：若 $a,b$ 都是代数数，则 $a+b$、$a-b$、$ab$ 也都是代数数。这两条定理解释了为什么 $\\sqrt{3}+\\sqrt{3}$、$\\sqrt{3}-\\sqrt{2}$ 之类看起来复杂的数仍是代数数：它们由已知代数数经四则运算得到。习题 1.13 与 1.14 是定理 1.4 的具体推广：代数数乘有理数仍是代数数；代数数的平方根仍是代数数。",
+        "en": "Theorem 1.3: every rational number is an algebraic number (since $\\dfrac{p}{q}$ satisfies $qx-p=0$). Theorem 1.4: if $a$ and $b$ are algebraic numbers, then so are $a+b$, $a-b$ and $ab$. These two theorems explain why expressions such as $\\sqrt{3}+\\sqrt{3}$ or $\\sqrt{3}-\\sqrt{2}$ are still algebraic: they are obtained from known algebraic numbers by arithmetic. Exercises 1.13 and 1.14 extend Theorem 1.4: an algebraic number times a rational number is algebraic, and the square root of an algebraic number is algebraic."
+      }
+    },
+    {
+      "sec": "1.3",
+      "title": { "zh": "超越数的三个历史事实", "en": "Three Historical Facts about Transcendental Numbers" },
+      "body": {
+        "zh": "讲义给出三个历史事实：$\\pi$ 是超越数，由 Ferdinand von Lindemann 在 1882 年证明；Joseph Liouville 在 1844 年首次证明了超越数的存在；Georg Cantor 在 1874 年证明超越数远多于代数数。这些事实说明代数数虽然无处不在，但它们在实数中只占很小的一部分。",
+        "en": "The lecture gives three historical facts: $\\pi$ is transcendental, proved by Ferdinand von Lindemann in 1882; Joseph Liouville first proved the existence of transcendental numbers in 1844; and in 1874 Georg Cantor proved that there are far more transcendental numbers than algebraic ones. Together they show that although algebraic numbers appear everywhere, they occupy only a tiny part of the reals."
+      }
+    }
+  ],
+  "pitfalls": [
+    {
+      "sec": "1.1",
+      "title": { "zh": "误以为减法也满足交换律与结合律", "en": "Assuming subtraction is commutative and associative" },
+      "body": {
+        "zh": "容易错：把加法的运算律照搬到减法上，写成 $a-b=b-a$ 或 $(a-b)-c=a-(b-c)$。正确做法：讲义明确指出减法不满足交换律与结合律；只有在引入负数、把减法写成 $a-b=a+(-b)$ 之后，才能借用加法的运算律，而且此时要先把式子改写成加法形式再使用交换律、结合律。",
+        "en": "The error is carrying the laws of addition over to subtraction, writing $a-b=b-a$ or $(a-b)-c=a-(b-c)$. The correct way: the lecture states explicitly that subtraction satisfies neither commutativity nor associativity; only after negative numbers are introduced and subtraction is rewritten as $a-b=a+(-b)$ may one use the laws of addition, and then the expression must first be rearranged into additive form."
+      }
+    },
+    {
+      "sec": "1.1",
+      "title": { "zh": "带余除法的余数范围写成 $0\\le r\\le b$", "en": "Writing the remainder range as $0\\le r\\le b$" },
+      "body": {
+        "zh": "容易错：把带余除法写成 $a=bq+r$，$0\\le r\\le b$，或忘记 $q,r$ 的唯一性。正确做法：讲义给出的结论是 $a=bq+r$，$0\\le r\\le b-1$（$b\\ge2$），且 $q,r$ 唯一；上限是 $b-1$ 而不是 $b$，因为 $b$ 本身可以写进商里。进制转换题中反复除以 $b$ 取余，得到的余数序列正是这里 $r$ 的取值范围。",
+        "en": "The error is stating $a=bq+r$ with $0\\le r\\le b$, or forgetting that $q,r$ are unique. The correct way: the lecture gives $a=bq+r$ with $0\\le r\\le b-1$ for $b\\ge2$, and $q,r$ unique; the upper bound is $b-1$, not $b$, because $b$ itself can be absorbed into the quotient. The remainders obtained by repeated division by $b$ in base conversion are exactly the $r$ of this statement."
+      }
+    },
+    {
+      "sec": "1.1",
+      "title": { "zh": "进制转换时分组位数与读数方向出错", "en": "Wrong group size or reading direction in base conversion" },
+      "body": {
+        "zh": "容易错：十进制转二进制时把余数从上往下读；八进制转二进制时按 4 位一组；二进制转四进制时按 3 位一组。正确做法：$2^k$ 进制之间互转按 $k$ 位一组——八进制转二进制按 3 位一组（$0=000,\\dots,7=111$），二进制转八进制按 3 位一组、二进制转四进制按 2 位一组（$4=2^2$）；十进制转进制用反复除法且余数从下往上读。写完最好用幂展开验算一次。",
+        "en": "The error is reading the remainders from the top when converting decimal to binary, or grouping in 4 bits when going from octal to binary. The correct way: between bases $2^k$ group in $k$ bits — octal to binary uses groups of 3 ($0=000,\\dots,7=111$), binary to octal uses groups of 3, binary to base 4 uses groups of 2 since $4=2^2$; decimal to base $b$ uses repeated division with the remainders read from the bottom up. Always verify once with a power expansion."
+      }
+    },
+    {
+      "sec": "1.2",
+      "title": { "zh": "证明有理数封闭时忘记 $qs\\neq0$ 与互素条件", "en": "Forgetting $qs\\neq0$ and coprimality when proving closure of $\\mathbb{Q}$" },
+      "body": {
+        "zh": "容易错：写 $a+b=\\dfrac{ps+rq}{qs}$ 就直接断言是有理数。正确做法：必须补上两句——$ps+rq$ 与 $qs$ 都是整数，且 $qs\\neq0$（因为 $q\\neq0$ 且 $s\\neq0$），这样它才确实是形如 $\\dfrac{\\text{整数}}{\\text{非零整数}}$ 的分数。反过来，若要说明两个有理数之差不是有理数，则要用反证法：假设 $a+b$ 有理，推出 $b$ 有理，与已知 $b$ 无理矛盾。",
+        "en": "The error is writing $a+b=\\dfrac{ps+rq}{qs}$ and immediately calling it rational. The correct way: add the two missing checks — $ps+rq$ and $qs$ are integers, and $qs\\neq0$ since $q\\neq0$ and $s\\neq0$ — so the expression really is a fraction of integers over a nonzero integer. In the other direction, to show a sum is not rational you argue by contradiction: assuming $a+b$ rational forces $b$ rational, contradicting the hypothesis."
+      }
+    },
+    {
+      "sec": "1.2",
+      "title": { "zh": "循环小数的循环节位置与 $\\dfrac{1}{1-r}$ 用错", "en": "Misplacing the repetend and misusing $\\dfrac{1}{1-r}$" },
+      "body": {
+        "zh": "容易错：把 $0.0\\overline{14}$ 当成 $0.\\overline{014}$，或者套用 $1+r+r^2+\\dots=\\dfrac{1}{1-r}$ 时把公比取成 $10$。正确做法：先确认循环节从哪一位开始——$0.0\\overline{14}$ 循环节是 $14$，首项是 $\\dfrac{14}{10^3}$、公比是 $\\dfrac{1}{10^2}$，故 $\\dfrac{14}{10^3}\\times\\dfrac{1}{1-\\dfrac{1}{10^2}}=\\dfrac{7}{495}$；而 $0.\\overline{014}$ 才是 $\\dfrac{14}{999}$。首项与公比必须同时对上循环节的位置。",
+        "en": "The error is reading $0.0\\overline{14}$ as $0.\\overline{014}$, or taking the ratio to be $10$ when using $1+r+r^2+\\dots=\\dfrac{1}{1-r}$. The correct way: first locate where the repetend starts — for $0.0\\overline{14}$ the repetend is $14$, the first term is $\\dfrac{14}{10^3}$ and the ratio is $\\dfrac{1}{10^2}$, giving $\\dfrac{14}{10^3}\\times\\dfrac{1}{1-\\dfrac{1}{10^2}}=\\dfrac{7}{495}$; whereas $0.\\overline{014}=\\dfrac{14}{999}$. The first term and the ratio must both match the position of the repetend."
+      }
+    },
+    {
+      "sec": "1.2",
+      "title": { "zh": "把\"有理数\"与\"实数\"、\"无理数\"混为一谈", "en": "Confusing rational, real and irrational numbers" },
+      "body": {
+        "zh": "容易错：认为无理数不属于实数，或认为有理数之外没有数。正确做法：讲义指出所有小数的全体构成实数集 $\\mathbb{R}$，无理数当然也属于 $\\mathbb{R}$；$\\mathbb{Q}\\subset\\mathbb{R}$ 是真包含。定理 1.1 与 1.2 说的是有理数 $\\iff$ 有限小数或循环小数，不是 $\\iff$ 有限小数——循环小数同样对应有理数。",
+        "en": "The error is believing irrational numbers lie outside the reals, or that nothing exists beyond the rationals. The correct way: the lecture states that the set of all decimals forms the real numbers $\\mathbb{R}$, and irrational numbers belong to $\\mathbb{R}$ too; the inclusion $\\mathbb{Q}\\subset\\mathbb{R}$ is proper. Theorems 1.1 and 1.2 say rational $\\iff$ finite or repeating decimal, not rational $\\iff$ finite decimal — repeating decimals are rational as well."
+      }
+    },
+    {
+      "sec": "1.3",
+      "title": { "zh": "判定代数数时漏掉 $a_n\\neq0$ 或系数必须为整数", "en": "Dropping $a_n\\neq0$ or the integrality of the coefficients" },
+      "body": {
+        "zh": "容易错：写 $a_nx^n+\\dots+a_0=0$ 时不注明 $a_n\\neq0$，或系数用了分数、无理数。正确做法：定义 1.1 要求最高次项系数非零且所有系数 $a_0,\\dots,a_n$ 都是整数；所以 $x^2-2=0$ 可以说明 $\\sqrt{2}$ 是代数数，但 $\\sqrt{2}x^2-2x+1=0$ 不能。此外 $0=0$ 这种恒等式不能用来判定任何数。",
+        "en": "The error is omitting $a_n\\neq0$, or using fractional or irrational coefficients. The correct way: Definition 1.1 requires a nonzero leading coefficient and all coefficients $a_0,\\dots,a_n$ to be integers, so $x^2-2=0$ certifies that $\\sqrt{2}$ is algebraic while $\\sqrt{2}x^2-2x+1=0$ certifies nothing. The identity $0=0$ is useless for deciding anything."
+      }
+    }
+  ],
+  "sheet": [
+    {
+      "group": { "zh": "带余除法与进制表示", "en": "Division with Remainder and Base Representation" },
+      "items": [
+        { "f": "$a=bq+r,\\quad 0\\le r\\le b-1$", "note": { "zh": "带余除法（$b\\ge2$，$q,r$ 唯一）", "en": "division with remainder ($b\\ge2$, $q,r$ unique)" } },
+        { "f": "$\\overline{a_n a_{n-1}\\dots a_1 a_0}_b=a_n\\times b^n+a_{n-1}\\times b^{n-1}+\\dots+a_1\\times b+a_0$", "note": { "zh": "$b$ 进制数的位值展开", "en": "place-value expansion of a base-$b$ numeral" } },
+        { "f": "$134_{10}=10000110_2=2012_4=206_8$", "note": { "zh": "$134$ 的三种进制写法", "en": "three base representations of $134$" } },
+        { "f": "$4=2^2,\\quad 8=2^3$", "note": { "zh": "2 的幂次，决定分组位数", "en": "powers of 2 that fix the grouping size" } },
+        { "f": "$0=000_2,\\;1=001_2,\\;2=010_2,\\;3=011_2,\\;4=100_2,\\;5=101_2,\\;6=110_2,\\;7=111_2$", "note": { "zh": "八进制数字与二进制三位的对应", "en": "octal digits as three-bit groups" } }
+      ]
+    },
+    {
+      "group": { "zh": "幂与指数运算律", "en": "Powers and the Laws of Exponents" },
+      "items": [
+        { "f": "$x^n=\\underbrace{x\\times\\dots\\times x}_{n\\text{ terms}},\\quad x^0=1$", "note": { "zh": "幂的定义", "en": "definition of powers" } },
+        { "f": "$x^{-n}=\\dfrac{1}{x^n}$", "note": { "zh": "负指数", "en": "negative exponents" } },
+        { "f": "$x^m\\times x^n=x^{m+n}$", "note": { "zh": "指数乘法律", "en": "product rule for exponents" } },
+        { "f": "$\\dfrac{x^m}{x^n}=x^{m-n}$", "note": { "zh": "指数商法则", "en": "quotient rule for exponents" } },
+        { "f": "$1+r+r^2+r^3+\\dots=\\dfrac{1}{1-r},\\quad 0<r<1$", "note": { "zh": "几何级数公式", "en": "geometric series formula" } }
+      ]
+    },
+    {
+      "group": { "zh": "有理数、循环小数与代数数", "en": "Rationals, Repeating Decimals and Algebraic Numbers" },
+      "items": [
+        { "f": "$\\dfrac{p}{q},\\quad p,q\\in\\mathbb{Z},\\ q\\neq0$", "note": { "zh": "分数（有理数）的定义", "en": "definition of a fraction (rational number)" } },
+        { "f": "$0.0\\overline{14}=\\dfrac{14}{10^3}\\times\\dfrac{1}{1-\\dfrac{1}{10^2}}=\\dfrac{7}{495}$", "note": { "zh": "循环小数化为分数", "en": "repeating decimal as a fraction" } },
+        { "f": "$3.14\\overline{207}=\\dfrac{314207-314}{99900}=\\dfrac{34877}{11100}$", "note": { "zh": "循环小数化为分数（另一例）", "en": "another repeating decimal as a fraction" } },
+        { "f": "$0.\\overline{014}=\\dfrac{14}{999}$", "note": { "zh": "循环节从第一位开始的循环小数", "en": "repeating decimal whose repetend starts at the first digit" } },
+        { "f": "$a_nx^n+a_{n-1}x^{n-1}+\\dots+a_1x+a_0=0,\\quad a_n\\neq0,\\ a_0,\\dots,a_n\\in\\mathbb{Z}$", "note": { "zh": "代数数的判定方程（定义 1.1）", "en": "defining equation of an algebraic number (Definition 1.1)" } },
+        { "f": "$x^2-2=0\\Rightarrow x=\\sqrt{2}\\ \\text{is algebraic}$", "note": { "zh": "$\\sqrt{2}$ 的代数性证明", "en": "proof that $\\sqrt{2}$ is algebraic" } }
+      ]
+    }
+  ],
+  "problems": [
+    {
+      "num": "1.1(a)",
+      "sec": "1.1",
+      "type": { "zh": "进制转换", "en": "Base conversion" },
+      "q": { "zh": "把十进制数 $134$ 转换为二进制数。", "en": "Convert the number $134$ in base 10 to base 2." },
+      "ans": { "zh": "$134_{10}=10000110_2$", "en": "$134_{10}=10000110_2$" },
+      "steps": [
+        { "zh": "反复除以 $2$ 取余：$134=67\\times2+0$，$67=2\\times33+1$，$33=2\\times16+1$，$16=2\\times8+0$，$8=2\\times4+0$，$4=2\\times2+0$，$2=2\\times1+0$，$1=2\\times0+1$。", "en": "Divide repeatedly by $2$ and keep the remainders: $134=67\\times2+0$, $67=2\\times33+1$, $33=2\\times16+1$, $16=2\\times8+0$, $8=2\\times4+0$, $4=2\\times2+0$, $2=2\\times1+0$, $1=2\\times0+1$." },
+        { "zh": "把余数自下而上读出，得到二进制数 $10000110$。", "en": "Read the remainders from the bottom up to obtain $10000110$." },
+        { "zh": "验算：$2^7+2^2+2^1=128+4+2=134$。", "en": "Check: $2^7+2^2+2^1=128+4+2=134$." }
+      ],
+      "official": {
+        "zh": "官方详解 p.1 给出反复除以 $2$ 的余数序列（$134=67\\times2+0$，$67=2\\times33+1$，$33=2\\times16+1$，$16=2\\times8+0$，$8=2\\times4+0$，$4=2\\times2+0$，$2=2\\times1+0$，$1=2\\times0+1$），从下往上读得 $10000110_2$；另用 $134=2^7+2^2+2^1$ 展开核对，并提示 $4=2^2$。",
+        "en": "Official solutions p.1 list the repeated-division-by-$2$ remainder chain ($134=67\\times2+0$, $67=2\\times33+1$, $33=2\\times16+1$, $16=2\\times8+0$, $8=2\\times4+0$, $4=2\\times2+0$, $2=2\\times1+0$, $1=2\\times0+1$), read from the bottom up as $10000110_2$; it also verifies with $134=2^7+2^2+2^1$ and notes $4=2^2$."
+      },
+      "src": { "zh": "官方详解 p.1", "en": "Official solutions p.1" }
+    },
+    {
+      "num": "1.1(b)",
+      "sec": "1.1",
+      "type": { "zh": "进制转换", "en": "Base conversion" },
+      "q": { "zh": "把十进制数 $134$ 转换为四进制数。", "en": "Convert the number $134$ in base 10 to base 4." },
+      "ans": { "zh": "$134_{10}=2012_4$", "en": "$134_{10}=2012_4$" },
+      "steps": [
+        { "zh": "反复除以 $4$ 取余：$134=4\\times33+2$，$33=4\\times8+1$，$8=4\\times2+0$，$2=4\\times0+2$。", "en": "Divide repeatedly by $4$ and keep the remainders: $134=4\\times33+2$, $33=4\\times8+1$, $8=4\\times2+0$, $2=4\\times0+2$." },
+        { "zh": "余数自下而上读出得 $2012_4$。", "en": "Reading the remainders from the bottom up gives $2012_4$." },
+        { "zh": "验算：$2\\times4^3+0\\times4^2+1\\times4+2=128+4+2=134$。", "en": "Check: $2\\times4^3+0\\times4^2+1\\times4+2=128+4+2=134$." }
+      ],
+      "official": {
+        "zh": "官方详解 p.1 用除法草稿 $4\\overline{)33}$ 分解 $134$（$134=4\\times33+2$，$33=4\\times8+1$，$8=4\\times2$），并把二进制结果 $10000110$ 按 2 位一组写成 $2012_4$，另直接展开 $134=2\\times4^3+1\\times4+2$。",
+        "en": "Official solutions p.1 decomposes $134$ by long division ($134=4\\times33+2$, $33=4\\times8+1$, $8=4\\times2$), then regroups the binary result $10000110$ in pairs to get $2012_4$, and also expands $134=2\\times4^3+1\\times4+2$ directly."
+      },
+      "src": { "zh": "官方详解 p.1", "en": "Official solutions p.1" }
+    },
+    {
+      "num": "1.1(c)",
+      "sec": "1.1",
+      "type": { "zh": "进制转换", "en": "Base conversion" },
+      "q": { "zh": "把十进制数 $134$ 转换为八进制数。", "en": "Convert the number $134$ in base 10 to base 8." },
+      "ans": { "zh": "$134_{10}=206_8$", "en": "$134_{10}=206_8$" },
+      "steps": [
+        { "zh": "反复除以 $8$ 取余：$134=8\\times16+6$，$16=8\\times2+0$，$2=8\\times0+2$。", "en": "Divide repeatedly by $8$ and keep the remainders: $134=8\\times16+6$, $16=8\\times2+0$, $2=8\\times0+2$." },
+        { "zh": "余数自下而上读出得 $206_8$。", "en": "Reading the remainders from the bottom up gives $206_8$." },
+        { "zh": "验算：$2\\times8^2+0\\times8+6=128+6=134$。", "en": "Check: $2\\times8^2+0\\times8+6=128+6=134$." }
+      ],
+      "official": {
+        "zh": "官方详解 p.1 把二进制结果按 3 位一组写成 $\\underline{\\underline{1}}\\mid\\underline{\\underline{000}}\\mid\\underline{110}$ 得 $206_8$，并用 $134=2\\times2^6+\\dfrac{2^2+2}{6}=2\\times8^2+6=206_8$ 核对。",
+        "en": "Official solutions p.1 groups the binary result in threes as $\\underline{\\underline{1}}\\mid\\underline{\\underline{000}}\\mid\\underline{110}$ to get $206_8$, and checks with $134=2\\times2^6+\\dfrac{2^2+2}{6}=2\\times8^2+6=206_8$."
+      },
+      "src": { "zh": "官方详解 p.1", "en": "Official solutions p.1" }
+    },
+    {
+      "num": "1.2",
+      "sec": "1.1",
+      "type": { "zh": "进制转换", "en": "Base conversion" },
+      "q": { "zh": "把二进制数 $11011100101_2$ 转换为四进制数和八进制数。", "en": "Convert the base 2 number $11011100101_2$ to base 4 and base 8." },
+      "ans": { "zh": "$11011100101_2=123211_4=3345_8$", "en": "$11011100101_2=123211_4=3345_8$" },
+      "steps": [
+        { "zh": "转四进制：按 $4=2^2$ 每 2 位一组，得 $1\\mid10\\mid11\\mid10\\mid01\\mid01$，即 $123211_4$。", "en": "To base 4: since $4=2^2$ group the bits in pairs, giving $1\\mid10\\mid11\\mid10\\mid01\\mid01$, i.e. $123211_4$." },
+        { "zh": "转八进制：按 $8=2^3$ 每 3 位一组，左端补 $0$ 得 $011\\mid011\\mid100\\mid101$，即 $3345_8$。", "en": "To base 8: since $8=2^3$ group the bits in threes, padding on the left to get $011\\mid011\\mid100\\mid101$, i.e. $3345_8$." },
+        { "zh": "验算：$2^{10}+2^9+2^7+2^6+2^5+2^2+2^0=1765$，而 $123211_4=3345_8=1765$。", "en": "Check: $2^{10}+2^9+2^7+2^6+2^5+2^2+2^0=1765$, and $123211_4=3345_8=1765$." }
+      ],
+      "official": {
+        "zh": "官方详解 p.2 先把二进制数按幂展开 $1\\times2^{10}+1\\times2^9+(1\\times2^7+1\\times2^6)+1\\times2^5+1\\times2^2+1$，再按 2 位一组写出四进制 $1\\mid\\underline{1\\quad0}\\mid\\underline{1\\quad1}\\mid1\\;00\\mid1\\;\\underline{0\\quad1}$ 得 $123211_4$，按 3 位一组写出八进制 $\\underline{1}\\mid\\underline{1}\\;0\\quad\\underline{1}\\;\\underline{1}\\mid1\\;0\\;0\\mid\\underline{1}\\;\\underline{0}\\;\\underline{1}$ 得 $3345_8$，并提示 $4=2^2$。",
+        "en": "Official solutions p.2 first expands the binary numeral as $1\\times2^{10}+1\\times2^9+(1\\times2^7+1\\times2^6)+1\\times2^5+1\\times2^2+1$, then groups in pairs for base 4, $1\\mid\\underline{1\\quad0}\\mid\\underline{1\\quad1}\\mid1\\;00\\mid1\\;\\underline{0\\quad1}$, giving $123211_4$, and in threes for base 8, $\\underline{1}\\mid\\underline{1}\\;0\\quad\\underline{1}\\;\\underline{1}\\mid1\\;0\\;0\\mid\\underline{1}\\;\\underline{0}\\;\\underline{1}$, giving $3345_8$, with the reminder $4=2^2$."
+      },
+      "src": { "zh": "官方详解 p.2", "en": "Official solutions p.2" }
+    },
+    {
+      "num": "1.3",
+      "sec": "1.1",
+      "type": { "zh": "进制转换", "en": "Base conversion" },
+      "q": { "zh": "把四进制数 $123223_4$ 转换为二进制数。", "en": "Convert the base 4 number $123223_4$ to base 2." },
+      "ans": { "zh": "$123223_4=11011101011_2$", "en": "$123223_4=11011101011_2$" },
+      "steps": [
+        { "zh": "因 $4=2^2$，把每个四进制数字展开成两位二进制：$1\\to01$，$2\\to10$，$3\\to11$，$2\\to10$，$2\\to10$，$3\\to11$。", "en": "Since $4=2^2$, expand each base-4 digit into two binary digits: $1\\to01$, $2\\to10$, $3\\to11$, $2\\to10$, $2\\to10$, $3\\to11$." },
+        { "zh": "连写得到 $01\\,10\\,11\\,10\\,10\\,11$，去掉最左端的 $0$ 得 $11011101011_2$。", "en": "Writing these in a row gives $01\\,10\\,11\\,10\\,10\\,11$; dropping the leading $0$ gives $11011101011_2$." },
+        { "zh": "验算：$1\\times4^5+2\\times4^4+3\\times4^3+2\\times4^2+2\\times4+3=1771=11011101011_2$。", "en": "Check: $1\\times4^5+2\\times4^4+3\\times4^3+2\\times4^2+2\\times4+3=1771=11011101011_2$." }
+      ],
+      "official": {
+        "zh": "官方详解 p.3 直接写出二进制结果 $1\\,10\\,11\\,10\\,10\\,11_2$，即 $11011101011_2$（把四进制每一位拆成两位二进制）。",
+        "en": "Official solutions p.3 gives the binary result directly as $1\\,10\\,11\\,10\\,10\\,11_2$, i.e. $11011101011_2$ (each base-4 digit split into two binary digits)."
+      },
+      "src": { "zh": "官方详解 p.3", "en": "Official solutions p.3" }
+    },
+    {
+      "num": "1.4",
+      "sec": "1.1",
+      "type": { "zh": "进制转换", "en": "Base conversion" },
+      "q": { "zh": "把八进制数 $123607_8$ 转换为二进制数和四进制数。", "en": "Convert the base 8 number $123607_8$ to base 2 and base 4." },
+      "ans": { "zh": "$123607_8=1010011110000111_2=22132013_4$", "en": "$123607_8=1010011110000111_2=22132013_4$" },
+      "steps": [
+        { "zh": "先列出八进制数字对应的三位二进制：$0=000$，$1=001$，$2=010$，$3=011$，$4=100$，$5=101$，$6=110$，$7=111$。", "en": "List the three-bit binary value of each octal digit: $0=000$, $1=001$, $2=010$, $3=011$, $4=100$, $5=101$, $6=110$, $7=111$." },
+        { "zh": "逐位展开 $123607_8$：$001\\mid010\\mid011\\mid110\\mid000\\mid111$，合并得 $1010011110000111_2$。", "en": "Expand $123607_8$ digit by digit: $001\\mid010\\mid011\\mid110\\mid000\\mid111$, which concatenates to $1010011110000111_2$." },
+        { "zh": "再把二进制每 2 位一组：$10\\mid10\\mid01\\mid11\\mid10\\mid00\\mid01\\mid11$，得 $22132013_4$。", "en": "Group the binary digits in pairs: $10\\mid10\\mid01\\mid11\\mid10\\mid00\\mid01\\mid11$, giving $22132013_4$." }
+      ],
+      "official": {
+        "zh": "官方详解 p.4 列出 $0=000_2$ 至 $7=111_2$ 的对照表，然后把 $123607_8$ 写成 $1010011110000111_2$，再按 2 位一组得 $10\\mid10\\mid01\\mid11\\mid10\\mid00\\mid01\\mid11$，即 $22132013_4$。",
+        "en": "Official solutions p.4 lists the table $0=000_2$ through $7=111_2$, writes $123607_8$ as $1010011110000111_2$, and then groups in pairs, $10\\mid10\\mid01\\mid11\\mid10\\mid00\\mid01\\mid11$, i.e. $22132013_4$."
+      },
+      "src": { "zh": "官方详解 p.4", "en": "Official solutions p.4" }
+    },
+    {
+      "num": "1.5(a)",
+      "sec": "1.2",
+      "type": { "zh": "证明：运算封闭性", "en": "Proof of closure" },
+      "q": { "zh": "设 $a$ 与 $b$ 是有理数且 $b\\neq0$。证明 $a+b$ 是有理数。", "en": "If $a$ and $b$ are rational numbers and $b\\neq0$, show that $a+b$ is a rational number." },
+      "ans": { "zh": "$a+b$ 是有理数。", "en": "$a+b$ is rational." },
+      "steps": [
+        { "zh": "写 $a=\\dfrac{p}{q}$（$p,q$ 为整数，$q\\neq0$），写 $b=\\dfrac{r}{s}$（$r,s$ 为整数，$s\\neq0$）。", "en": "Write $a=\\dfrac{p}{q}$ with integers $p,q$, $q\\neq0$, and $b=\\dfrac{r}{s}$ with integers $r,s$, $s\\neq0$." },
+        { "zh": "通分得 $a+b=\\dfrac{p}{q}+\\dfrac{r}{s}=\\dfrac{ps+rq}{qs}$。", "en": "Over a common denominator, $a+b=\\dfrac{p}{q}+\\dfrac{r}{s}=\\dfrac{ps+rq}{qs}$." },
+        { "zh": "$ps+rq$ 与 $qs$ 都是整数且 $qs\\neq0$，故 $a+b$ 是有理数。", "en": "Both $ps+rq$ and $qs$ are integers and $qs\\neq0$, so $a+b$ is rational." }
+      ],
+      "official": {
+        "zh": "官方详解 p.5 设 $a=\\dfrac{p}{q}$、$b=\\dfrac{r}{s}$，得 $a+b=\\dfrac{ps+rq}{qs}$，指出 $ps+rq$ 与 $qs$ 是整数且 $qs\\neq0$，故 $a+b$ 是有理数。",
+        "en": "Official solutions p.5 sets $a=\\dfrac{p}{q}$ and $b=\\dfrac{r}{s}$, obtains $a+b=\\dfrac{ps+rq}{qs}$, and notes that $ps+rq$ and $qs$ are integers with $qs\\neq0$, so $a+b$ is rational."
+      },
+      "src": { "zh": "官方详解 p.5", "en": "Official solutions p.5" }
+    },
+    {
+      "num": "1.5(b)",
+      "sec": "1.2",
+      "type": { "zh": "证明：运算封闭性", "en": "Proof of closure" },
+      "q": { "zh": "设 $a$ 与 $b$ 是有理数且 $b\\neq0$。证明 $a-b$ 是有理数。", "en": "If $a$ and $b$ are rational numbers and $b\\neq0$, show that $a-b$ is a rational number." },
+      "ans": { "zh": "$a-b$ 是有理数。", "en": "$a-b$ is rational." },
+      "steps": [
+        { "zh": "仍写 $a=\\dfrac{p}{q}$、$b=\\dfrac{r}{s}$，其中 $q\\neq0$，$s\\neq0$。", "en": "Again write $a=\\dfrac{p}{q}$ and $b=\\dfrac{r}{s}$ with $q\\neq0$ and $s\\neq0$." },
+        { "zh": "通分得 $a-b=\\dfrac{p}{q}-\\dfrac{r}{s}=\\dfrac{ps-rq}{qs}$。", "en": "Over a common denominator, $a-b=\\dfrac{p}{q}-\\dfrac{r}{s}=\\dfrac{ps-rq}{qs}$." },
+        { "zh": "$ps-rq$ 与 $qs$ 都是整数且 $qs\\neq0$，故 $a-b$ 是有理数。", "en": "Both $ps-rq$ and $qs$ are integers and $qs\\neq0$, so $a-b$ is rational." }
+      ],
+      "official": {
+        "zh": "官方详解 p.5 得 $a-b=\\dfrac{ps-rq}{qs}$，指出 $ps-rq$ 与 $qs$ 是整数且 $qs\\neq0$，故 $a-b$ 是有理数。",
+        "en": "Official solutions p.5 obtains $a-b=\\dfrac{ps-rq}{qs}$, notes that $ps-rq$ and $qs$ are integers with $qs\\neq0$, and concludes that $a-b$ is rational."
+      },
+      "src": { "zh": "官方详解 p.5", "en": "Official solutions p.5" }
+    },
+    {
+      "num": "1.5(c)",
+      "sec": "1.2",
+      "type": { "zh": "证明：运算封闭性", "en": "Proof of closure" },
+      "q": { "zh": "设 $a$ 与 $b$ 是有理数且 $b\\neq0$。证明 $ab$ 是有理数。", "en": "If $a$ and $b$ are rational numbers and $b\\neq0$, show that $ab$ is a rational number." },
+      "ans": { "zh": "$ab$ 是有理数。", "en": "$ab$ is rational." },
+      "steps": [
+        { "zh": "写 $a=\\dfrac{p}{q}$、$b=\\dfrac{r}{s}$，$q\\neq0$，$s\\neq0$。", "en": "Write $a=\\dfrac{p}{q}$ and $b=\\dfrac{r}{s}$ with $q\\neq0$ and $s\\neq0$." },
+        { "zh": "相乘得 $ab=\\dfrac{pr}{qs}$。", "en": "Multiplying gives $ab=\\dfrac{pr}{qs}$." },
+        { "zh": "$pr$ 与 $qs$ 都是整数且 $qs\\neq0$，故 $ab$ 是有理数。", "en": "Both $pr$ and $qs$ are integers and $qs\\neq0$, so $ab$ is rational." }
+      ],
+      "official": {
+        "zh": "官方详解 p.5 得 $ab=\\dfrac{pr}{qs}$，指出 $pr$ 与 $qs$ 是整数且 $qs\\neq0$，故 $ab$ 是有理数。",
+        "en": "Official solutions p.5 obtains $ab=\\dfrac{pr}{qs}$, notes that $pr$ and $qs$ are integers with $qs\\neq0$, and concludes that $ab$ is rational."
+      },
+      "src": { "zh": "官方详解 p.5", "en": "Official solutions p.5" }
+    },
+    {
+      "num": "1.5(d)",
+      "sec": "1.2",
+      "type": { "zh": "证明：运算封闭性", "en": "Proof of closure" },
+      "q": { "zh": "设 $a$ 与 $b$ 是有理数且 $b\\neq0$。证明 $\\dfrac{a}{b}$ 是有理数。", "en": "If $a$ and $b$ are rational numbers and $b\\neq0$, show that $\\dfrac{a}{b}$ is a rational number." },
+      "ans": { "zh": "$\\dfrac{a}{b}$ 是有理数。", "en": "$\\dfrac{a}{b}$ is rational." },
+      "steps": [
+        { "zh": "写 $a=\\dfrac{p}{q}$、$b=\\dfrac{r}{s}$，其中 $q\\neq0$，且因 $b\\neq0$ 故 $r\\neq0$，$s\\neq0$。", "en": "Write $a=\\dfrac{p}{q}$ and $b=\\dfrac{r}{s}$ with $q\\neq0$; since $b\\neq0$ we also have $r\\neq0$ and $s\\neq0$." },
+        { "zh": "相除得 $\\dfrac{a}{b}=\\dfrac{\\dfrac{p}{q}}{\\dfrac{r}{s}}=\\dfrac{ps}{qr}$。", "en": "Dividing gives $\\dfrac{a}{b}=\\dfrac{\\dfrac{p}{q}}{\\dfrac{r}{s}}=\\dfrac{ps}{qr}$." },
+        { "zh": "$ps$ 与 $qr$ 都是整数且 $qr\\neq0$，故 $\\dfrac{a}{b}$ 是有理数。", "en": "Both $ps$ and $qr$ are integers and $qr\\neq0$, so $\\dfrac{a}{b}$ is rational." }
+      ],
+      "official": {
+        "zh": "官方详解 p.5 得 $\\dfrac{a}{b}=\\dfrac{ps}{qr}$，指出 $ps$ 与 $qr$ 是整数且 $qr\\neq0$，故 $\\dfrac{a}{b}$ 是有理数。",
+        "en": "Official solutions p.5 obtains $\\dfrac{a}{b}=\\dfrac{ps}{qr}$, notes that $ps$ and $qr$ are integers with $qr\\neq0$, and concludes that $\\dfrac{a}{b}$ is rational."
+      },
+      "src": { "zh": "官方详解 p.5", "en": "Official solutions p.5" }
+    },
+    {
+      "num": "1.6(a)",
+      "sec": "1.2",
+      "type": { "zh": "证明：有理数与无理数的和", "en": "Sum of a rational and an irrational number" },
+      "q": { "zh": "设 $a$ 是有理数，$b$ 是无理数，$a\\neq0$。判断 $a+b$ 是有理数还是无理数，并说明理由。", "en": "If $a$ is a rational number, $b$ is an irrational number and $a\\neq0$, determine whether $a+b$ is rational or irrational, and justify your answer." },
+      "ans": { "zh": "$a+b$ 是无理数。", "en": "$a+b$ is irrational." },
+      "steps": [
+        { "zh": "反证：假设 $a+b$ 是有理数，设 $a+b=\\dfrac{r}{s}$，其中 $r,s$ 为整数且 $s\\neq0$。", "en": "By contradiction: assume $a+b$ is rational, say $a+b=\\dfrac{r}{s}$ with integers $r,s$ and $s\\neq0$." },
+        { "zh": "写 $a=\\dfrac{p}{q}$（$q\\neq0$），则 $b=\\dfrac{r}{s}-\\dfrac{p}{q}=\\dfrac{rq-ps}{qs}$。", "en": "Write $a=\\dfrac{p}{q}$ with $q\\neq0$; then $b=\\dfrac{r}{s}-\\dfrac{p}{q}=\\dfrac{rq-ps}{qs}$." },
+        { "zh": "$rq-ps$ 与 $qs$ 为整数且 $qs\\neq0$，故 $b$ 是有理数，与 $b$ 无理矛盾；所以 $a+b$ 必是无理数。", "en": "Since $rq-ps$ and $qs$ are integers with $qs\\neq0$, $b$ would be rational, contradicting the hypothesis; hence $a+b$ must be irrational." }
+      ],
+      "official": {
+        "zh": "官方详解 p.6 用反证法：设 $a=\\dfrac{p}{q}$（$p\\neq0$），若 $a+b=\\dfrac{r}{s}$ 则 $b=\\dfrac{rq-ps}{qs}$ 是有理数，矛盾；故 $a+b$ 是无理数。",
+        "en": "Official solutions p.6 argues by contradiction: with $a=\\dfrac{p}{q}$ ($p\\neq0$), if $a+b=\\dfrac{r}{s}$ then $b=\\dfrac{rq-ps}{qs}$ is rational, a contradiction; therefore $a+b$ is irrational."
+      },
+      "src": { "zh": "官方详解 p.6", "en": "Official solutions p.6" }
+    },
+    {
+      "num": "1.6(b)",
+      "sec": "1.2",
+      "type": { "zh": "证明：有理数与无理数的积", "en": "Product of a rational and an irrational number" },
+      "q": { "zh": "设 $a$ 是有理数，$b$ 是无理数，$a\\neq0$。判断 $ab$ 是有理数还是无理数，并说明理由。", "en": "If $a$ is a rational number, $b$ is an irrational number and $a\\neq0$, determine whether $ab$ is rational or irrational, and justify your answer." },
+      "ans": { "zh": "$ab$ 是无理数。", "en": "$ab$ is irrational." },
+      "steps": [
+        { "zh": "反证：假设 $ab$ 是有理数，设 $ab=\\dfrac{m}{n}$，其中 $m,n$ 为整数且 $n\\neq0$。", "en": "By contradiction: assume $ab$ is rational, say $ab=\\dfrac{m}{n}$ with integers $m,n$ and $n\\neq0$." },
+        { "zh": "写 $a=\\dfrac{p}{q}$（$q\\neq0$）；由 $a\\neq0$ 得 $p\\neq0$，于是 $b=\\dfrac{ab}{a}=\\dfrac{\\dfrac{m}{n}}{\\dfrac{p}{q}}=\\dfrac{mq}{np}$。", "en": "Write $a=\\dfrac{p}{q}$ with $q\\neq0$; since $a\\neq0$ we have $p\\neq0$, and $b=\\dfrac{ab}{a}=\\dfrac{\\dfrac{m}{n}}{\\dfrac{p}{q}}=\\dfrac{mq}{np}$." },
+        { "zh": "$mq$ 与 $np$ 为整数且 $np\\neq0$，故 $b$ 是有理数，矛盾；所以 $ab$ 是无理数。", "en": "Since $mq$ and $np$ are integers with $np\\neq0$, $b$ would be rational, a contradiction; hence $ab$ is irrational." }
+      ],
+      "official": {
+        "zh": "官方详解 p.6 用反证法：设 $a=\\dfrac{p}{q}$（$p\\neq0$），若 $ab=\\dfrac{m}{n}$ 则 $b=\\dfrac{mq}{np}$ 是有理数，矛盾；故 $ab$ 是无理数，并指出条件 $a\\neq0$（即 $p\\neq0$）是关键。",
+        "en": "Official solutions p.6 argues by contradiction: with $a=\\dfrac{p}{q}$ ($p\\neq0$), if $ab=\\dfrac{m}{n}$ then $b=\\dfrac{mq}{np}$ would be rational, a contradiction; hence $ab$ is irrational, and it stresses that the condition $a\\neq0$ (i.e. $p\\neq0$) is essential."
+      },
+      "src": { "zh": "官方详解 p.6", "en": "Official solutions p.6" }
+    },
+    {
+      "num": "1.7(a)",
+      "sec": "1.2",
+      "type": { "zh": "分数化为小数", "en": "Fraction to decimal expansion" },
+      "q": { "zh": "把分数 $\\dfrac{777}{20}$ 写成小数展开。", "en": "Write the fraction $\\dfrac{777}{20}$ in decimal expansion." },
+      "ans": { "zh": "$\\dfrac{777}{20}=38.85$", "en": "$\\dfrac{777}{20}=38.85$" },
+      "steps": [
+        { "zh": "先用 $777\\div2=388.5$，即 $\\dfrac{777}{2}=388.5$。", "en": "First $777\\div2=388.5$, i.e. $\\dfrac{777}{2}=388.5$." },
+        { "zh": "再除以 $10$：$\\dfrac{777}{20}=38.85$，是有限小数。", "en": "Then divide by $10$: $\\dfrac{777}{20}=38.85$, a finite decimal." },
+        { "zh": "验算：$38.85\\times20=777$。", "en": "Check: $38.85\\times20=777$." }
+      ],
+      "official": {
+        "zh": "官方详解 p.7 写出 $\\dfrac{777}{2}=388.5$，再用长除法 $2\\overline{)777}$（$777-600=177$，$177-160=17$，$17-16=1$，补零得 $10$，$10-8=2$）得 $\\dfrac{777}{20}=38.85$。",
+        "en": "Official solutions p.7 writes $\\dfrac{777}{2}=388.5$ and then uses long division $2\\overline{)777}$ ($777-600=177$, $177-160=17$, $17-16=1$, append a zero to get $10$, $10-8=2$) to obtain $\\dfrac{777}{20}=38.85$."
+      },
+      "src": { "zh": "官方详解 p.7", "en": "Official solutions p.7" }
+    },
+    {
+      "num": "1.7(b)",
+      "sec": "1.2",
+      "type": { "zh": "分数化为循环小数", "en": "Fraction to repeating decimal expansion" },
+      "q": { "zh": "把分数 $\\dfrac{12}{101}$ 写成小数展开。", "en": "Write the fraction $\\dfrac{12}{101}$ in decimal expansion." },
+      "ans": { "zh": "$\\dfrac{12}{101}=0.118811881188\\ldots=0.\\overline{1188}$", "en": "$\\dfrac{12}{101}=0.118811881188\\ldots=0.\\overline{1188}$" },
+      "steps": [
+        { "zh": "长除法：$120\\div101$ 商 $1$ 余 $19$；$190\\div101$ 商 $1$ 余 $89$；$890\\div101$ 商 $8$ 余 $82$；$820\\div101$ 商 $8$ 余 $12$。", "en": "Long division: $120\\div101$ gives quotient $1$ remainder $19$; $190\\div101$ gives $1$ remainder $89$; $890\\div101$ gives $8$ remainder $82$; $820\\div101$ gives $8$ remainder $12$." },
+        { "zh": "余数 $12$ 回到初始状态，故循环节为 $1188$。", "en": "The remainder $12$ returns to the starting value, so the repetend is $1188$." },
+        { "zh": "因此 $\\dfrac{12}{101}=0.118811881188\\ldots$。", "en": "Hence $\\dfrac{12}{101}=0.118811881188\\ldots$." }
+      ],
+      "official": {
+        "zh": "官方详解 p.7 用长除法 $101\\overline{)120}$ 写出 $120\\to190\\to890\\to820\\to120$ 的循环，得 $0.118811881188\\ldots$，并写成 $0.\\dot{1}18\\dot{8}$（点在循环节首尾）。",
+        "en": "Official solutions p.7 uses long division $101\\overline{)120}$ showing the cycle $120\\to190\\to890\\to820\\to120$, giving $0.118811881188\\ldots$, written as $0.\\dot{1}18\\dot{8}$ with dots over the ends of the repetend."
+      },
+      "src": { "zh": "官方详解 p.7", "en": "Official solutions p.7" },
+      "note": { "zh": "核对提示：循环节为 $1188$（4 位），也可用 $\\dfrac{12}{101}=\\dfrac{1188}{9999}$ 验证。", "en": "Checking note: the repetend is $1188$ (four digits); you may also verify with $\\dfrac{12}{101}=\\dfrac{1188}{9999}$." }
+    },
+    {
+      "num": "1.8",
+      "sec": "1.2",
+      "type": { "zh": "证明：有限小数的充要条件", "en": "Proof of the finite-decimal criterion" },
+      "q": { "zh": "设 $p$ 是正整数，$q$ 是大于等于 $2$ 且与 $p$ 互素的正整数。证明分数 $\\dfrac{p}{q}$ 有有限小数展开，当且仅当 $q$ 没有除 $2$ 或 $5$ 以外的素因子。", "en": "Let $p$ be a positive integer and let $q$ be a positive integer greater than or equal to $2$ that is relatively prime to $p$. Show that the fraction $\\dfrac{p}{q}$ has a finite decimal expansion if and only if $q$ does not have prime factors other than $2$ or $5$." },
+      "ans": { "zh": "$\\dfrac{p}{q}$ 有有限小数展开 $\\iff q$ 的素因子只有 $2$ 和 $5$。", "en": "$\\dfrac{p}{q}$ has a finite decimal expansion if and only if the only prime factors of $q$ are $2$ and $5$." },
+      "steps": [
+        { "zh": "（必要性）设 $\\dfrac{p}{q}=\\overline{a_n\\dots a_0.a_{-1}\\dots a_{-m}}=\\dfrac{k}{10^m}$，$k$ 为整数，于是 $10^mp=kq$，即 $q\\mid10^mp$。", "en": "(Necessity) Suppose $\\dfrac{p}{q}=\\overline{a_n\\dots a_0.a_{-1}\\dots a_{-m}}=\\dfrac{k}{10^m}$ with $k$ an integer; then $10^mp=kq$, i.e. $q\\mid10^mp$." },
+        { "zh": "因 $\\gcd(p,q)=1$，由欧几里得引理得 $q\\mid10^m=2^m\\times5^m$，故 $q$ 的素因子只能是 $2$ 或 $5$。", "en": "Since $\\gcd(p,q)=1$, Euclid's lemma gives $q\\mid10^m=2^m\\times5^m$, so the only prime factors of $q$ are $2$ or $5$." },
+        { "zh": "（充分性）若 $q=2^a\\times5^b$，则当 $a\\le b$ 时 $\\dfrac{p}{q}=\\dfrac{p\\times2^{b-a}}{10^b}$，当 $a>b$ 时 $\\dfrac{p}{q}=\\dfrac{p\\times5^{a-b}}{10^a}$，分子都是整数，故为有限小数。", "en": "(Sufficiency) If $q=2^a\\times5^b$, then for $a\\le b$, $\\dfrac{p}{q}=\\dfrac{p\\times2^{b-a}}{10^b}$, and for $a>b$, $\\dfrac{p}{q}=\\dfrac{p\\times5^{a-b}}{10^a}$; the numerators are integers, so the decimal expansion is finite." }
+      ],
+      "official": {
+        "zh": "官方详解 p.8 证必要性：设 $\\dfrac{p}{q}=\\overline{a_n a_{n-1}\\dots a_0.a_{-1}a_{-2}\\dots a_{-m}}=\\dfrac{k}{10^m}$，则 $10^mp=kq$，故 $q$ 整除 $10^mp$；由 $p,q$ 互素得 $q$ 整除 $10^m=2^m\\times5^m$（旁注欧几里得引理：$a\\mid bc$、$a\\neq0$、$\\gcd(a,b)=1$ 则 $a\\mid c$），故 $q$ 的素因子只有 $2$ 或 $5$。官方详解 p.9 证充分性：写 $q=2^a\\times5^b$（$a,b$ 非负且不同时为 $0$），情形 $a\\le b$ 时 $\\dfrac{p}{q}=\\dfrac{p\\times2^{b-a}}{10^b}$，情形 $a>b$ 时 $\\dfrac{p}{q}=\\dfrac{p\\times5^{a-b}}{10^a}$，故有有限小数展开。",
+        "en": "Official solutions p.8 proves necessity: writing $\\dfrac{p}{q}=\\overline{a_n a_{n-1}\\dots a_0.a_{-1}a_{-2}\\dots a_{-m}}=\\dfrac{k}{10^m}$ gives $10^mp=kq$, so $q$ divides $10^mp$; since $p$ and $q$ are coprime, $q$ divides $10^m=2^m\\times5^m$ (a side note states Euclid's lemma: if $a\\mid bc$, $a\\neq0$ and $\\gcd(a,b)=1$ then $a\\mid c$), hence the only prime factors of $q$ are $2$ and $5$. Official solutions p.9 proves sufficiency: write $q=2^a\\times5^b$ with $a,b$ nonnegative and not both $0$; for $a\\le b$, $\\dfrac{p}{q}=\\dfrac{p\\times2^{b-a}}{10^b}$, and for $a>b$, $\\dfrac{p}{q}=\\dfrac{p\\times5^{a-b}}{10^a}$, so the decimal expansion is finite."
+      },
+      "src": { "zh": "官方详解 p.8-9", "en": "Official solutions p.8-9" }
+    },
+    {
+      "num": "1.9(a)",
+      "sec": "1.2",
+      "type": { "zh": "循环小数化为最简分数", "en": "Repeating decimal to a fraction in lowest terms" },
+      "q": { "zh": "把 $0.0\\overline{14}$ 化为最简分数。", "en": "Convert the number $0.0\\overline{14}$ to a fraction in lowest terms." },
+      "ans": { "zh": "$0.0\\overline{14}=\\dfrac{7}{495}$", "en": "$0.0\\overline{14}=\\dfrac{7}{495}$" },
+      "steps": [
+        { "zh": "写成等比级数：$0.0\\overline{14}=\\dfrac{14}{10^3}+\\dfrac{14}{10^5}+\\dfrac{14}{10^7}+\\dots$。", "en": "Write it as a geometric series: $0.0\\overline{14}=\\dfrac{14}{10^3}+\\dfrac{14}{10^5}+\\dfrac{14}{10^7}+\\dots$." },
+        { "zh": "用 $\\sum r^k=\\dfrac{1}{1-r}$：$=\\dfrac{14}{10^3}\\left(1+\\dfrac{1}{10^2}+\\dfrac{1}{10^4}+\\dots\\right)=\\dfrac{14}{10^3}\\times\\dfrac{1}{1-\\dfrac{1}{10^2}}$。", "en": "Using $\\sum r^k=\\dfrac{1}{1-r}$: $=\\dfrac{14}{10^3}\\left(1+\\dfrac{1}{10^2}+\\dfrac{1}{10^4}+\\dots\\right)=\\dfrac{14}{10^3}\\times\\dfrac{1}{1-\\dfrac{1}{10^2}}$." },
+        { "zh": "化简得 $\\dfrac{14}{10(10^2-1)}=\\dfrac{14}{990}=\\dfrac{7}{495}$，已是既约分数。", "en": "Simplifying, $\\dfrac{14}{10(10^2-1)}=\\dfrac{14}{990}=\\dfrac{7}{495}$, which is in lowest terms." }
+      ],
+      "official": {
+        "zh": "官方详解 p.10 给出两种做法。其一（蓝笔）：$0.0\\overline{14}=\\dfrac{14}{10^3}+\\dfrac{14}{10^5}+\\dfrac{14}{10^7}+\\dots=\\dfrac{14}{10^3}\\times\\dfrac{1}{1-\\dfrac{1}{10^2}}=\\dfrac{14}{990}=\\dfrac{7}{495}$。其二（绿笔）用移位法：$S=0.0\\overline{14}$，则 $10^2S=1.4\\overline{14}$，$(10^2-1)S=1.4$，$S=\\dfrac{1.4}{99}=\\dfrac{14}{990}$。同一页上方还用 $S=1+r+r^2+\\dots$ 与 $rS=S-1$ 推出 $S=\\dfrac{1}{1-r}$。",
+        "en": "Official solutions p.10 gives two methods. First (in blue): $0.0\\overline{14}=\\dfrac{14}{10^3}+\\dfrac{14}{10^5}+\\dfrac{14}{10^7}+\\dots=\\dfrac{14}{10^3}\\times\\dfrac{1}{1-\\dfrac{1}{10^2}}=\\dfrac{14}{990}=\\dfrac{7}{495}$. Second (in green) by shifting: with $S=0.0\\overline{14}$ we get $10^2S=1.4\\overline{14}$, hence $(10^2-1)S=1.4$ and $S=\\dfrac{1.4}{99}=\\dfrac{14}{990}$. The top of the same page also derives $S=\\dfrac{1}{1-r}$ from $S=1+r+r^2+\\dots$ and $rS=S-1$."
+      },
+      "src": { "zh": "官方详解 p.10", "en": "Official solutions p.10" }
+    },
+    {
+      "num": "1.9(b)",
+      "sec": "1.2",
+      "type": { "zh": "循环小数化为最简分数", "en": "Repeating decimal to a fraction in lowest terms" },
+      "q": { "zh": "把 $3.14\\overline{207}$ 化为最简分数。", "en": "Convert the number $3.14\\overline{207}$ to a fraction in lowest terms." },
+      "ans": { "zh": "$3.14\\overline{207}=\\dfrac{34877}{11100}$", "en": "$3.14\\overline{207}=\\dfrac{34877}{11100}$" },
+      "steps": [
+        { "zh": "写成级数：$3.14\\overline{207}=\\dfrac{314}{10^2}+\\dfrac{207}{10^5}+\\dfrac{207}{10^8}+\\dfrac{207}{10^{11}}+\\dots$。", "en": "Write it as a series: $3.14\\overline{207}=\\dfrac{314}{10^2}+\\dfrac{207}{10^5}+\\dfrac{207}{10^8}+\\dfrac{207}{10^{11}}+\\dots$." },
+        { "zh": "对循环部分用几何级数：$=\\dfrac{314}{10^2}+\\dfrac{207}{10^5}\\times\\dfrac{1}{1-\\dfrac{1}{10^3}}=\\dfrac{314}{10^2}+\\dfrac{207}{10^2(10^3-1)}$。", "en": "Apply the geometric series to the repeating part: $=\\dfrac{314}{10^2}+\\dfrac{207}{10^5}\\times\\dfrac{1}{1-\\dfrac{1}{10^3}}=\\dfrac{314}{10^2}+\\dfrac{207}{10^2(10^3-1)}$." },
+        { "zh": "通分并化简：$=\\dfrac{314(10^3-1)+207}{10^2(10^3-1)}=\\dfrac{314207-314}{99900}=\\dfrac{34877}{11100}$。", "en": "Combine and simplify: $=\\dfrac{314(10^3-1)+207}{10^2(10^3-1)}=\\dfrac{314207-314}{99900}=\\dfrac{34877}{11100}$." }
+      ],
+      "official": {
+        "zh": "官方详解 p.11 写 $3.14\\overline{207}=3.14\\,207\\,207\\,207\\dots=\\dfrac{314}{10^2}+\\dfrac{207}{10^5}+\\dfrac{207}{10^8}+\\dfrac{207}{10^{11}}+\\dots=\\dfrac{314}{10^2}+\\dfrac{207}{10^5}\\times\\dfrac{1}{1-\\dfrac{1}{10^3}}=\\dfrac{314}{10^2}+\\dfrac{207}{10^2(10^3-1)}=\\dfrac{314(10^3-1)+207}{10^2(10^3-1)}=\\dfrac{314207-314}{99900}=\\dfrac{34877}{11100}$。",
+        "en": "Official solutions p.11 writes $3.14\\overline{207}=3.14\\,207\\,207\\,207\\dots=\\dfrac{314}{10^2}+\\dfrac{207}{10^5}+\\dfrac{207}{10^8}+\\dfrac{207}{10^{11}}+\\dots=\\dfrac{314}{10^2}+\\dfrac{207}{10^5}\\times\\dfrac{1}{1-\\dfrac{1}{10^3}}=\\dfrac{314}{10^2}+\\dfrac{207}{10^2(10^3-1)}=\\dfrac{314(10^3-1)+207}{10^2(10^3-1)}=\\dfrac{314207-314}{99900}=\\dfrac{34877}{11100}$."
+      },
+      "src": { "zh": "官方详解 p.11", "en": "Official solutions p.11" }
+    },
+    {
+      "num": "1.10",
+      "sec": "1.3",
+      "type": { "zh": "证明：代数数", "en": "Proving a number algebraic" },
+      "q": { "zh": "证明 $\\sqrt[5]{2}$ 是代数数。", "en": "Show that $\\sqrt[5]{2}$ is an algebraic number." },
+      "ans": { "zh": "$\\sqrt[5]{2}$ 满足整系数方程 $x^5-2=0$，故为代数数。", "en": "$\\sqrt[5]{2}$ satisfies the integer-coefficient equation $x^5-2=0$, so it is algebraic." },
+      "steps": [
+        { "zh": "回顾定义：数 $x$ 若满足整系数多项式方程 $C_nx^n+C_{n-1}x^{n-1}+\\dots+C_1x+C_0=0$，则为代数数。", "en": "Recall the definition: a number $x$ satisfying the integer-coefficient polynomial equation $C_nx^n+C_{n-1}x^{n-1}+\\dots+C_1x+C_0=0$ is algebraic." },
+        { "zh": "令 $x=\\sqrt[5]{2}$，则 $x^5=2$，即 $x^5-2=0$。", "en": "Set $x=\\sqrt[5]{2}$; then $x^5=2$, i.e. $x^5-2=0$." },
+        { "zh": "该方程系数 $1$ 与 $-2$ 都是整数，故 $x$ 是代数数。", "en": "Since the coefficients $1$ and $-2$ are integers, $x$ is an algebraic number." }
+      ],
+      "official": {
+        "zh": "官方详解 p.12 先复述代数数定义（$C_nx^n+C_{n-1}x^{n-1}+\\dots+C_1x+C_0=0$，系数为整数），再令 $x=\\sqrt[5]{2}$，得 $x^5=2$，故 $x$ 满足多项式方程 $x^5-2=0$，系数为整数，因此 $x$ 是代数数。",
+        "en": "Official solutions p.12 restates the definition of an algebraic number ($C_nx^n+C_{n-1}x^{n-1}+\\dots+C_1x+C_0=0$ with integer coefficients), then sets $x=\\sqrt[5]{2}$, gets $x^5=2$, and concludes that $x$ satisfies the polynomial equation $x^5-2=0$ with integer coefficients, hence is algebraic."
+      },
+      "src": { "zh": "官方详解 p.12", "en": "Official solutions p.12" }
+    },
+    {
+      "num": "1.11",
+      "sec": "1.3",
+      "type": { "zh": "证明：代数数", "en": "Proving a number algebraic" },
+      "q": { "zh": "证明 $\\sqrt{3}+\\sqrt[3]{2}$ 是代数数。", "en": "Show that $\\sqrt{3}+\\sqrt[3]{2}$ is an algebraic number." },
+      "ans": { "zh": "$x=\\sqrt{3}+\\sqrt[3]{2}$ 满足 $x^6-9x^4-4x^3+27x^2-36x-23=0$，故为代数数。", "en": "$x=\\sqrt{3}+\\sqrt[3]{2}$ satisfies $x^6-9x^4-4x^3+27x^2-36x-23=0$, so it is algebraic." },
+      "steps": [
+        { "zh": "令 $x=\\sqrt{3}+\\sqrt[3]{2}$，则 $x-\\sqrt{3}=\\sqrt[3]{2}$，故 $(x-\\sqrt{3})^3=(\\sqrt[3]{2})^3=2$。", "en": "Set $x=\\sqrt{3}+\\sqrt[3]{2}$; then $x-\\sqrt{3}=\\sqrt[3]{2}$, so $(x-\\sqrt{3})^3=(\\sqrt[3]{2})^3=2$." },
+        { "zh": "展开并整理：$x^3-3\\sqrt{3}x^2+9x-3\\sqrt{3}=2$，即 $x^3+9x-2=3\\sqrt{3}\\,(x^2+1)$。", "en": "Expanding and rearranging: $x^3-3\\sqrt{3}x^2+9x-3\\sqrt{3}=2$, i.e. $x^3+9x-2=3\\sqrt{3}\\,(x^2+1)$." },
+        { "zh": "两边平方消去根号：$(x^3+9x-2)^2=27(x^2+1)^2$，展开得 $x^6+18x^4-4x^3+81x^2-36x+4=27x^4+54x^2+27$。", "en": "Squaring both sides to remove the radical: $(x^3+9x-2)^2=27(x^2+1)^2$, which expands to $x^6+18x^4-4x^3+81x^2-36x+4=27x^4+54x^2+27$." },
+        { "zh": "移项整理：$x^6-9x^4-4x^3+27x^2-36x-23=0$，系数全为整数，故 $x$ 是代数数。", "en": "Collecting terms: $x^6-9x^4-4x^3+27x^2-36x-23=0$; all coefficients are integers, so $x$ is algebraic." }
+      ],
+      "official": {
+        "zh": "官方详解 p.13 令 $x=\\sqrt{3}+\\sqrt[3]{2}$，由 $(x-\\sqrt{3})^3=(\\sqrt[3]{2})^3=2$ 展开得 $x^3-3\\sqrt{3}x^2+9x-3\\sqrt{3}=2$，即 $x^3+9x-2=3\\sqrt{3}(x^2+1)$；两边平方得 $x^6+81x^2+4+18x^4-4x^3-36x=27(x^4+2x^2+1)$，整理为 $x^6-9x^4-4x^3+27x^2-36x-23=0$，故 $x$ 是代数数。页边还给出 $(x-y)^3$ 与 $(a+b+c)^2$ 的展开备用式。",
+        "en": "Official solutions p.13 sets $x=\\sqrt{3}+\\sqrt[3]{2}$ and, from $(x-\\sqrt{3})^3=(\\sqrt[3]{2})^3=2$, expands to $x^3-3\\sqrt{3}x^2+9x-3\\sqrt{3}=2$, i.e. $x^3+9x-2=3\\sqrt{3}(x^2+1)$; squaring gives $x^6+81x^2+4+18x^4-4x^3-36x=27(x^4+2x^2+1)$, which is rearranged to $x^6-9x^4-4x^3+27x^2-36x-23=0$, so $x$ is algebraic. Side notes give the expansions of $(x-y)^3$ and $(a+b+c)^2$ for reference."
+      },
+      "src": { "zh": "官方详解 p.13", "en": "Official solutions p.13" }
+    },
+    {
+      "num": "1.12",
+      "sec": "1.3",
+      "type": { "zh": "证明：代数数", "en": "Proving a number algebraic" },
+      "q": { "zh": "证明 $\\dfrac{2}{3-\\sqrt{5}}$ 是代数数。", "en": "Show that $\\dfrac{2}{3-\\sqrt{5}}$ is an algebraic number." },
+      "ans": { "zh": "$x=\\dfrac{2}{3-\\sqrt{5}}$ 满足 $x^2-3x+1=0$，故为代数数。", "en": "$x=\\dfrac{2}{3-\\sqrt{5}}$ satisfies $x^2-3x+1=0$, so it is algebraic." },
+      "steps": [
+        { "zh": "令 $x=\\dfrac{2}{3-\\sqrt{5}}$，则 $3x-\\sqrt{5}\\,x=2$。", "en": "Set $x=\\dfrac{2}{3-\\sqrt{5}}$; then $3x-\\sqrt{5}\\,x=2$." },
+        { "zh": "两边平方消去根号：$(3x-2)^2=(\\sqrt{5}\\,x)^2$，即 $9x^2-12x+4=5x^2$。", "en": "Square both sides to remove the radical: $(3x-2)^2=(\\sqrt{5}\\,x)^2$, i.e. $9x^2-12x+4=5x^2$." },
+        { "zh": "整理得 $4x^2-12x+4=0$，再同除以 $4$ 得 $x^2-3x+1=0$，系数为整数，故 $x$ 是代数数。", "en": "Rearranging, $4x^2-12x+4=0$, and dividing by $4$ gives $x^2-3x+1=0$; the coefficients are integers, so $x$ is algebraic." }
+      ],
+      "official": {
+        "zh": "官方详解 p.14 令 $x=\\dfrac{2}{3-\\sqrt{5}}$，则 $3x-\\sqrt{5}x=2$；平方得 $(3x-2)^2=(\\sqrt{5}x)^2$，即 $9x^2-12x+4=5x^2$，整理为 $4x^2-12x+4=0$，再写成 $x^2-3x+1=0$，指出这是整数系数多项式方程，故 $x$ 是代数数。",
+        "en": "Official solutions p.14 sets $x=\\dfrac{2}{3-\\sqrt{5}}$, gets $3x-\\sqrt{5}x=2$, squares to $(3x-2)^2=(\\sqrt{5}x)^2$, i.e. $9x^2-12x+4=5x^2$, rearranges to $4x^2-12x+4=0$ and then $x^2-3x+1=0$, and notes this is a polynomial equation with integer coefficients, so $x$ is algebraic."
+      },
+      "src": { "zh": "官方详解 p.14", "en": "Official solutions p.14" }
+    },
+    {
+      "num": "1.13",
+      "sec": "1.3",
+      "type": { "zh": "证明：代数数的封闭性", "en": "Closure property of algebraic numbers" },
+      "q": { "zh": "若 $a$ 是代数数，$b$ 是有理数，证明 $ab$ 也是代数数。", "en": "If $a$ is an algebraic number and $b$ is a rational number, show that $ab$ is also an algebraic number." },
+      "ans": { "zh": "$ab$ 是代数数。", "en": "$ab$ is algebraic." },
+      "steps": [
+        { "zh": "情形一：若 $b=0$，则 $ab=0$，而 $0$ 满足 $x=0$，是代数数。", "en": "Case one: if $b=0$ then $ab=0$, and $0$ satisfies $x=0$, so it is algebraic." },
+        { "zh": "情形二：若 $b\\neq0$，则存在非零整数 $p,q$ 使 $b=\\dfrac{p}{q}$；设 $x=a$ 满足 $c_nx^n+c_{n-1}x^{n-1}+\\dots+c_1x+c_0=0$。", "en": "Case two: if $b\\neq0$ there are nonzero integers $p,q$ with $b=\\dfrac{p}{q}$; let $x=a$ satisfy $c_nx^n+c_{n-1}x^{n-1}+\\dots+c_1x+c_0=0$." },
+        { "zh": "令 $y=ab=bx=\\dfrac{px}{q}$，则 $x=\\dfrac{qy}{p}$，代入原方程并同乘 $p^n$ 得 $c_nq^ny^n+c_{n-1}q^{n-1}p\\,y^{n-1}+\\dots+c_1qp^{n-1}y+c_0p^n=0$。", "en": "Let $y=ab=bx=\\dfrac{px}{q}$, so $x=\\dfrac{qy}{p}$; substituting into the original equation and multiplying by $p^n$ gives $c_nq^ny^n+c_{n-1}q^{n-1}p\\,y^{n-1}+\\dots+c_1qp^{n-1}y+c_0p^n=0$." },
+        { "zh": "所有系数都是整数，故 $y=ab$ 满足整系数多项式方程，$ab$ 是代数数。", "en": "All the coefficients are integers, so $y=ab$ satisfies a polynomial equation with integer coefficients and $ab$ is algebraic." }
+      ],
+      "official": {
+        "zh": "官方详解 p.15 分两种情形：情形一 $b=0$ 时 $ab=0$ 是代数数；情形二 $b\\neq0$ 时写 $b=\\dfrac{p}{q}$（$p,q$ 为非零整数），设 $x=a$ 满足 $c_nx^n+\\dots+c_0=0$，令 $y=ab=bx=\\dfrac{px}{q}$，即 $x=\\dfrac{qy}{p}$，代入并同乘 $p^n$ 得 $c_nq^ny^n+c_{n-1}q^{n-1}p\\,y^{n-1}+\\dots+c_1qp^{n-1}y+c_0p^n=0$，系数均为整数，故 $y=ab$ 是代数数。",
+        "en": "Official solutions p.15 splits into two cases: if $b=0$ then $ab=0$, which is algebraic; if $b\\neq0$ it writes $b=\\dfrac{p}{q}$ with nonzero integers $p,q$, lets $x=a$ satisfy $c_nx^n+\\dots+c_0=0$, sets $y=ab=bx=\\dfrac{px}{q}$ so that $x=\\dfrac{qy}{p}$, substitutes and multiplies by $p^n$ to get $c_nq^ny^n+c_{n-1}q^{n-1}p\\,y^{n-1}+\\dots+c_1qp^{n-1}y+c_0p^n=0$ with integer coefficients, hence $y=ab$ is algebraic."
+      },
+      "src": { "zh": "官方详解 p.15", "en": "Official solutions p.15" }
+    },
+    {
+      "num": "1.14",
+      "sec": "1.3",
+      "type": { "zh": "证明：代数数的封闭性", "en": "Closure property of algebraic numbers" },
+      "q": { "zh": "若 $a$ 是代数数，$b$ 是一个满足 $b^2=a$ 的数，证明 $b$ 也是代数数。", "en": "If $a$ is an algebraic number and $b$ is a number such that $b^2=a$, show that $b$ is also an algebraic number." },
+      "ans": { "zh": "$b$ 是代数数。", "en": "$b$ is algebraic." },
+      "steps": [
+        { "zh": "因 $a$ 是代数数，$x=a$ 是某个整系数多项式方程 $c_nx^n+c_{n-1}x^{n-1}+\\dots+c_1x+c_0=0$ 的解。", "en": "Since $a$ is algebraic, $x=a$ is a solution of an integer-coefficient polynomial equation $c_nx^n+c_{n-1}x^{n-1}+\\dots+c_1x+c_0=0$." },
+        { "zh": "令 $y=b$，由 $b^2=a$ 得 $y^2=b^2=a=x$。", "en": "Set $y=b$; from $b^2=a$ we get $y^2=b^2=a=x$." },
+        { "zh": "把 $x=y^2$ 代入原方程得 $c_ny^{2n}+c_{n-1}y^{2n-2}+\\dots+c_1y^2+c_0=0$，系数为整数，故 $y=b$ 是代数数。", "en": "Substituting $x=y^2$ into the original equation gives $c_ny^{2n}+c_{n-1}y^{2n-2}+\\dots+c_1y^2+c_0=0$ with integer coefficients, so $y=b$ is algebraic." }
+      ],
+      "official": {
+        "zh": "官方详解 p.16 设 $a$ 为代数数，$x=a$ 是整系数多项式方程 $c_nx^n+c_{n-1}x^{n-1}+\\dots+c_1x+c_0=0$ 的解；令 $y=b$，则 $y^2=b^2=a=x$，于是 $y$ 满足 $c_ny^{2n}+c_{n-1}y^{2n-2}+\\dots+c_1y^2+c_0=0$，系数为整数，故 $b$ 是代数数。",
+        "en": "Official solutions p.16 lets $a$ be algebraic with $x=a$ a solution of the integer-coefficient equation $c_nx^n+c_{n-1}x^{n-1}+\\dots+c_1x+c_0=0$; setting $y=b$ gives $y^2=b^2=a=x$, so $y$ satisfies $c_ny^{2n}+c_{n-1}y^{2n-2}+\\dots+c_1y^2+c_0=0$ with integer coefficients, and therefore $b$ is algebraic."
+      },
+      "src": { "zh": "官方详解 p.16", "en": "Official solutions p.16" }
+    }
+  ]
+}
