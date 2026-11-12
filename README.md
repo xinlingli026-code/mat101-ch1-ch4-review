@@ -7,7 +7,11 @@ A fully static, **bilingual (中文 / English)** revision site for **MAT101 Alge
 Chapters 1–4**: section-by-section key points, pitfalls, a formula sheet, and a self-test bank with
 transcribed official solutions.
 
-在线访问 / Live: <https://xinlingli026-code.github.io/mat101-ch1-ch4-review/>
+在线访问 / Live:
+- GitHub Pages：<https://xinlingli026-code.github.io/mat101-ch1-ch4-review/>
+- 独立公开站点 / Standalone mirror：<https://lhjxvphzq3q00.space.mcode.cn>
+
+中文站 `index.html` · English site `index-en.html`（两版内容严格对等）
 
 ---
 
