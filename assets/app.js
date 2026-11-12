@@ -398,8 +398,9 @@
 
   function init() {
     var params = new URLSearchParams(window.location.search);
-    var ch = parseInt(params.get('ch') || '0', 10);
-    if (!isNaN(ch) && ch >= 0 && ch < DATA.length) state.chapter = ch;
+    // ?ch=N 使用 1-based 章节号（?ch=1 即第 1 章），并夹在有效范围内
+    var ch = parseInt(params.get('ch') || '1', 10);
+    if (!isNaN(ch) && ch >= 1 && ch <= DATA.length) state.chapter = ch - 1;
     var view = params.get('view');
     if (view && T.zh.views[view]) state.view = view;
     bind();

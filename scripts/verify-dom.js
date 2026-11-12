@@ -82,15 +82,15 @@ async function run() {
 
   // 全部视图在第 1 章上对比
   for (const view of VIEWS) {
-    const zh = await page('zh', 0, view);
-    const en = await page('en', 0, view);
+    const zh = await page('zh', 1, view);
+    const en = await page('en', 1, view);
     rows.push({ label: `ch1/${view}`, zh, en });
   }
   // 每章的自测题库
-  for (const ch of [1, 2, 3]) {
+  for (const ch of [2, 3, 4]) {
     const zh = await page('zh', ch, 'quiz');
     const en = await page('en', ch, 'quiz');
-    rows.push({ label: `ch${ch + 1}/quiz`, zh, en });
+    rows.push({ label: `ch${ch}/quiz`, zh, en });
   }
 
   console.log('view           metric        zh      en     equal');
